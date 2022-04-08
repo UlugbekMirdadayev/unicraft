@@ -1,13 +1,38 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
+import Header from "./components/header";
+import Footer from "./components/footer";
+import { LoginAuntification } from "./adminComponent/login";
 
 function App() {
   return (
-    <div>
+    <>
       <Routes>
-        <Route path="/" element={<h1>Home</h1>} />
+        <Route path="*" element={<HomePage />} />
+        <Route path="/admin/*" element={<>AdminPanel</>} />
+        <Route path="/auth/*" element={<LoginAuth />} />
       </Routes>
-    </div>
+    </>
+  );
+}
+
+function HomePage() {
+  return (
+    <>
+      <Header />
+      <Routes>
+        <Route path="/" element={<>Home</>} />
+      </Routes>
+      <Footer />
+    </>
+  );
+}
+
+function LoginAuth() {
+  return (
+    <Routes>
+      <Route path="/login" element={<LoginAuntification />} />
+    </Routes>
   );
 }
 
