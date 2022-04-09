@@ -1,7 +1,8 @@
 main.home {
   .video-bg-intro {
     position: relative;
-    height: 90vh;
+    max-height: 90vh;
+    min-height: 60vh;
     width: 100vw;
     .video-overlay {
       position: absolute;
