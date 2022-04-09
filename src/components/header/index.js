@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import { Logo } from "./../export/svg";
 import "./header.scss";
 
@@ -53,10 +53,6 @@ const linkData = [
         link: "/about#vacancy",
       },
       {
-        name: "Вакансии",
-        link: "/about#vacancy",
-      },
-      {
         name: "Контакты",
         link: "/about#contacts",
       },
@@ -73,7 +69,9 @@ const linkData = [
 ];
 
 function Header() {
+  const { hash, pathname } = useLocation();
   const [lang, setLang] = React.useState("ru");
+
 
   return (
     <div className="header-container">
@@ -93,7 +91,13 @@ function Header() {
                     <ol className="header__dropdown">
                       {item.dropdown.map((item, index) => {
                         return (
-                          <NavLink key={index} to={item.link}>
+                          <NavLink
+                            style={
+                              pathname + hash === item?.link ? { color: "red" } : {}
+                            }
+                            key={index}
+                            to={item.link}
+                          >
                             {item.name}
                           </NavLink>
                         );
