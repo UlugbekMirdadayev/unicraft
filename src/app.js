@@ -3,6 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import Header from "./components/header";
 import Footer from "./components/footer";
 import { LoginAuntification } from "./adminComponent/login";
+import "./assets/style/main.scss";
 
 function App() {
   return (
