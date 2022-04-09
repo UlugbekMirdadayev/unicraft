@@ -61,11 +61,7 @@
             height: 100%;
             text-decoration: none;
             height: 50px;
-            transition: 300ms ease;
-            -webkit-transition: 300ms ease;
-            -moz-transition: 300ms ease;
-            -ms-transition: 300ms ease;
-            -o-transition: 300ms ease;
+      
             &:hover {
               background: rgba(106, 173, 227, 0.2);
             }
