@@ -1,5 +1,5 @@
 import React from "react";
-
+import { PresentBox } from "../export/svg";
 function Rate() {
   return (
     <div className="rate">
@@ -14,7 +14,10 @@ function Rate() {
           <div className="switch"></div>
         </div>
         <div className="tariff_blocks_period_year">
-          
+          <p>Год</p>
+          <div className="tariff_img">
+            <PresentBox />
+          </div>
         </div>
       </div>
     </div>
