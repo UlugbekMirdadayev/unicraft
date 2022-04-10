@@ -362,6 +362,34 @@ main.home {
             }
           }
         }
+        .card_wrapper__ {
+          position: relative;
+          .card_container__ {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            z-index: -3;
+            transition: 300ms ease opacity;
+            -webkit-transition: 300ms ease opacity;
+            -moz-transition: 300ms ease opacity;
+            -ms-transition: 300ms ease opacity;
+            -o-transition: 300ms ease opacity;
+            &.active {
+              z-index: 2;
+              opacity: 1;
+            }
+          }
+          .navigation__btn {
+            width: 4rem;
+            height: 4rem;
+            border-radius: 4rem;
+            z-index: 2;
+            position: relative;
+          }
+        }
       }
     }
   }

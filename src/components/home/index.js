@@ -134,7 +134,7 @@ const Advantages = [
       {
         id: 1,
 
-        title: "Конструктор упражнений",
+        title: "Загрузка материалов",
         list: [
           "Полноценный встроенный редактор уроков",
           "Поддержка всех популярных форматов файлов",
@@ -367,6 +367,31 @@ function Home() {
                         </div>
                       );
                     })}
+                  </div>
+                  <div className="card_wrapper__">
+                    <button className="prev__slide__btn navigation__btn">
+                      prev
+                    </button>
+
+                    {__res?.card.map((__it) => {
+                      return (
+                        <div
+                          key={__it?.id}
+                          className={`card_container__ ${
+                            __it?.id === active ? "active" : ""
+                          }`}
+                        >
+                          <div className="card__text_left">
+                            <div className="card__text_left_title">
+                              {__it?.title}
+                            </div>
+                          </div>
+                        </div>
+                      );
+                    })}
+                    <button className="next__slide__btn navigation__btn">
+                      next
+                    </button>
                   </div>
                 </div>
               );
