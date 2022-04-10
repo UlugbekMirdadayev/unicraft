@@ -1,39 +1,51 @@
 import React from "react";
 import VanillaTilt from "vanilla-tilt";
 import "./home.scss";
-import Sber from "../../assets/img/sber.webp";
-import Rostelecom from "../../assets/img/rostelecom.webp";
-import Mts from "../../assets/img/mts.webp";
-import Mailru from "../../assets/img/mailru.webp";
-import Ingos from "../../assets/img/ingos.webp";
-import SportMaster from "../../assets/img/sportmaster.webp";
-import Mondi from "../../assets/img/mondi.webp";
-import AptekaVita from "../../assets/img/aptekavita.webp";
-import Askona from "../../assets/img/askona.webp";
-import Ochakovo from "../../assets/img/ochakovo.webp";
-import Greenway from "../../assets/img/greenway.webp";
-import Msu from "../../assets/img/msu.webp";
-import TiltImg from "../../assets/img/tilt.webp";
-import TiltImgAfter from "../../assets/img/tiltafter.webp";
-import TiltImgTwo from "../../assets/img/tilttwo.webp";
-import TiltImgAfterTwo from "../../assets/img/tiltaftertwo.webp";
-import TiltImghree from "../../assets/img/tiltthree.webp";
-import TiltImgAfterhree from "../../assets/img/tiltafterthree.webp";
-import Problem from "../../assets/img/problem.png";
-import ProblemTwo from "../../assets/img/problem2.png";
-import ProblemThree from "../../assets/img/problem3.png";
-import ProblemFour from "../../assets/img/problem4.png";
-import ProblemFive from "../../assets/img/problem5.png";
-import ProblemSix from "../../assets/img/problem6.png";
-import AdvanOne from "../../assets/img/slider-advan1.png";
-import AdvanSecond from "../../assets/img/slider-advan2.png";
-import AdvanThird from "../../assets/img/slider-advan3.png";
-import AdvanFourth from "../../assets/img/slider-advan4.png";
-import AdvanFifth from "../../assets/img/slider-advan5.png";
-import AdvanSixth from "../../assets/img/slider-advan6.png";
-import AdvanSeventh from "../../assets/img/slider-advan7.png";
-import AdvanEighth from "../../assets/img/slider-advan8.png";
-
+import { ArrowSlide, ImgHome } from "../export/svg";
+const [
+  Noutbook,
+  AdvanEighth,
+  AdvanSeventh,
+  AdvanSixth,
+  AdvanFifth,
+  AdvanThird,
+  AdvanFourth,
+  AdvanSecond,
+  AdvanOne,
+  ProblemSix,
+  ProblemFive,
+  ProblemFour,
+  ProblemThree,
+  ProblemTwo,
+  Problem,
+  TiltImgAfterhree,
+  TiltImghree,
+  TiltImgAfterTwo,
+  Sber,
+  Rostelecom,
+  Mts,
+  Mailru,
+  Ingos,
+  SportMaster,
+  Mondi,
+  AptekaVita,
+  Askona,
+  Ochakovo,
+  Greenway,
+  Msu,
+  TiltImg,
+  TiltImgAfter,
+  TiltImgTwo,
+  Cup,
+  StartPackage,
+  Holon,
+  RVK,
+  mincomsv,
+  Appstore,
+  Googleplay,
+  Huawei,
+  MobileApp,
+] = ImgHome;
 const Liders = [
   {
     img: Sber,
@@ -240,6 +252,17 @@ function Home() {
     max: 30,
   };
 
+  React.useEffect(() => {
+    const interval = setInterval(() => {
+      if (active !== 8) {
+        setActive(active + 1);
+      } else {
+        setActive(1);
+      }
+    }, 50000);
+    return () => clearInterval(interval);
+  }, [active]);
+
   return (
     <main className="home">
       <div className="video-bg-intro">
@@ -369,33 +392,168 @@ function Home() {
                     })}
                   </div>
                   <div className="card_wrapper__">
-                    <button className="prev__slide__btn navigation__btn">
-                      prev
+                    <button
+                      className="prev__slide__btn navigation__btn"
+                      onClick={() =>
+                        setActive(active > 1 ? active - 1 : __res?.card?.length)
+                      }
+                    >
+                      <ArrowSlide className="navigation__btn_prev" />
                     </button>
 
-                    {__res?.card.map((__it) => {
-                      return (
-                        <div
-                          key={__it?.id}
-                          className={`card_container__ ${
-                            __it?.id === active ? "active" : ""
-                          }`}
-                        >
-                          <div className="card__text_left">
-                            <div className="card__text_left_title">
-                              {__it?.title}
+                    {__res?.card
+                      .filter((responses) => responses?.id === active)
+                      .map((__it) => {
+                        return (
+                          <div key={__it?.id} className={`card_container__`}>
+                            <div className="card__text_left">
+                              <div
+                                className="index_number__"
+                                data-count={active}
+                              />
+                              <div className="card__text_left_title">
+                                {__it?.title}
+                              </div>
+                              <div className="card__text_left_text">
+                                {__it?.list.map((_it) => {
+                                  return (
+                                    <div
+                                      key={_it}
+                                      className="card__text_left_text_item"
+                                    >
+                                      {_it}
+                                    </div>
+                                  );
+                                })}
+                              </div>
+                              <button className="modal_opener__btn">
+                                УЗНАТЬ ПОДРОБНЕЙ
+                              </button>
+                            </div>
+                            <div className="card__img_right">
+                              <img src={__it?.img} alt="" />
                             </div>
                           </div>
-                        </div>
-                      );
-                    })}
-                    <button className="next__slide__btn navigation__btn">
-                      next
+                        );
+                      })}
+                    <button
+                      className="next__slide__btn navigation__btn"
+                      onClick={() =>
+                        setActive(__res?.card?.length > active ? active + 1 : 1)
+                      }
+                    >
+                      <ArrowSlide className="navigation__btn_next" />
                     </button>
                   </div>
                 </div>
               );
             })}
+          </div>
+        </div>
+      </div>
+      <div className="container_section_row">
+        <div className="_col___">
+          <div className="container_section_title">
+            <h2>Познакомьтесь поближе с Unicraft</h2>
+            <p>
+              Посмотрите <s>5-минутное</s> видео о преимуществах платформы
+            </p>
+          </div>
+          <div className="getcloserlook_about">
+            <b>Unicraft </b> - мощная и эффективная платформа для корпоративного
+            обучения, которая подстраивается под цели компании из любой сферы
+            деятельности
+          </div>
+        </div>
+        <div className="vector__to__noutbook" />
+        <div className="container_section getcloserlook">
+          <iframe
+            title="video"
+            frameBorder={0}
+            allow="autoplay; fullscreen"
+            allowFullScreen
+            id="getcloserlook_VideoVimeo"
+            src="https://player.vimeo.com/video/346229565"
+          />
+          <img src={Noutbook} alt="" />
+        </div>
+      </div>
+      <div className="container_section popular">
+        <div className="container_section_body">
+          <div className="container_section_title">
+            <h2>Популярное и признанное решение</h2>
+          </div>
+          <div className="container_section_contents">
+            <img src={Cup} className="cup_img__" alt="" />
+            <div className="container_section_contents_item">
+              <img src={StartPackage} alt="" />
+              <div className="container_section_contents_item_title">
+                <b>Первое</b>
+                <p>место</p>
+              </div>
+              <p>
+                №1 платформа для дистанционного обучения в рейтинге сервисов для
+                бизнеса
+              </p>
+            </div>
+            <div className="container_section_contents_item">
+              <img src={Holon} alt="" />
+              <div className="container_section_contents_item_title">
+                <b>ТОП-100</b>
+                <p> EdTech</p>
+              </div>
+              <p>
+                ТОП-100 EdTech компаний России и СНГ по версии ведущего
+                аналитического агентства
+              </p>
+            </div>
+            <div className="container_section_contents_item">
+              <img src={RVK} alt="" />
+              <div className="container_section_contents_item_title">
+                <b>Лидерство</b>
+                <p> технологий</p>
+              </div>
+              <p>Победитель конкурса "Глобальное технологическое лидерство"</p>
+            </div>
+            <div className="container_section_contents_item">
+              <img src={mincomsv} alt="" />
+              <div className="container_section_contents_item_title">
+                <b>Включено</b>
+                <p> в реестр ПО</p>
+              </div>
+              <p>
+                Платформа дистанционного обучения Unicraft uLearn входит в
+                единый реестр Российского ПО
+              </p>
+            </div>
+          </div>
+          <div className="text__small_">
+            Платформа для организации и проведения дистанционного обучения,
+            многократно доказавшая свою эффективность на практике
+          </div>
+          <div className="connecting__button__cont">
+            <button className="connecting__button__">Подключиться</button>
+          </div>
+        </div>
+      </div>
+      <div className="mobile_app">
+        <div className="container_section_body">
+          <div className="left__col__">
+            <div className="container_section_title">
+              <h2>Знания всегда под рукой</h2>
+              <p>
+                Установите мобильное приложение на свой смартфон и обучайтесь в
+                удобное время из любой точки мира
+              </p>
+            </div>
+            <div className="container_section_contents">
+              <img src={Appstore} alt="" />
+              <img src={Googleplay} alt="" />
+              <img src={Huawei} alt="" />
+            </div>
+          </div>
+          <div className="right__col__">
+            <img src={MobileApp} alt="" />
           </div>
         </div>
       </div>

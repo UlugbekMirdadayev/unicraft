@@ -1,3 +1,45 @@
+import Sber from "../../assets/img/sber.webp";
+import Rostelecom from "../../assets/img/rostelecom.webp";
+import Mts from "../../assets/img/mts.webp";
+import Mailru from "../../assets/img/mailru.webp";
+import Ingos from "../../assets/img/ingos.webp";
+import SportMaster from "../../assets/img/sportmaster.webp";
+import Mondi from "../../assets/img/mondi.webp";
+import AptekaVita from "../../assets/img/aptekavita.webp";
+import Askona from "../../assets/img/askona.webp";
+import Ochakovo from "../../assets/img/ochakovo.webp";
+import Greenway from "../../assets/img/greenway.webp";
+import Msu from "../../assets/img/msu.webp";
+import TiltImg from "../../assets/img/tilt.webp";
+import TiltImgAfter from "../../assets/img/tiltafter.webp";
+import TiltImgTwo from "../../assets/img/tilttwo.webp";
+import TiltImgAfterTwo from "../../assets/img/tiltaftertwo.webp";
+import TiltImghree from "../../assets/img/tiltthree.webp";
+import TiltImgAfterhree from "../../assets/img/tiltafterthree.webp";
+import MobileApp from "../../assets/img/mobileapp.webp";
+import Problem from "../../assets/img/problem.png";
+import Holon from "../../assets/img/holoniq.png";
+import RVK from "../../assets/img/rvk.png";
+import mincomsv from "../../assets/img/mincomsv.png";
+import ProblemTwo from "../../assets/img/problem2.png";
+import ProblemThree from "../../assets/img/problem3.png";
+import ProblemFour from "../../assets/img/problem4.png";
+import ProblemFive from "../../assets/img/problem5.png";
+import ProblemSix from "../../assets/img/problem6.png";
+import StartPack from "../../assets/img/startpack.png";
+import AdvanOne from "../../assets/img/slider-advan1.png";
+import AdvanSecond from "../../assets/img/slider-advan2.png";
+import AdvanThird from "../../assets/img/slider-advan3.png";
+import AdvanFourth from "../../assets/img/slider-advan4.png";
+import AdvanFifth from "../../assets/img/slider-advan5.png";
+import AdvanSixth from "../../assets/img/slider-advan6.png";
+import AdvanSeventh from "../../assets/img/slider-advan7.png";
+import AdvanEighth from "../../assets/img/slider-advan8.png";
+import Noutbook from "../../assets/img/noutbook.webp";
+import Cup from "../../assets/img/cup.webp";
+import Appstore from "../../assets/img/appstore.svg";
+import Googleplay from "../../assets/img/googleplay.svg";
+import Huawei from "../../assets/img/huawei.svg";
 export const PresentBox = () => {
   return (
     <svg
@@ -92,3 +134,61 @@ export const Logo = () => {
     </svg>
   );
 };
+
+export const ArrowSlide = ({ className = "icon" }) => {
+  return (
+    <svg
+      className={className}
+      xmlns="http://www.w3.org/2000/svg"
+      width={24}
+      height={24}
+    >
+      <path d="M13.293 6.293 7.586 12l5.707 5.707 1.414-1.414L10.414 12l4.293-4.293z" />
+    </svg>
+  );
+};
+
+export const ImgHome = [
+  Noutbook,
+  AdvanEighth,
+  AdvanSeventh,
+  AdvanSixth,
+  AdvanFifth,
+  AdvanThird,
+  AdvanFourth,
+  AdvanSecond,
+  AdvanOne,
+  ProblemSix,
+  ProblemFive,
+  ProblemFour,
+  ProblemThree,
+  ProblemTwo,
+  Problem,
+  TiltImgAfterhree,
+  TiltImghree,
+  TiltImgAfterTwo,
+  Sber,
+  Rostelecom,
+  Mts,
+  Mailru,
+  Ingos,
+  SportMaster,
+  Mondi,
+  AptekaVita,
+  Askona,
+  Ochakovo,
+  Greenway,
+  Msu,
+  TiltImg,
+  TiltImgAfter,
+  TiltImgTwo,
+  Cup,
+  StartPack,
+  Holon,
+  RVK,
+  mincomsv,
+  Appstore,
+  Googleplay,
+  Huawei,
+  MobileApp
+];
