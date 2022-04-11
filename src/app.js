@@ -4,6 +4,7 @@ import Header from "./components/header";
 import Footer from "./components/footer";
 import { LoginAuntification } from "./adminComponent/login";
 import "./assets/style/main.scss";
+import Home from "./components/home";
 
 function App() {
   return (
@@ -22,7 +23,7 @@ function HomePage() {
     <>
       <Header />
       <Routes>
-        <Route path="/" element={<>Home</>} />
+        <Route path="/" element={<Home/>} />
       </Routes>
       <Footer />
     </>
