@@ -1,7 +1,7 @@
 import React from "react";
 import VanillaTilt from "vanilla-tilt";
 import "./home.scss";
-import { ArrowSlide, ImgHome } from "../export/svg";
+import { ArrowSlide, ImgHome, Konsult, KonsultBg } from "../export/svg";
 const [
   Noutbook,
   AdvanEighth,
@@ -550,6 +550,14 @@ function Home() {
           </div>
           <div className="right__col__">
             <img src={MobileApp} alt="" />
+          </div>
+        </div>
+      </div>
+      <div className="contacts_section">
+        <div className="col__left__">
+          <div className="contacts_section_title">
+            <Konsult className="konsult__img__" />
+            <KonsultBg className="konsult__img__bg__" />
           </div>
         </div>
       </div>
