@@ -5,6 +5,7 @@ import Footer from "./components/footer";
 import { LoginAuntification } from "./adminComponent/login";
 import "./assets/style/main.scss";
 import Home from "./components/home";
+import Rate from "./components/rate/index";
 
 function App() {
   return (
@@ -23,7 +24,8 @@ function HomePage() {
     <>
       <Header />
       <Routes>
-        <Route path="/" element={<Home/>} />
+        <Route path="/" element={<Home />} />
+        <Route path="/rate" element={<Rate />} />
       </Routes>
       <Footer />
     </>

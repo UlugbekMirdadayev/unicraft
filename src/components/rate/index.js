@@ -3,6 +3,10 @@ import { NavLink } from "react-router-dom";
 import { PresentBox } from "../export/svg";
 import "./rate.scss";
 function Rate() {
+  function priceUser(price, number) {
+    return Math.floor(Number(price) / Number(number) / 3);
+  }
+
   const TariffItem = [
     {
       mainTitle: "Начало",
@@ -17,8 +21,65 @@ function Rate() {
         },
       ],
       userTo: "10-50",
-      storage: "50 ГБ для хранения данных",
-      individual: false,
+      storage: true,
+      individual: true,
+      integration: false,
+      edit: false,
+      version: false,
+    },
+    {
+      mainTitle: "Тугади",
+      users: [
+        {
+          number: "100",
+          price: "99000",
+        },
+        {
+          number: "500",
+          price: "2233232",
+        },
+      ],
+      userTo: "100-500",
+      storage: false,
+      individual: true,
+      integration: false,
+      edit: false,
+      version: false,
+    },
+    {
+      mainTitle: "ааа",
+      users: [
+        {
+          number: "100",
+          price: "990020",
+        },
+        {
+          number: "500",
+          price: "22332332",
+        },
+      ],
+      userTo: "10-50",
+      storage: false,
+      individual: true,
+      integration: false,
+      edit: false,
+      version: false,
+    },
+    {
+      mainTitle: "вввв",
+      users: [
+        {
+          number: "100",
+          price: "232323",
+        },
+        {
+          number: "500",
+          price: "44444",
+        },
+      ],
+      userTo: "10-50",
+      storage: false,
+      individual: true,
       integration: false,
       edit: false,
       version: false,
@@ -52,23 +113,62 @@ function Rate() {
           {TariffItem.map((item, index) => {
             return (
               <div key={index} className="tariff_block_card">
+                {item?.users.map((user, i) => {
+                  return (
+                    <input
+                      defaultChecked={i === 0}
+                      type="radio"
+                      name={item?.mainTitle}
+                      id={user?.price}
+                      className={`tariff_block_card_radio ${
+                        i === 0 ? "first" : "second"
+                      } `}
+                    />
+                  );
+                })}
                 <h1>{item?.mainTitle}</h1>
                 <p>Пользователей</p>
                 <div className="tariff_card_number">
                   {item?.users.map((user, i) => {
-                    return <button key={i}>{user.number}</button>;
+                    return (
+                      <button key={i}>
+                        <label htmlFor={user?.price}>{user?.number}</label>
+                      </button>
+                    );
                   })}
                 </div>
                 <div className="tariff_card_price">
-                  <h1>9 900 ₽</h1>
-                  <h2>за квартал</h2>
-                  <p>за пользователя в месяц</p>
+                  {item?.users.map((user) => {
+                    return (
+                      <h1>
+                        <p>{user?.price}</p>
+                      </h1>
+                    );
+                  })}
+                  <h2>за квартал</h2>{" "}
+                  <div className="user__price__months">
+                    {item?.users.map(({ price, number }) => {
+                      return (
+                        <p>
+                          {priceUser(price, number)} за пользователя в месяц
+                        </p>
+                      );
+                    })}
+                  </div>
                   <button>ЗАКАЗАТЬ</button>
                   <NavLink to={"#"}>Оплатить онлайн</NavLink>
-                  <p>10-50 пользователей</p>
                 </div>
                 <div className="tariff_card_price_bottom">
-                  <p>50 ГБ для хранения данных</p>
+                  <p>{item?.userTo} пользователей</p>
+                  <p>
+                    {item?.storage
+                      ? "50 ГБ для хранения данных"
+                      : "Безлимитное хранилище"}
+                  </p>
+                  <p>{item?.individual && "Индивидуальный стиль"}</p>
+                  <p>{item?.integration && "Интеграции"}</p>
+                  <p>{item?.edit && "Спец. тарифы на доработки"}</p>
+                  <p>{item?.version && "Box-версия (опционально)"}</p>
                 </div>
               </div>
             );
