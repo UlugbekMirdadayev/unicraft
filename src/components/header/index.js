@@ -42,7 +42,7 @@ const linkData = [
       },
       {
         name: "Отзывы",
-        link: "/about#reviews",
+        link: "/reviews",
       },
       {
         name: "Партнерам",

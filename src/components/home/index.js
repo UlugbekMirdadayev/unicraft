@@ -601,6 +601,148 @@ function Home() {
           </form>
         </div>
       </div>
+      <div className="container__otziv__">
+        <div className="container__otziv__title">
+          <h2>Отзывы наших клиентов</h2>
+        </div>
+        <div className="container__otziv__contents">
+          <div className="container__otziv__contents__item">
+            <div className="container__otziv__contents__item__img__avatar">
+              <img src={Noutbook} alt="" />
+            </div>
+            <div className="container__otziv__contents__item__img__avatar">
+              <img src={Noutbook} alt="" />
+            </div>
+            <div className="container__otziv__contents__item__img__avatar">
+              <img src={Noutbook} alt="" />
+            </div>
+            <div className="container__otziv__contents__item__img__avatar">
+              <img src={Noutbook} alt="" />
+            </div>
+            <div className="container__otziv__contents__item__img__avatar">
+              <img src={Noutbook} alt="" />
+            </div>    <div className="container__otziv__contents__item__img__avatar">
+              <img src={Noutbook} alt="" />
+            </div>    <div className="container__otziv__contents__item__img__avatar">
+              <img src={Noutbook} alt="" />
+            </div>    <div className="container__otziv__contents__item__img__avatar">
+              <img src={Noutbook} alt="" />
+            </div>    <div className="container__otziv__contents__item__img__avatar">
+              <img src={Noutbook} alt="" />
+            </div>    <div className="container__otziv__contents__item__img__avatar">
+              <img src={Noutbook} alt="" />
+            </div>    <div className="container__otziv__contents__item__img__avatar">
+              <img src={Noutbook} alt="" />
+            </div>    <div className="container__otziv__contents__item__img__avatar">
+              <img src={Noutbook} alt="" />
+            </div>    <div className="container__otziv__contents__item__img__avatar">
+              <img src={Noutbook} alt="" />
+            </div>    <div className="container__otziv__contents__item__img__avatar">
+              <img src={Noutbook} alt="" />
+            </div>    <div className="container__otziv__contents__item__img__avatar">
+              <img src={Noutbook} alt="" />
+            </div>    <div className="container__otziv__contents__item__img__avatar">
+              <img src={Noutbook} alt="" />
+            </div>    <div className="container__otziv__contents__item__img__avatar">
+              <img src={Noutbook} alt="" />
+            </div>    <div className="container__otziv__contents__item__img__avatar">
+              <img src={Noutbook} alt="" />
+            </div>    <div className="container__otziv__contents__item__img__avatar">
+              <img src={Noutbook} alt="" />
+            </div>    <div className="container__otziv__contents__item__img__avatar">
+              <img src={Noutbook} alt="" />
+            </div>    <div className="container__otziv__contents__item__img__avatar">
+              <img src={Noutbook} alt="" />
+            </div>    <div className="container__otziv__contents__item__img__avatar">
+              <img src={Noutbook} alt="" />
+            </div>    <div className="container__otziv__contents__item__img__avatar">
+              <img src={Noutbook} alt="" />
+            </div>    <div className="container__otziv__contents__item__img__avatar">
+              <img src={Noutbook} alt="" />
+            </div>    <div className="container__otziv__contents__item__img__avatar">
+              <img src={Noutbook} alt="" />
+            </div>    <div className="container__otziv__contents__item__img__avatar">
+              <img src={Noutbook} alt="" />
+            </div>    <div className="container__otziv__contents__item__img__avatar">
+              <img src={Noutbook} alt="" />
+            </div>    <div className="container__otziv__contents__item__img__avatar">
+              <img src={Noutbook} alt="" />
+            </div>    <div className="container__otziv__contents__item__img__avatar">
+              <img src={Noutbook} alt="" />
+            </div>    <div className="container__otziv__contents__item__img__avatar">
+              <img src={Noutbook} alt="" />
+            </div>    <div className="container__otziv__contents__item__img__avatar">
+              <img src={Noutbook} alt="" />
+            </div>    <div className="container__otziv__contents__item__img__avatar">
+              <img src={Noutbook} alt="" />
+            </div>    <div className="container__otziv__contents__item__img__avatar">
+              <img src={Noutbook} alt="" />
+            </div>    <div className="container__otziv__contents__item__img__avatar">
+              <img src={Noutbook} alt="" />
+            </div>    <div className="container__otziv__contents__item__img__avatar">
+              <img src={Noutbook} alt="" />
+            </div>    <div className="container__otziv__contents__item__img__avatar">
+              <img src={Noutbook} alt="" />
+            </div>    <div className="container__otziv__contents__item__img__avatar">
+              <img src={Noutbook} alt="" />
+            </div>    <div className="container__otziv__contents__item__img__avatar">
+              <img src={Noutbook} alt="" />
+            </div>    <div className="container__otziv__contents__item__img__avatar">
+              <img src={Noutbook} alt="" />
+            </div>    <div className="container__otziv__contents__item__img__avatar">
+              <img src={Noutbook} alt="" />
+            </div>    <div className="container__otziv__contents__item__img__avatar">
+              <img src={Noutbook} alt="" />
+            </div>    <div className="container__otziv__contents__item__img__avatar">
+              <img src={Noutbook} alt="" />
+            </div>    <div className="container__otziv__contents__item__img__avatar">
+              <img src={Noutbook} alt="" />
+            </div>    <div className="container__otziv__contents__item__img__avatar">
+              <img src={Noutbook} alt="" />
+            </div>    <div className="container__otziv__contents__item__img__avatar">
+              <img src={Noutbook} alt="" />
+            </div>    <div className="container__otziv__contents__item__img__avatar">
+              <img src={Noutbook} alt="" />
+            </div>    <div className="container__otziv__contents__item__img__avatar">
+              <img src={Noutbook} alt="" />
+            </div>    <div className="container__otziv__contents__item__img__avatar">
+              <img src={Noutbook} alt="" />
+            </div>    <div className="container__otziv__contents__item__img__avatar">
+              <img src={Noutbook} alt="" />
+            </div>    <div className="container__otziv__contents__item__img__avatar">
+              <img src={Noutbook} alt="" />
+            </div>    <div className="container__otziv__contents__item__img__avatar">
+              <img src={Noutbook} alt="" />
+            </div>    <div className="container__otziv__contents__item__img__avatar">
+              <img src={Noutbook} alt="" />
+            </div>    <div className="container__otziv__contents__item__img__avatar">
+              <img src={Noutbook} alt="" />
+            </div>    <div className="container__otziv__contents__item__img__avatar">
+              <img src={Noutbook} alt="" />
+            </div>    <div className="container__otziv__contents__item__img__avatar">
+              <img src={Noutbook} alt="" />
+            </div>    <div className="container__otziv__contents__item__img__avatar">
+              <img src={Noutbook} alt="" />
+            </div>    <div className="container__otziv__contents__item__img__avatar">
+              <img src={Noutbook} alt="" />
+            </div>    <div className="container__otziv__contents__item__img__avatar">
+              <img src={Noutbook} alt="" />
+            </div>    <div className="container__otziv__contents__item__img__avatar">
+              <img src={Noutbook} alt="" />
+            </div>    <div className="container__otziv__contents__item__img__avatar">
+              <img src={Noutbook} alt="" />
+            </div>    <div className="container__otziv__contents__item__img__avatar">
+              <img src={Noutbook} alt="" />
+            </div>    <div className="container__otziv__contents__item__img__avatar">
+              <img src={Noutbook} alt="" />
+            </div>    <div className="container__otziv__contents__item__img__avatar">
+              <img src={Noutbook} alt="" />
+            </div>    <div className="container__otziv__contents__item__img__avatar">
+              <img src={Noutbook} alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
   );
 }

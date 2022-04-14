@@ -6,6 +6,8 @@ import { LoginAuntification } from "./adminComponent/login";
 import "./assets/style/main.scss";
 import Home from "./components/home";
 import Rate from "./components/rate/index";
+import About from "./components/about/index";
+import Review from "./components/review/index";
 
 function App() {
   return (
@@ -26,6 +28,8 @@ function HomePage() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/rate" element={<Rate />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/reviews" element={<Review />} />
       </Routes>
       <Footer />
     </>
