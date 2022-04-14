@@ -7,6 +7,8 @@ import "./assets/style/main.scss";
 import Home from "./components/home";
 import Rate from "./components/rate/index";
 import About from "./components/about/index";
+import Contacts from "./components/contacts/index";
+import Vacancy from "./components/vacancy/index";
 import Review from "./components/review/index";
 
 function App() {
@@ -29,6 +31,8 @@ function HomePage() {
         <Route path="/" element={<Home />} />
         <Route path="/rate" element={<Rate />} />
         <Route path="/about" element={<About />} />
+        <Route path="/contacts" element={<Contacts />} />
+        <Route path="/vacancy" element={<Vacancy />} />
         <Route path="/reviews" element={<Review />} />
       </Routes>
       <Footer />
