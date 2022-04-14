@@ -56,9 +56,17 @@ function Vacancy() {
                 >
                   Откликнуться
                 </button>
-                <a className="dottedlink">Подробнее</a>
-              </div>
-              <div className="vacancy_item_more" style={{ display: "none" }}>
+                <label htmlFor="vacancy2">
+                  {" "}
+                  <a className="dottedlink">Подробнее</a>
+                </label>
+              </div><input
+                type="checkbox"
+                className="see_alls"
+                style={{ display: "none" }}
+                id="vacancy2"
+              />
+              <div className="vacancy_item_more" >
                 <div className="vacancy_item_options">
                   <div className="vacancy_item_options_block">
                     <p>
@@ -184,9 +192,18 @@ function Vacancy() {
                 >
                   Откликнуться
                 </button>
-                <a className="dottedlink">Подробнее</a>
+                <label htmlFor="vacancy1">
+                  {" "}
+                  <a className="dottedlink">Подробнее</a>
+                </label>
               </div>
-              <div className="vacancy_item_more" style={{ display: "none" }}>
+              <input
+                type="checkbox"
+                className="see_alls"
+                style={{ display: "none" }}
+                id="vacancy1"
+              />
+              <div className="vacancy_item_more">
                 <div className="vacancy_item_options">
                   <div className="vacancy_item_options_block">
                     <p>

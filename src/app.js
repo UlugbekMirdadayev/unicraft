@@ -8,6 +8,7 @@ import Home from "./components/home";
 import Rate from "./components/rate/index";
 import About from "./components/about/index";
 import Contacts from "./components/contacts/index";
+import Partners from "./components/partners/index";
 import Vacancy from "./components/vacancy/index";
 import Review from "./components/review/index";
 
@@ -32,6 +33,7 @@ function HomePage() {
         <Route path="/rate" element={<Rate />} />
         <Route path="/about" element={<About />} />
         <Route path="/contacts" element={<Contacts />} />
+        <Route path="/partners" element={<Partners />} />
         <Route path="/vacancy" element={<Vacancy />} />
         <Route path="/reviews" element={<Review />} />
       </Routes>

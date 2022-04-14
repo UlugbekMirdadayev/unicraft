@@ -46,15 +46,15 @@ const linkData = [
       },
       {
         name: "Партнерам",
-        link: "/about#partners",
+        link: "/partners",
       },
       {
         name: "Вакансии",
-        link: "/about#vacancy",
+        link: "/vacancy",
       },
       {
         name: "Контакты",
-        link: "/about#contacts",
+        link: "/contacts",
       },
     ],
   },

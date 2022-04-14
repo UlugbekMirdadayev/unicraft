@@ -232,18 +232,37 @@ element.style {
   background-image: -o-radial-gradient(20%, circle, #96da4e, #7cb83d);
   background-image: radial-gradient(circle at 20%, #96da4e, #7cb83d);
   border: 1px solid #90c756;
-}.button_success, .button_success:visited {
-    color: #fff;
-    background-color: #7bb63d;
-}.button_rounded {
-    border-radius: 100px;
-}.dottedlink:not(.button):hover {
-    color: #6AADE3;
-}.dottedlink {
-    cursor: pointer;
-    text-decoration: none;
-    border-bottom: 1px dashed currentcolor;
-    margin-bottom: -1px;
-    position: relative;
-    white-space: nowrap;
+}
+.button_success,
+.button_success:visited {
+  color: #fff;
+  background-color: #7bb63d;
+}
+.button_rounded {
+  border-radius: 100px;
+}
+.dottedlink:not(.button):hover {
+  color: #6aade3;
+}
+.dottedlink {
+  cursor: pointer;
+  text-decoration: none;
+  border-bottom: 1px dashed currentcolor;
+  margin-bottom: -1px;
+  position: relative;
+  white-space: nowrap;
+}
+
+.vacancy_item_more {
+  display: none;
+}
+.see_alls:checked ~ .vacancy_item_more {
+  display: block;
+}
+
+.vacancy_item_more {
+  display: none;
+}
+.see_alls:checked ~ .vacancy_item_more {
+  display: block;
 }
