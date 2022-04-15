@@ -1,0 +1,245 @@
+.customerreview_nav {
+  position: relative;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  background-color: rgba(255, 255, 255, 0.35);
+}
+.customerreview_nav_arrow--prev {
+  left: -2rem;
+}
+.customerreview_nav_arrow--next {
+  right: -2rem;
+}
+.customerreview_nav_arrow {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  position: absolute;
+  width: 6rem;
+  height: 6rem;
+  top: calc(50% - 3rem);
+  opacity: 0.5;
+  outline: none;
+  cursor: pointer;
+  z-index: 10;
+}
+button {
+  border: none;
+  margin: 0;
+  padding: 0;
+  width: auto;
+  overflow: visible;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  line-height: normal;
+  -webkit-font-smoothing: inherit;
+  -moz-osx-font-smoothing: inherit;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  position: relative;
+}
+.customerreview_nav_list {
+  -webkit-mask-image: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    color-stop(2rem, transparent),
+    color-stop(15rem, white),
+    color-stop(white),
+    to(transparent)
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 2rem,
+    white 15rem,
+    white calc(100% - 15rem),
+    transparent calc(100% - 2rem)
+  );
+  mask-image: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    color-stop(2rem, transparent),
+    color-stop(15rem, white),
+    color-stop(white),
+    to(transparent)
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent 2rem,
+    white 15rem,
+    white calc(100% - 15rem),
+    transparent calc(100% - 2rem)
+  );
+  padding-left: 12rem;
+  padding-right: 12rem;
+  margin: 0 auto;
+}
+.customerreview_nav_wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  height: 10rem;
+}
+.customerreview_nav_item {
+  display: block;
+  width: 3.75rem;
+  height: 3.75rem;
+  -webkit-box-flex: 0;
+  -ms-flex: none;
+  flex: none;
+  margin: 1rem;
+  -webkit-filter: saturate(0);
+  filter: saturate(0);
+  opacity: 0.5;
+  cursor: pointer;
+  position: relative;
+  -webkit-transform-origin: center center;
+  -ms-transform-origin: center center;
+  transform-origin: center center;
+  -webkit-transition-property: opacity, width, height;
+  -o-transition-property: opacity, width, height;
+  transition-property: opacity, width, height;
+  -webkit-transition-duration: 200ms;
+  -o-transition-duration: 200ms;
+  transition-duration: 200ms;
+  -webkit-transition-timing-function: ease-in-out;
+  -o-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.customerreview_nav_item img {
+  display: block;
+  width: 102%;
+  height: 102%;
+  position: absolute;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: center;
+  object-position: center;
+  left: -1%;
+  top: -1%;
+  border-radius: 50%;
+  overflow: hidden;
+  -webkit-transform-origin: center;
+  -ms-transform-origin: center;
+  transform-origin: center;
+  -webkit-box-shadow: 0 0 20px #00000040;
+  box-shadow: 0 0 20px #00000040;
+}
+.customerreview_nav_item.active {
+  opacity: 1;
+  -webkit-filter: saturate(1);
+  filter: saturate(1);
+  pointer-events: none;
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+.customerreview_nav_item.active img {
+  width: 7.5rem;
+  height: 7.5rem;
+  left: -51%;
+  top: -51%;
+  -webkit-transition-property: left, top, opacity, width, height;
+  -o-transition-property: left, top, opacity, width, height;
+  transition-property: left, top, opacity, width, height;
+  -webkit-transition-duration: 200ms;
+  -o-transition-duration: 200ms;
+  transition-duration: 200ms;
+  -webkit-transition-timing-function: ease-in-out;
+  -o-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+}
+.customerreview_view {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  padding-left: 2rem;
+  padding-right: 0;
+  padding-top: 0;
+  padding-bottom: 3rem;
+  max-width: 80rem;
+  -webkit-animation: reviewShow 500ms ease-out;
+  animation: reviewShow 500ms ease-out;
+}
+.customerreview_view_user {
+    position: relative;
+    -webkit-box-flex: 0;
+    -ms-flex: none;
+    flex: none;
+    width: 25%;
+}
+.customerreview_view_preview {
+    margin: 0 2rem 0 3rem;
+    -webkit-box-flex: 0;
+    -ms-flex: none;
+    flex: none;
+    border-radius: 5px;
+    background-color: #fff;
+    -webkit-box-shadow: 0px 15px 40px 0px rgb(0 0 0 / 25%);
+    box-shadow: 0px 15px 40px 0px rgb(0 0 0 / 25%);
+    width: 10rem;
+    height: 15rem;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    -webkit-transition-property: -webkit-box-shadow;
+    transition-property: -webkit-box-shadow;
+    -o-transition-property: box-shadow;
+    transition-property: box-shadow;
+    transition-property: box-shadow, -webkit-box-shadow;
+    -webkit-transition-duration: 250ms;
+    -o-transition-duration: 250ms;
+    transition-duration: 250ms;
+    -webkit-transition-timing-function: ease-out;
+    -o-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
+}
+.customerreview_view_preview img {
+    width: 100%;
+    display: block;
+    height: 100%;
+    -o-object-fit: contain;
+    object-fit: contain;
+    -o-object-position: center;
+    object-position: center;
+    border: none;
+}
+.customerreview_view_preview+.customerreview_view_result {
+    padding-left: 0;
+}
+
+.customerreview_view_result {
+    padding-left: 2rem;
+}
+.customerreview_view_quote {
+    margin: 0;
+    padding-top: 2.5rem;
+    padding-left: 2rem;
+    background-image: url(https://www.unicraft.org/style/img/quote.svg);
+    background-size: auto 1.25rem;
+    background-position: left top;
+    background-repeat: no-repeat;
+    font-size: 1rem;
+    font-style: italic;
+}

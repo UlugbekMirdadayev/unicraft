@@ -21,6 +21,10 @@ import Problem from "../../assets/img/problem.png";
 import Holon from "../../assets/img/holoniq.png";
 import RVK from "../../assets/img/rvk.png";
 import mincomsv from "../../assets/img/mincomsv.png";
+import KonsText from "../../assets/img/kons-text.png";
+import KonsTel from "../../assets/img/kons-tel.png";
+import Kons from "../../assets/img/kons.png";
+import KonsWebp from "../../assets/img/kons.webp";
 import ProblemTwo from "../../assets/img/problem2.png";
 import ProblemThree from "../../assets/img/problem3.png";
 import ProblemFour from "../../assets/img/problem4.png";
@@ -210,3 +214,17 @@ export const ImgHome = [
   Huawei,
   MobileApp,
 ];
+export const Konsult = ({ className = "img" }) => {
+  return (
+    <div className={"konsult__bloc_img_"}>
+      <img src={KonsText} alt="" />
+      <img src={KonsTel} alt="" />
+      <img className={className} src={Kons} alt="" />
+    </div>
+  );
+};
+export const KonsultBg = ({ className = "img" }) => {
+  return <img src={KonsWebp} alt="" className={className} />;
+};
+
+//KonsWebp

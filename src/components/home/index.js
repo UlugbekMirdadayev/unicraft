@@ -1,7 +1,10 @@
 import React from "react";
 import VanillaTilt from "vanilla-tilt";
+import { useForm } from "react-hook-form";
 import "./home.scss";
-import { ArrowSlide, ImgHome } from "../export/svg";
+import { ArrowSlide, ImgHome, Konsult, KonsultBg } from "../export/svg";
+import OurTeam from "./ourTeam";
+
 const [
   Noutbook,
   AdvanEighth,
@@ -259,6 +262,13 @@ function Home() {
     }, 5000);
     return () => clearInterval(interval);
   }, [active]);
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+  const onSubmit = (data) => console.log(data);
 
   return (
     <main className="home">
@@ -553,6 +563,47 @@ function Home() {
           </div>
         </div>
       </div>
+      <div className="contacts_section">
+        <div className="col__left__">
+          <div className="contacts_section_title__imgs">
+            <Konsult className="konsult__img__" />
+            <KonsultBg className="konsult__img__bg__" />
+          </div>
+        </div>
+        <div className="col__right_form">
+          <form onSubmit={handleSubmit(onSubmit)}>
+            <div className="form_title">
+              <h2>Запишитесь на презентацию</h2>
+              <p>
+                Проведем краткий обзор платформы, покажем как решить ваши задачи
+                и подскажем первые шаги для эффективного запуска
+              </p>
+            </div>
+            <div className="form_contents">
+              <div className="form_contents_item">
+                <input
+                  type="text"
+                  placeholder="Ваше имя"
+                  style={errors.name ? { border: "1px solid red" } : null}
+                  {...register("name", { required: true })}
+                />
+              </div>
+              <div className="form_contents_item">
+                <input
+                  type="tel"
+                  placeholder="Ваш телефон"
+                  style={errors.number ? { border: "1px solid red" } : null}
+                  {...register("number", { required: true })}
+                />
+              </div>
+              <div className="form_contents_item">
+                <button type="submit">Записаться сейчас</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <OurTeam />
     </main>
   );
 }

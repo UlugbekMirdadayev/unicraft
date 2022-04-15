@@ -42,19 +42,19 @@ const linkData = [
       },
       {
         name: "Отзывы",
-        link: "/about#reviews",
+        link: "/reviews",
       },
       {
         name: "Партнерам",
-        link: "/about#partners",
+        link: "/partners",
       },
       {
         name: "Вакансии",
-        link: "/about#vacancy",
+        link: "/vacancy",
       },
       {
         name: "Контакты",
-        link: "/about#contacts",
+        link: "/contacts",
       },
     ],
   },
