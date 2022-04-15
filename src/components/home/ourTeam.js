@@ -13,7 +13,6 @@ function OurTeam() {
             <div className="customerreview_nav">
               <button
                 className="customerreview_nav_arrow customerreview_nav_arrow--prev"
-                onclick="toggleReviewNext('prev')"
                 aria-label="Предыдущий отзыв"
               >
                 <svg
@@ -31,7 +30,6 @@ function OurTeam() {
               </button>
               <button
                 className="customerreview_nav_arrow customerreview_nav_arrow--next"
-                onclick="toggleReviewNext('next')"
                 aria-label="Предыдущий отзыв"
               >
                 <svg
@@ -55,7 +53,6 @@ function OurTeam() {
                 >
                   <div
                     className="customerreview_nav_item"
-                    onclick="onClickReviewNav(0)"
                     data-id={0}
                   >
                     <picture>
@@ -71,7 +68,6 @@ function OurTeam() {
                   </div>
                   <div
                     className="customerreview_nav_item"
-                    onclick="onClickReviewNav(1)"
                     data-id={1}
                   >
                     <picture>
@@ -87,7 +83,6 @@ function OurTeam() {
                   </div>
                   <div
                     className="customerreview_nav_item"
-                    onclick="onClickReviewNav(2)"
                     data-id={2}
                   >
                     <picture>
@@ -103,7 +98,6 @@ function OurTeam() {
                   </div>
                   <div
                     className="customerreview_nav_item"
-                    onclick="onClickReviewNav(3)"
                     data-id={3}
                   >
                     <picture>
@@ -119,7 +113,6 @@ function OurTeam() {
                   </div>
                   <div
                     className="customerreview_nav_item"
-                    onclick="onClickReviewNav(4)"
                     data-id={4}
                   >
                     <picture>
@@ -135,7 +128,6 @@ function OurTeam() {
                   </div>
                   <div
                     className="customerreview_nav_item"
-                    onclick="onClickReviewNav(5)"
                     data-id={5}
                   >
                     <picture>
@@ -151,7 +143,6 @@ function OurTeam() {
                   </div>
                   <div
                     className="customerreview_nav_item"
-                    onclick="onClickReviewNav(6)"
                     data-id={6}
                   >
                     <picture>
@@ -167,7 +158,6 @@ function OurTeam() {
                   </div>
                   <div
                     className="customerreview_nav_item"
-                    onclick="onClickReviewNav(7)"
                     data-id={7}
                   >
                     <picture>
@@ -183,7 +173,6 @@ function OurTeam() {
                   </div>
                   <div
                     className="customerreview_nav_item"
-                    onclick="onClickReviewNav(8)"
                     data-id={8}
                   >
                     <picture>
@@ -199,7 +188,6 @@ function OurTeam() {
                   </div>
                   <div
                     className="customerreview_nav_item"
-                    onclick="onClickReviewNav(9)"
                     data-id={9}
                   >
                     <picture>
@@ -215,7 +203,6 @@ function OurTeam() {
                   </div>
                   <div
                     className="customerreview_nav_item"
-                    onclick="onClickReviewNav(10)"
                     data-id={10}
                   >
                     <picture>
@@ -231,7 +218,6 @@ function OurTeam() {
                   </div>
                   <div
                     className="customerreview_nav_item"
-                    onclick="onClickReviewNav(11)"
                     data-id={11}
                   >
                     <picture>
@@ -247,7 +233,6 @@ function OurTeam() {
                   </div>
                   <div
                     className="customerreview_nav_item"
-                    onclick="onClickReviewNav(12)"
                     data-id={12}
                   >
                     <picture>
@@ -263,7 +248,6 @@ function OurTeam() {
                   </div>
                   <div
                     className="customerreview_nav_item"
-                    onclick="onClickReviewNav(13)"
                     data-id={13}
                   >
                     <picture>
@@ -279,7 +263,6 @@ function OurTeam() {
                   </div>
                   <div
                     className="customerreview_nav_item"
-                    onclick="onClickReviewNav(14)"
                     data-id={14}
                   >
                     <picture>
@@ -295,7 +278,6 @@ function OurTeam() {
                   </div>
                   <div
                     className="customerreview_nav_item"
-                    onclick="onClickReviewNav(15)"
                     data-id={15}
                   >
                     <picture>
@@ -311,7 +293,6 @@ function OurTeam() {
                   </div>
                   <div
                     className="customerreview_nav_item"
-                    onclick="onClickReviewNav(16)"
                     data-id={16}
                   >
                     <picture>
@@ -327,7 +308,6 @@ function OurTeam() {
                   </div>
                   <div
                     className="customerreview_nav_item"
-                    onclick="onClickReviewNav(17)"
                     data-id={17}
                   >
                     <picture>
@@ -343,7 +323,6 @@ function OurTeam() {
                   </div>
                   <div
                     className="customerreview_nav_item"
-                    onclick="onClickReviewNav(18)"
                     data-id={18}
                   >
                     <picture>
@@ -359,7 +338,6 @@ function OurTeam() {
                   </div>
                   <div
                     className="customerreview_nav_item"
-                    onclick="onClickReviewNav(19)"
                     data-id={19}
                   >
                     <picture>
@@ -375,7 +353,6 @@ function OurTeam() {
                   </div>
                   <div
                     className="customerreview_nav_item active"
-                    onclick="onClickReviewNav(0)"
                     data-nav-id="reviewsnav_0"
                     data-id={0}
                   >
@@ -392,7 +369,6 @@ function OurTeam() {
                   </div>
                   <div
                     className="customerreview_nav_item"
-                    onclick="onClickReviewNav(1)"
                     data-nav-id="reviewsnav_1"
                     data-id={1}
                   >
@@ -409,7 +385,6 @@ function OurTeam() {
                   </div>
                   <div
                     className="customerreview_nav_item"
-                    onclick="onClickReviewNav(2)"
                     data-nav-id="reviewsnav_2"
                     data-id={2}
                   >
@@ -426,7 +401,6 @@ function OurTeam() {
                   </div>
                   <div
                     className="customerreview_nav_item"
-                    onclick="onClickReviewNav(3)"
                     data-nav-id="reviewsnav_3"
                     data-id={3}
                   >
@@ -443,7 +417,6 @@ function OurTeam() {
                   </div>
                   <div
                     className="customerreview_nav_item"
-                    onclick="onClickReviewNav(4)"
                     data-nav-id="reviewsnav_4"
                     data-id={4}
                   >
@@ -460,7 +433,6 @@ function OurTeam() {
                   </div>
                   <div
                     className="customerreview_nav_item"
-                    onclick="onClickReviewNav(5)"
                     data-nav-id="reviewsnav_5"
                     data-id={5}
                   >
@@ -477,7 +449,6 @@ function OurTeam() {
                   </div>
                   <div
                     className="customerreview_nav_item"
-                    onclick="onClickReviewNav(6)"
                     data-nav-id="reviewsnav_6"
                     data-id={6}
                   >
@@ -494,7 +465,6 @@ function OurTeam() {
                   </div>
                   <div
                     className="customerreview_nav_item"
-                    onclick="onClickReviewNav(7)"
                     data-nav-id="reviewsnav_7"
                     data-id={7}
                   >
@@ -511,7 +481,6 @@ function OurTeam() {
                   </div>
                   <div
                     className="customerreview_nav_item"
-                    onclick="onClickReviewNav(8)"
                     data-nav-id="reviewsnav_8"
                     data-id={8}
                   >
@@ -528,7 +497,6 @@ function OurTeam() {
                   </div>
                   <div
                     className="customerreview_nav_item"
-                    onclick="onClickReviewNav(9)"
                     data-nav-id="reviewsnav_9"
                     data-id={9}
                   >
@@ -545,7 +513,6 @@ function OurTeam() {
                   </div>
                   <div
                     className="customerreview_nav_item"
-                    onclick="onClickReviewNav(10)"
                     data-nav-id="reviewsnav_10"
                     data-id={10}
                   >
@@ -562,7 +529,6 @@ function OurTeam() {
                   </div>
                   <div
                     className="customerreview_nav_item"
-                    onclick="onClickReviewNav(11)"
                     data-nav-id="reviewsnav_11"
                     data-id={11}
                   >
@@ -579,7 +545,6 @@ function OurTeam() {
                   </div>
                   <div
                     className="customerreview_nav_item"
-                    onclick="onClickReviewNav(12)"
                     data-nav-id="reviewsnav_12"
                     data-id={12}
                   >
@@ -596,7 +561,6 @@ function OurTeam() {
                   </div>
                   <div
                     className="customerreview_nav_item"
-                    onclick="onClickReviewNav(13)"
                     data-nav-id="reviewsnav_13"
                     data-id={13}
                   >
@@ -613,7 +577,6 @@ function OurTeam() {
                   </div>
                   <div
                     className="customerreview_nav_item"
-                    onclick="onClickReviewNav(14)"
                     data-nav-id="reviewsnav_14"
                     data-id={14}
                   >
@@ -630,7 +593,6 @@ function OurTeam() {
                   </div>
                   <div
                     className="customerreview_nav_item"
-                    onclick="onClickReviewNav(15)"
                     data-nav-id="reviewsnav_15"
                     data-id={15}
                   >
@@ -647,7 +609,6 @@ function OurTeam() {
                   </div>
                   <div
                     className="customerreview_nav_item"
-                    onclick="onClickReviewNav(16)"
                     data-nav-id="reviewsnav_16"
                     data-id={16}
                   >
@@ -664,7 +625,6 @@ function OurTeam() {
                   </div>
                   <div
                     className="customerreview_nav_item"
-                    onclick="onClickReviewNav(17)"
                     data-nav-id="reviewsnav_17"
                     data-id={17}
                   >
@@ -681,7 +641,6 @@ function OurTeam() {
                   </div>
                   <div
                     className="customerreview_nav_item"
-                    onclick="onClickReviewNav(18)"
                     data-nav-id="reviewsnav_18"
                     data-id={18}
                   >
@@ -698,7 +657,6 @@ function OurTeam() {
                   </div>
                   <div
                     className="customerreview_nav_item"
-                    onclick="onClickReviewNav(19)"
                     data-nav-id="reviewsnav_19"
                     data-id={19}
                   >
@@ -715,7 +673,6 @@ function OurTeam() {
                   </div>
                   <div
                     className="customerreview_nav_item"
-                    onclick="onClickReviewNav(0)"
                     data-id={0}
                   >
                     <picture>
@@ -731,7 +688,6 @@ function OurTeam() {
                   </div>
                   <div
                     className="customerreview_nav_item"
-                    onclick="onClickReviewNav(1)"
                     data-id={1}
                   >
                     <picture>
@@ -747,7 +703,6 @@ function OurTeam() {
                   </div>
                   <div
                     className="customerreview_nav_item"
-                    onclick="onClickReviewNav(2)"
                     data-id={2}
                   >
                     <picture>
@@ -763,7 +718,6 @@ function OurTeam() {
                   </div>
                   <div
                     className="customerreview_nav_item"
-                    onclick="onClickReviewNav(3)"
                     data-id={3}
                   >
                     <picture>
@@ -779,7 +733,6 @@ function OurTeam() {
                   </div>
                   <div
                     className="customerreview_nav_item"
-                    onclick="onClickReviewNav(4)"
                     data-id={4}
                   >
                     <picture>
@@ -795,7 +748,6 @@ function OurTeam() {
                   </div>
                   <div
                     className="customerreview_nav_item"
-                    onclick="onClickReviewNav(5)"
                     data-id={5}
                   >
                     <picture>
@@ -811,7 +763,6 @@ function OurTeam() {
                   </div>
                   <div
                     className="customerreview_nav_item"
-                    onclick="onClickReviewNav(6)"
                     data-id={6}
                   >
                     <picture>
@@ -827,7 +778,6 @@ function OurTeam() {
                   </div>
                   <div
                     className="customerreview_nav_item"
-                    onclick="onClickReviewNav(7)"
                     data-id={7}
                   >
                     <picture>
@@ -843,7 +793,6 @@ function OurTeam() {
                   </div>
                   <div
                     className="customerreview_nav_item"
-                    onclick="onClickReviewNav(8)"
                     data-id={8}
                   >
                     <picture>
@@ -859,7 +808,6 @@ function OurTeam() {
                   </div>
                   <div
                     className="customerreview_nav_item"
-                    onclick="onClickReviewNav(9)"
                     data-id={9}
                   >
                     <picture>
@@ -875,7 +823,6 @@ function OurTeam() {
                   </div>
                   <div
                     className="customerreview_nav_item"
-                    onclick="onClickReviewNav(10)"
                     data-id={10}
                   >
                     <picture>
@@ -891,7 +838,6 @@ function OurTeam() {
                   </div>
                   <div
                     className="customerreview_nav_item"
-                    onclick="onClickReviewNav(11)"
                     data-id={11}
                   >
                     <picture>
@@ -907,7 +853,6 @@ function OurTeam() {
                   </div>
                   <div
                     className="customerreview_nav_item"
-                    onclick="onClickReviewNav(12)"
                     data-id={12}
                   >
                     <picture>
@@ -923,7 +868,6 @@ function OurTeam() {
                   </div>
                   <div
                     className="customerreview_nav_item"
-                    onclick="onClickReviewNav(13)"
                     data-id={13}
                   >
                     <picture>
@@ -939,7 +883,6 @@ function OurTeam() {
                   </div>
                   <div
                     className="customerreview_nav_item"
-                    onclick="onClickReviewNav(14)"
                     data-id={14}
                   >
                     <picture>
@@ -955,7 +898,6 @@ function OurTeam() {
                   </div>
                   <div
                     className="customerreview_nav_item"
-                    onclick="onClickReviewNav(15)"
                     data-id={15}
                   >
                     <picture>
@@ -971,7 +913,6 @@ function OurTeam() {
                   </div>
                   <div
                     className="customerreview_nav_item"
-                    onclick="onClickReviewNav(16)"
                     data-id={16}
                   >
                     <picture>
@@ -987,7 +928,6 @@ function OurTeam() {
                   </div>
                   <div
                     className="customerreview_nav_item"
-                    onclick="onClickReviewNav(17)"
                     data-id={17}
                   >
                     <picture>
@@ -1003,7 +943,6 @@ function OurTeam() {
                   </div>
                   <div
                     className="customerreview_nav_item"
-                    onclick="onClickReviewNav(18)"
                     data-id={18}
                   >
                     <picture>
@@ -1019,7 +958,6 @@ function OurTeam() {
                   </div>
                   <div
                     className="customerreview_nav_item"
-                    onclick="onClickReviewNav(19)"
                     data-id={19}
                   >
                     <picture>
