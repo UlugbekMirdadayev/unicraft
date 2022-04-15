@@ -1,8 +1,9 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { PresentBox } from "../export/svg";
+import { CheckMark, PresentBox, Search } from "../export/svg";
 import "./rate.scss";
 function Rate() {
+  const [search, setSearch] = React.useState("");
   function priceUser(price, number) {
     return Math.floor(Number(price) / Number(number) / 3);
   }
@@ -28,15 +29,15 @@ function Rate() {
       version: false,
     },
     {
-      mainTitle: "Тугади",
+      mainTitle: "Оптимум",
       users: [
         {
           number: "100",
-          price: "99000",
+          price: "42600",
         },
         {
           number: "500",
-          price: "2233232",
+          price: "57 300",
         },
       ],
       userTo: "100-500",
@@ -47,15 +48,15 @@ function Rate() {
       version: false,
     },
     {
-      mainTitle: "ааа",
+      mainTitle: "Бизнес",
       users: [
         {
-          number: "100",
-          price: "990020",
+          number: "1000",
+          price: "86 700",
         },
         {
-          number: "500",
-          price: "22332332",
+          number: "5000",
+          price: "172 200 ",
         },
       ],
       userTo: "10-50",
@@ -66,11 +67,11 @@ function Rate() {
       version: false,
     },
     {
-      mainTitle: "вввв",
+      mainTitle: "Корпорация",
       users: [
         {
-          number: "100",
-          price: "232323",
+          number: "5000",
+          price: "По запросу",
         },
         {
           number: "500",
@@ -85,6 +86,7 @@ function Rate() {
       version: false,
     },
   ];
+
   return (
     <div className="rate_container">
       <div className="rate">
@@ -116,6 +118,7 @@ function Rate() {
                 {item?.users.map((user, i) => {
                   return (
                     <input
+                      key={i}
                       defaultChecked={i === 0}
                       type="radio"
                       name={item?.mainTitle}
@@ -138,9 +141,9 @@ function Rate() {
                   })}
                 </div>
                 <div className="tariff_card_price">
-                  {item?.users.map((user) => {
+                  {item?.users.map((user, i) => {
                     return (
-                      <h1>
+                      <h1 key={i}>
                         <p>{user?.price}</p>
                       </h1>
                     );
@@ -149,7 +152,7 @@ function Rate() {
                   <div className="user__price__months">
                     {item?.users.map(({ price, number }) => {
                       return (
-                        <p>
+                        <p key={number}>
                           {priceUser(price, number)} за пользователя в месяц
                         </p>
                       );
@@ -173,6 +176,71 @@ function Rate() {
               </div>
             );
           })}
+        </div>
+        <div className="tariff_block_change">
+          <h1>Вне зависимоcти от выбранного тарифа, вы получите</h1>
+          <div className="tariff_features_forall">
+            <div className="tariff_features_forall_col">
+              {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((item, index) => {
+                return (
+                  <div key={index} className="tariff_features_forall_item">
+                    <CheckMark />
+                    Неограниченное количество курсов
+                    <span
+                      className="tariff_features_forall_item_question"
+                      data-tooltip="Создавайте столько курсов, сколько вам необходимо"
+                    />
+                    <div className="before">
+                      ?
+                      <div className="before_tooltip">
+                        Lorem ipsum dolor sit amet.
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+
+            <div className="tariff_features_forall_col">
+              {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((item, index) => {
+                return (
+                  <div key={index} className="tariff_features_forall_item">
+                    <CheckMark />
+                    Неограниченное количество курсов
+                    <span
+                      className="tariff_features_forall_item_question"
+                      data-tooltip="Создавайте столько курсов, сколько вам необходимо"
+                    />
+                    <div className="before">
+                      ?
+                      <div className="before_tooltip">
+                        Lorem ipsum dolor sit amet.
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+        <div className="tariff_block_search">
+          <h1>Часто задаваемые вопросы</h1>
+          <p>
+            Мы собрали ответы на самые популярные вопросы: сколько стоит, какие
+            условия, технические нюансы и многое другое.
+          </p>
+          <label>
+            <input
+              onChange={(e) => {
+                setSearch(e.target.value);
+                console.log(search);
+              }}
+              value={search}
+              type="text"
+              placeholder="Что хотите узнать?"
+            />
+            <Search />
+          </label>
         </div>
       </div>
     </div>

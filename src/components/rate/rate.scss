@@ -243,5 +243,109 @@
         }
       }
     }
+    .tariff_block_change {
+      margin-bottom: 50px;
+      > h1 {
+        text-align: center;
+        font-weight: 500;
+        font-size: 24px;
+        margin-bottom: 30px;
+      }
+      .tariff_features_forall {
+        display: flex;
+        justify-content: space-between;
+        padding: 0 50px;
+        .tariff_features_forall_col {
+          width: 50%;
+          .tariff_features_forall_item {
+            display: flex;
+            align-items: center;
+            position: relative;
+            padding: 10px;
+            margin-bottom: 10px;
+            font-size: 1.215em;
+            margin: 0 30px;
+            svg {
+              margin-right: 10px;
+            }
+            .before {
+              position: absolute;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              top: 50%;
+              transform: translateY(-50%);
+              right: 0;
+              width: 25px;
+              height: 25px;
+              border-radius: 50%;
+              background: rgba(119, 119, 119, 0.141);
+              .before_tooltip {
+                position: absolute;
+                padding: 1rem 1.5rem;
+                max-width: 35rem;
+
+                border-radius: 5px;
+                text-align: left;
+                background: #fff;
+                font-size: 0.75em;
+                bottom: 100%;
+                right: 0px;
+                box-shadow: 0 2px 25px -15px #00000080;
+                border: 1px solid #ebebeb;
+                min-width: 300px;
+                transform: scaleY(0);
+                transition: 0.3s ease;
+              }
+              &:hover {
+                cursor: help;
+                .before_tooltip {
+                  transform: scaleY(1);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .tariff_block_search {
+      padding: 0 80px;
+      margin-bottom: 50px;
+      > h1 {
+        font-size: 2.1em;
+        font-weight: 600;
+        margin-bottom: 15px;
+      }
+      > p {
+        font-size: 16px;
+        margin-bottom: 20px;
+      }
+      label {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+        input {
+          width: 100%;
+          border-radius: 20px;
+          border: 1px solid #e6e6e6;
+          height: 100%;
+          padding: 10px 20px;
+          padding-right: 40px;
+          transition: 0.3s ease;
+          &:focus {
+            border: 1px solid #6aade3;
+            box-shadow: 0 2px 10px rgba(106, 173, 227, 0.355);
+          }
+        }
+        svg {
+          position: absolute;
+          right: 12px;
+          top: 50%;
+          transform: translateY(-50%);
+          fill: #626262;
+        }
+      }
+    }
   }
 }
