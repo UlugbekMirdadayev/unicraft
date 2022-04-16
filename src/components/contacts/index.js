@@ -1,10 +1,20 @@
 import React from "react";
 import "./contact.css";
+import { useForm } from "react-hook-form";
 
 function Contacts() {
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm();
+  const onSubmit = (data) => {
+    console.log(data);
+    reset();
+  };
   return (
     <div>
-      {" "}
       <div className="container_section container_section--main">
         <div className="row">
           <h1 className="container_section_title text_center">
@@ -16,37 +26,31 @@ function Contacts() {
           </p>
         </div>
       </div>
-      <section class="container_section">
-        <div
-          class="row address"
-          itemscope=""
-          itemtype="http://schema.org/Organization"
-        >
-          <div class="address_info">
+      <section className="container_section">
+        <div className="row address">
+          <div className="address_info">
             <h2>Новым клиентам</h2>
-            <p class="hugetext" itemprop="telephone">
+            <p className="hugetext">
               <a href="tel:+7 (495) 532-69-02">+7 (495) 532-69-02</a>
             </p>
-            <p itemprop="email">
+            <p>
               <a href="mailto:sales@unicraft.org">sales@unicraft.org</a>
             </p>
             <h2>Текущим клиентам</h2>
-            <p class="hugetext">
+            <p className="hugetext">
               <a href="tel:+8 (800) 350-24-43">8 (800) 350-24-43</a>
             </p>
             <p>
               <a href="mailto:support@unicraft.org">support@unicraft.org</a>
             </p>
           </div>
-          <div class="address_payinfo">
+          <div className="address_payinfo">
             <h2>Реквизиты</h2>
             <p>
-              <span itemprop="name">
-                Общество с ограниченной ответственностью "ЮНИКРАФТ”
-              </span>
+              <span>Общество с ограниченной ответственностью "ЮНИКРАФТ”</span>
               <br />
               <br />
-              <span itemprop="address">
+              <span>
                 Юр. адрес: 123458, Москва г, Твардовского ул, дом 8, строение 1,
                 помещение I ЭТ 3 КОМ 7
               </span>
@@ -73,51 +77,98 @@ function Contacts() {
           </div>
         </div>
       </section>
-
-      <section class="container_section">
-      <div class="row">
-        <p class="tac hugetext">Есть вопросы? Пишите!</p>
-        <form class="writetous" name="writetous" id="writetous" onsubmit="writetousSubmit();return false;">
-          <div class="writetous_error" id="writetous_error"style={{ display: "none" }}>
-            <p>Что-то пошло не так. Попробуйте еще раз</p>
-          </div>
-          <div class="writetous_process" id="writetous_process"style={{ display: "none" }}>
-            <p>Подготовка к отправке...</p>
-          </div>
-          {/* <div class="writetous_success">
-            <p class="largetext">Сообщение отправлено.
-              <br />Мы свяжемся с вами в ближайшее время.
-            </p>
-            <p>
-              <a class="dottedlink" onclick="sendMore(this)">Хотите написать еще?</a>
-            </p>
-          </div> */}
-          <div class="writetous_message" data-message="Сообщение отправляется">
-            <div class="writetous_message_info">
-              <div>
-                <input type="name" class="text" id="writetous_message-name" placeholder="Имя и фамилия" value="" />
+      <section className="container_section">
+        <div className="row">
+          <p className="tac hugetext">Есть вопросы? Пишите!</p>
+          <form
+            onSubmit={handleSubmit(onSubmit)}
+            className="writetous"
+            name="writetous"
+            id="writetous"
+          >
+            <div
+              className="writetous_error"
+              id="writetous_error"
+              style={{ display: "none" }}
+            >
+              <p>Что-то пошло не так. Попробуйте еще раз</p>
+            </div>
+            <div
+              className="writetous_process"
+              id="writetous_process"
+              style={{ display: "none" }}
+            >
+              <p>Подготовка к отправке...</p>
+            </div>
+            <div
+              className="writetous_message"
+              data-message="Сообщение отправляется"
+            >
+              <div className="writetous_message_info">
+                <div>
+                  <input
+                    type="name"
+                    className="text"
+                    id="writetous_message-name"
+                    placeholder="Имя и фамилия"
+                    {...register("name", { required: true })}
+                    style={errors.name ? { borderColor: "red" } : {}}
+                  />
+                </div>
+                <div>
+                  <input
+                    type="phone"
+                    className="text"
+                    id="writetous_message-phone"
+                    placeholder="Телефон"
+                    {...register("phone", { required: true })}
+                    style={errors.phone ? { borderColor: "red" } : {}}
+                  />
+                </div>
+                <div>
+                  <input
+                    type="text"
+                    className="text"
+                    id="writetous_message-companyname"
+                    placeholder="Название организации"
+                    {...register("organ", { required: true })}
+                    style={errors.organ ? { borderColor: "red" } : {}}
+                  />
+                </div>
+                <div>
+                  <input
+                    type="email"
+                    className="text"
+                    id="writetous_message-email"
+                    placeholder="Ваш e-mail"
+                    {...register("email", { required: true })}
+                    style={errors.organ ? { borderColor: "red" } : {}}
+                  />
+                </div>
               </div>
-              <div>
-                <input type="phone" class="text" id="writetous_message-phone" placeholder="Телефон" value="" formnovalidate="" />
-              </div>
-              <div>
-                <input type="text" class="text" id="writetous_message-companyname" placeholder="Название организации" value="" />
-              </div>
-              <div>
-                <input type="email" class="text" id="writetous_message-email" placeholder="Ваш e-mail" value="" required="" />
+              <div className="writetous_message_text">
+                <div>
+                  <textarea
+                    className="text"
+                    id="writetous_message-message"
+                    placeholder="Ваше сообщение"
+                    rows="10"
+                    minLength="10"
+                    {...register("desc", { required: true })}
+                    style={errors.desc ? { borderColor: "red" } : {}}
+                  ></textarea>
+                  <button type="submit" className="button button_accent">
+                    Отправить
+                  </button>
+                  <span className="smalltext clr_gray">
+                    Сообщение должно быть не менее 10 символов.
+                  </span>
+                </div>
               </div>
             </div>
-            <div class="writetous_message_text">
-              <div>
-                <textarea class="text" id="writetous_message-message" placeholder="Ваше сообщение" rows="10" required="" minlength="10"></textarea>
-                <button type="submit" class="button button_accent">Отправить</button>
-                <span class="smalltext clr_gray">Сообщение должно быть не менее 10 символов.</span>
-              </div>
-            </div>
-          </div>
-        </form>
-      </div>
-      </section >
+          </form>
+        </div>
+      </section>
     </div>
   );
 }
