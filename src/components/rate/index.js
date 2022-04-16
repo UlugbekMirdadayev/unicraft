@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { CheckMark, PresentBox, Search } from "../export/svg";
+import { PresentBox, Search } from "../export/svg";
 import "./rate.scss";
 import { RegisterModal } from "./../export/modal";
 
@@ -63,6 +63,7 @@ const TariffItem = [
     version: true,
   },
 ];
+
 function Rate() {
   const [search, setSearch] = React.useState("");
   const [openModal, setOpenModal] = React.useState(false);
@@ -70,8 +71,9 @@ function Rate() {
     return Math.floor(Number(price) / Number(number) / 3);
   }
   const [tariffYear, setTariffYear] = React.useState(false);
+
   return (
-    <div className="rate_container">
+    <div className="rate_container" id="price">
       <RegisterModal open={openModal} setOpen={setOpenModal} />
       <div className="rate">
         <h1>Тарифы</h1>
@@ -157,7 +159,7 @@ function Rate() {
                       </h1>
                     );
                   })}
-                  <h2>за квартал</h2>{" "}
+                  <h2>за квартал</h2>
                   <div className="user__price__months">
                     {item?.users.map(({ price, number }) => {
                       return (
@@ -221,23 +223,29 @@ function Rate() {
             </div>
           </div>
         </div>
-        <div className="tariff_block_change">
+        <div className="tariff_block_change" id="features">
           <h1>Вне зависимоcти от выбранного тарифа, вы получите</h1>
           <div className="tariff_features_forall">
             <div className="tariff_features_forall_col">
-              {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((item, index) => {
+              {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((item, index) => {
                 return (
                   <div key={index} className="tariff_features_forall_item">
-                    <CheckMark />
-                    Неограниченное количество курсов
+                    <div className="label_____text__">
+                      Неограниченное количество курсов
+                    </div>
                     <span
                       className="tariff_features_forall_item_question"
                       data-tooltip="Создавайте столько курсов, сколько вам необходимо"
                     />
                     <div className="before">
-                      ?
+                      <span>?</span>
                       <div className="before_tooltip">
-                        Lorem ipsum dolor sit amet.
+                        Вы сможете создавать курсы из любого количества уроков:
+                        видео, аудио, текст с картинками, загружать документы,
+                        импортировать страницы из Google, группировать курсы по
+                        разделам. Добавлять пользователей и выбирать им роли,
+                        назначать на них любые учебные курсы и отслеживать
+                        успеваемость с помощью статистики
                       </div>
                     </div>
                   </div>
@@ -249,8 +257,9 @@ function Rate() {
               {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((item, index) => {
                 return (
                   <div key={index} className="tariff_features_forall_item">
-                    <CheckMark />
-                    Неограниченное количество курсов
+                    <div className="label_____text__">
+                      Неограниченное количество курсов
+                    </div>
                     <span
                       className="tariff_features_forall_item_question"
                       data-tooltip="Создавайте столько курсов, сколько вам необходимо"
@@ -267,7 +276,7 @@ function Rate() {
             </div>
           </div>
         </div>
-        <div className="tariff_block_search">
+        <div className="tariff_block_search" id="faq">
           <h1>Часто задаваемые вопросы</h1>
           <p>
             Мы собрали ответы на самые популярные вопросы: сколько стоит, какие

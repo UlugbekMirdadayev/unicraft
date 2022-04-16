@@ -2,7 +2,20 @@ import React from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import { Logo } from "./../export/svg";
 import "./header.scss";
-
+import { useScroll } from "../../hook/scroll";
+const styles = {
+  active: {
+    visibility: "visible",
+    transition: "all 0.2s",
+    opacity: 1,
+  },
+  hidden: {
+    visibility: "hidden",
+    transition: "all 0.2s",
+    transform: "translateY(-100%)",
+    opacity: 0,
+  },
+};
 const linkData = [
   {
     name: "Главная",
@@ -71,11 +84,14 @@ const linkData = [
 function Header() {
   const { hash, pathname } = useLocation();
   const [lang, setLang] = React.useState("ru");
-
+  const { scrollDirection } = useScroll();
 
   return (
     <div className="header-container">
-      <div className="w100">
+      <div
+        className="w100"
+        style={scrollDirection === "down" ? styles.active : styles.hidden}
+      >
         <header className="header">
           <NavLink to={"/"} className="header__logo">
             <Logo /> <span> Unicraft — платформа для онлайн обучения </span>
@@ -93,7 +109,9 @@ function Header() {
                         return (
                           <NavLink
                             style={
-                              pathname + hash === item?.link ? { color: "red" } : {}
+                              pathname + hash === item?.link
+                                ? { color: "red" }
+                                : {}
                             }
                             key={index}
                             to={item.link}
