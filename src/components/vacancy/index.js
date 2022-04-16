@@ -1,8 +1,11 @@
 import React from "react";
+import { VacncyModal } from "../export/modal";
 import "./vacancy.css";
 function Vacancy() {
+  const [isOpen, setIsOpen] = React.useState(false);
   return (
     <div>
+      <VacncyModal open={isOpen} setOpen={setIsOpen} />
       <div className="container_section container_section--main">
         <div className="row">
           <h1 className="container_section_title text_center">Вакансии</h1>
@@ -51,8 +54,8 @@ function Vacancy() {
               <div className="vacancy_item_action">
                 <button
                   type="button"
+                  onClick={() => setIsOpen(true)}
                   className="button button_rounded button_success button_gradienteffect"
-                  onclick="vacancyrequest(this)"
                 >
                   Откликнуться
                 </button>
@@ -186,9 +189,9 @@ function Vacancy() {
               </div>
               <div className="vacancy_item_action">
                 <button
+                  onClick={() => setIsOpen(true)}
                   type="button"
                   className="button button_rounded button_success button_gradienteffect"
-                  onclick="vacancyrequest(this)"
                 >
                   Откликнуться
                 </button>
