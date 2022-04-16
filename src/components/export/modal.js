@@ -222,8 +222,8 @@ export const RegisterModal = ({ open, setOpen }) => {
                 <div style={{ margin: "1.5rem 0rem" }} className="clr_gray">
                   <p className="tinytext">
                     Нажимая кнопку «Получить доступ», вы соглашаетесь с
-                    <NavLink to="/docs/offer">Публичной офертой</NavLink>и
-                    <NavLink to="/docs/agreement">
+                    <NavLink className={"tinytext"} to="/docs/offer">Публичной офертой</NavLink>и
+                    <NavLink className={"tinytext"}  to="/docs/agreement">
                       Согласием на обработку персональных данных
                     </NavLink>
                     .

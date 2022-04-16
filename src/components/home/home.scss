@@ -1180,6 +1180,7 @@ main.home {
       background-position: center;
       position: relative;
       padding-bottom: 4rem;
+      margin-bottom: 4rem;
       .container_section_contents {
         display: flex;
         position: relative;
@@ -1240,5 +1241,8 @@ main.home {
         }
       }
     }
+  }
+  .faq__section {
+    margin-bottom: 2rem;
   }
 }

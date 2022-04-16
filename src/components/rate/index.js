@@ -2,93 +2,77 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import { CheckMark, PresentBox, Search } from "../export/svg";
 import "./rate.scss";
+import { RegisterModal } from "./../export/modal";
+
+const TariffItem = [
+  {
+    mainTitle: "Начало",
+    users: [
+      {
+        number: "10",
+        price: "9900",
+      },
+      {
+        number: "50",
+        price: "17100",
+      },
+    ],
+    userTo: "10-50",
+    storage: true,
+    individual: false,
+    integration: false,
+    edit: false,
+    version: false,
+  },
+  {
+    mainTitle: "Оптимум",
+    users: [
+      {
+        number: 100,
+        price: 42600,
+      },
+      {
+        number: 500,
+        price: 57300,
+      },
+    ],
+    userTo: "100-500",
+    storage: false,
+    individual: true,
+    integration: true,
+    edit: false,
+    version: false,
+  },
+  {
+    mainTitle: "Бизнес",
+    users: [
+      {
+        number: 1000,
+        price: 86700,
+      },
+      {
+        number: 5000,
+        price: 172200,
+      },
+    ],
+    userTo: "10-50",
+    storage: false,
+    individual: true,
+    integration: true,
+    edit: true,
+    version: true,
+  },
+];
 function Rate() {
   const [search, setSearch] = React.useState("");
+  const [openModal, setOpenModal] = React.useState(false);
   function priceUser(price, number) {
     return Math.floor(Number(price) / Number(number) / 3);
   }
-
-  const TariffItem = [
-    {
-      mainTitle: "Начало",
-      users: [
-        {
-          number: "10",
-          price: "9900",
-        },
-        {
-          number: "50",
-          price: "17100",
-        },
-      ],
-      userTo: "10-50",
-      storage: true,
-      individual: true,
-      integration: false,
-      edit: false,
-      version: false,
-    },
-    {
-      mainTitle: "Оптимум",
-      users: [
-        {
-          number: "100",
-          price: "42600",
-        },
-        {
-          number: "500",
-          price: "57 300",
-        },
-      ],
-      userTo: "100-500",
-      storage: false,
-      individual: true,
-      integration: false,
-      edit: false,
-      version: false,
-    },
-    {
-      mainTitle: "Бизнес",
-      users: [
-        {
-          number: "1000",
-          price: "86 700",
-        },
-        {
-          number: "5000",
-          price: "172 200 ",
-        },
-      ],
-      userTo: "10-50",
-      storage: false,
-      individual: true,
-      integration: false,
-      edit: false,
-      version: false,
-    },
-    {
-      mainTitle: "Корпорация",
-      users: [
-        {
-          number: "5000",
-          price: "По запросу",
-        },
-        {
-          number: "500",
-          price: "44444",
-        },
-      ],
-      userTo: "10-50",
-      storage: false,
-      individual: true,
-      integration: false,
-      edit: false,
-      version: false,
-    },
-  ];
-
+  const [tariffYear, setTariffYear] = React.useState(false);
   return (
     <div className="rate_container">
+      <RegisterModal open={openModal} setOpen={setOpenModal} />
       <div className="rate">
         <h1>Тарифы</h1>
         <p>
@@ -97,19 +81,33 @@ function Rate() {
         </p>
         <div className="tariff_blocks_period">
           <p>Квартал</p>
-          <div className="tariff_blocks_period_switch">
-            <div className="switch"></div>
-          </div>
-          <div className="tariff_blocks_period_year">
-            <p>Год</p>
-            <div className="tariff_img">
+          <label className="switch">
+            <input type="checkbox" id="tariff_blocks_period_year" />
+            <span
+              className="slider round"
+              onClick={() => setTariffYear(!tariffYear)}
+            />
+          </label>
+
+          <label
+            htmlFor="tariff_blocks_period_year"
+            className="tariff_blocks_period_year"
+          >
+            <p onClick={() => setTariffYear(!tariffYear)}>Год</p>
+            <div
+              className="tariff_img"
+              onClick={() => setTariffYear(!tariffYear)}
+            >
               <PresentBox />
             </div>
-            <div className="tariff_title_flex">
+            <div
+              className="tariff_title_flex"
+              onClick={() => setTariffYear(!tariffYear)}
+            >
               <p>2 месяца</p>
               <p>даром</p>
             </div>
-          </div>
+          </label>
         </div>
         <div className="tariff_block_item">
           {TariffItem.map((item, index) => {
@@ -144,7 +142,18 @@ function Rate() {
                   {item?.users.map((user, i) => {
                     return (
                       <h1 key={i}>
-                        <p>{user?.price}</p>
+                        <p>
+                          {tariffYear && (
+                            <span className="price__skidka">
+                              {((Number(user?.price) / 3) * 12).toFixed(0)}
+                            </span>
+                          )}
+                          <br />
+                          {`${
+                            (Number(user?.price) / (tariffYear ? 3 : 1)) *
+                            (tariffYear ? 10 : 1)
+                          }₽`}
+                        </p>
                       </h1>
                     );
                   })}
@@ -158,7 +167,9 @@ function Rate() {
                       );
                     })}
                   </div>
-                  <button>ЗАКАЗАТЬ</button>
+                  <button onClick={() => setOpenModal(!openModal)}>
+                    ЗАКАЗАТЬ
+                  </button>
                   <NavLink to={"#"}>Оплатить онлайн</NavLink>
                 </div>
                 <div className="tariff_card_price_bottom">
@@ -176,6 +187,39 @@ function Rate() {
               </div>
             );
           })}
+          <div className="tariff_block_card">
+            <input
+              type="radio"
+              id={"korporativ"}
+              className={"tariff_block_card_radio first"}
+              defaultChecked
+            />
+
+            <h1>Корпорация</h1>
+            <p>Пользователей</p>
+            <div className="tariff_card_number">
+              <button>
+                <label htmlFor={"korporativ"}> {"> 5 000"}</label>
+              </button>
+            </div>
+            <div className="tariff_card_price">
+              <h1>
+                <p>По запросу</p>
+              </h1>
+              <div className="user__price__months">
+                <p> От 9 ₽ за пользователя в месяц</p>
+              </div>
+              <button onClick={() => setOpenModal(!openModal)}>ЗАКАЗАТЬ</button>
+            </div>
+            <div className="tariff_card_price_bottom">
+              <p>{"> 5000 пользователей"}</p>
+              <p>{"Безлимитное хранилище"}</p>
+              <p>{"Индивидуальный стиль"}</p>
+              <p>{"Интеграции"}</p>
+              <p>{"Спец. тарифы на доработки"}</p>
+              <p>{"Box-версия (опционально)"}</p>
+            </div>
+          </div>
         </div>
         <div className="tariff_block_change">
           <h1>Вне зависимоcти от выбранного тарифа, вы получите</h1>

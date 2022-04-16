@@ -14,9 +14,11 @@
   align-content: flex-start;
   justify-content: flex-start;
   overflow: auto;
-
   padding: 2rem;
   box-sizing: border-box;
+  .tinytext {
+    font-size: 0.895em !important;
+  }
   @keyframes requestform_show {
     from {
       opacity: 0;

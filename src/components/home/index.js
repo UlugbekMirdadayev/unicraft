@@ -5,6 +5,7 @@ import "./home.scss";
 import { ArrowSlide, ImgHome, Konsult, KonsultBg } from "../export/svg";
 import OurTeam from "./ourTeam";
 import { RegisterModal } from "./../export/modal";
+import Accordion from "./../export/accordion";
 
 const [
   Noutbook,
@@ -754,6 +755,16 @@ function Home() {
                 Посмотреть примеры
               </button>
             </div>
+          </div>
+        </div>
+      </div>
+      <div className="container_section faq__section">
+        <div className="container_section_body">
+          <div className="container_section_title">
+            <h2>Популярные вопросы</h2>
+          </div>
+          <div className="container_section_contents">
+            <Accordion />
           </div>
         </div>
       </div>

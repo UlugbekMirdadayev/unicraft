@@ -27,34 +27,28 @@
       justify-content: center;
       align-items: center;
       margin-bottom: 20px;
+      gap: 10px;
       > p {
         font-weight: bold;
         margin-right: 10px;
       }
-      .tariff_blocks_period_switch {
-        width: 68px;
-        height: 36px;
-        background: #fff;
-        border-radius: 30px;
-        position: relative;
-        overflow: hidden;
-        margin-right: 20px;
-        .switch {
-          position: absolute;
-          width: 35px;
-          border-radius: 50%;
-          height: calc(100% - 4px);
-          left: 2px;
-          top: 2px;
-          background: #2f79b4;
-        }
-      }
+
       .tariff_blocks_period_year {
         display: flex;
         align-items: center;
         > p {
           font-weight: bold;
           margin-right: 15px;
+          transition: 200ms ease;
+
+          -webkit-transition: 200ms ease;
+          -moz-transition: 200ms ease;
+          -ms-transition: 200ms ease;
+          -o-transition: 200ms ease;
+          &:hover {
+            color: #2196f3;
+            cursor: pointer;
+          }
         }
         .tariff_img {
           margin-right: 10px;
@@ -83,15 +77,18 @@
       display: flex;
       justify-content: space-between;
       padding: 20px;
+      align-items: flex-start;
       gap: 20px;
       .tariff_block_card {
         transition: 0.3s ease;
         text-align: center;
-        width: 318px;
+        min-width: 300px;
         background: #fff;
         border-radius: 30px;
         padding: 20px;
         border: 1px solid rgba(128, 128, 128, 0.1);
+        height: 100%;
+        min-height: 600px;
         .tariff_block_card_radio {
           &.first {
             display: none;
@@ -108,6 +105,7 @@
                 h1:nth-child(1) {
                   p {
                     display: block;
+                    font-size: 1.5rem;
                   }
                 }
                 .user__price__months {
@@ -133,6 +131,7 @@
                 h1:nth-child(2) {
                   p {
                     display: block;
+                    font-size: 1.5rem;
                   }
                 }
                 .user__price__months {
@@ -150,6 +149,7 @@
         > h1 {
           margin: 20px 0 40px 0;
           font-weight: 400;
+          font-size: 2rem;
         }
         > p {
           margin-bottom: 10px;
@@ -185,8 +185,10 @@
         .tariff_card_price {
           > h1 {
             font-weight: 400;
+            font-size: 1.5rem;
             p {
               display: none;
+              font-size: 1rem;
             }
             input {
               display: none;
@@ -199,6 +201,7 @@
           > h2 {
             font-weight: 400;
             margin-bottom: 20px;
+            font-size: 1rem;
           }
           > .user__price__months p {
             font-size: 13px;
@@ -238,7 +241,7 @@
         }
         .tariff_card_price_bottom {
           p {
-            font-size: 10px;
+            font-size: 0.875rem;
           }
         }
       }
@@ -346,6 +349,103 @@
           fill: #626262;
         }
       }
+    }
+  }
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+
+    input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      transition: 300ms ease;
+      -webkit-transition: 300ms ease;
+      -moz-transition: 300ms ease;
+      -ms-transition: 300ms ease;
+      -o-transition: 300ms ease;
+    }
+
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 26px;
+      width: 26px;
+      left: 4px;
+      bottom: 4px;
+      background-color: white;
+      transition: 200ms;
+      -webkit-transition: 200ms;
+      -moz-transition: 200ms;
+      -ms-transition: 200ms;
+      -o-transition: 200ms;
+    }
+
+    input:checked + .slider {
+      background-color: #2196f3;
+    }
+
+    input:focus + .slider {
+      box-shadow: 0 0 1px #2196f3;
+    }
+
+    input:checked + .slider:before {
+      -webkit-transform: translateX(26px);
+      -ms-transform: translateX(26px);
+      transform: translateX(26px);
+    }
+
+    /* Rounded sliders */
+    .slider.round {
+      border-radius: 34px;
+    }
+
+    .slider.round:before {
+      border-radius: 50%;
+    }
+  }
+  .price__skidka {
+    position: relative;
+    opacity: 0.7;
+    font-size: 0.875rem;
+    display: inline-block;
+    animation: fade-up 300ms linear forwards;
+    -webkit-animation: fade-up 300ms linear forwards;
+    @keyframes fade-up {
+      0% {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    &:before {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      -webkit-transform: rotate(-7deg);
+      -ms-transform: rotate(-7deg);
+      transform: rotate(-7deg);
+      content: "";
+      -webkit-box-shadow: 0 0 0px 1px hsla(0, 0%, 100%, 0.5);
+      box-shadow: 0 0 0px 1px hsla(0, 0%, 100%, 0.5);
+      width: 100%;
+      height: 1px;
+      background-color: currentColor;
     }
   }
 }
