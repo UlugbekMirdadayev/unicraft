@@ -3,8 +3,8 @@
   background-attachment: initial;
   background-image: linear-gradient(
     to bottom,
-    HSLA(0, 0%, 50%, 0.2),
-    HSLA(0, 0%, 50%, 0) 20rem
+    hsla(0, 0%, 50%, 0.2),
+    hsla(0, 0%, 50%, 0) 20rem
   );
   padding-top: 4rem;
   .rate {
@@ -88,7 +88,7 @@
         padding: 20px;
         border: 1px solid rgba(128, 128, 128, 0.1);
         height: 100%;
-        min-height: 600px;
+        min-height: 650px;
         .tariff_block_card_radio {
           &.first {
             display: none;
