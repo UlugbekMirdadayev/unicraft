@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import { PresentBox, Search } from "../export/svg";
 import "./rate.scss";
 import { RegisterModal } from "./../export/modal";
+import Accordion from "./../export/accordion";
 
 const TariffItem = [
   {
@@ -63,10 +64,140 @@ const TariffItem = [
     version: true,
   },
 ];
+const purchase = [
+  {
+    id: "purchase1a",
+    header: "Есть ли тестовый период?",
+    textContent:
+      "Да, конечно. По запросу для тестирования функциональности платформы мы предоставляем бесплатную демо-площадку на 10 лицензий сроком на 14 дней. За это время вы сможете создать один или несколько курсов, следуя нашим инструкциям, загрузить пользователей, провести обучение и получить первые результаты!",
+  },
+  {
+    id: "purchase1b",
+    header: "Что будет после тестового периода?",
+    textContent:
+      "После пробного бесплатного периода вы сможете выбрать тариф и форму оплаты, но если Unicraft вам не подойдет — ничего не случится, вам не нужно будет ни за что платить.",
+  },
+  {
+    id: "purchase1c",
+    header: "От чего зависит стоимость платформы?",
+    textContent:
+      "Стоимость LMS платформы зависит от выбранного пакета, которые отличаются между собой количеством лицензий. Минимальный пакет: 10 лицензий",
+  },
+  {
+    id: "purchase1d",
+    header: "Как можно сэкономить?",
+    textContent:
+      "Вы можете оплатить стоимость доступа на год и получить скидку в размере двух месяцев использования платформы. Это выгодно!",
+  },
+  {
+    id: "purchase1e",
+    header: "Нужно ли заключать договор?",
+    textContent:
+      "Мы работаем на основании публичной оферты, с условиями которой вы можете ознакомиться здесь.",
+  },
+  {
+    id: "purchase1f",
+    header: "Что будет после оплаты?",
+    textContent:
+      "После проведения оплаты в течение 24 часов мы увеличим количество лицензий на вашей площадке в соответствии с оплаченным тарифом. А также изменим адрес, по которому будет доступна ваша площадка в сети Интернет, предварительно согласовав все детали. Все созданные во время тестового периода материалы и пользователи будут сохранены, данные для авторизации для всех останутся прежними.",
+  },
+];
+const consultation = [
+  {
+    id: "consultation1a",
+    header: "Мы уже используем другую систему, вы поможете с переездом?",
+    textContent:
+      "Если Вы выбрали годовой тариф и выше, то мы полностью закрываем вопрос с переносом материалов с другой LMS.",
+  },
+  {
+    id: "consultation1b",
+    header: "Можно ли изменять количество лицензий после оплаты?",
+    textContent:
+      "Да, в любой момент вы можете сообщить нам о необходимости увеличения лицензий, и мы сделаем перерасчет стоимости на дату перехода на новый тариф с учетом уже ранее внесенной вами суммы.",
+  },
+  {
+    id: "consultation1c",
+    header:
+      "Могут ли несколько сотрудников использовать одну и ту же лицензию?",
+    textContent:
+      "Аккаунт любого пользователя привязан к одной электронной почте, куда приходят автоматические уведомления в процессе работы с платформой. Мы рекомендуем под каждого сотрудника создавать отдельный аккаунт. Так вам будет удобнее отследить историю прохождения курсов и статистику успеваемости.",
+  },
+  {
+    id: "consultation1d",
+    header: "Вы можете помочь с созданием контента на платформе?",
+    textContent:
+      "Да, конечно. Во-первых, мы можем разработать структуру всех нужных вам курсов. Структура формируется по итогам 1,5 - часового интервью и полностью отражает специфику вашей деятельности. Стоимость данной услуги - 15 000 руб.Если у вас нет времени на разработку курсов или сотрудника, которому можно делегировать этот процесс, то мы сделаем это за вас. Стоимость производства зависит от количества уроков в курсе. Подробности можно узнать у вашего менеджера.",
+  },
+  {
+    id: "consultation1e",
+    header: "Для установки Unicraft потребуется помощь нашего IT-отдела?",
+    textContent:
+      "Нет. Для работы в облачной версии Unicraft не потребуется никого привлекать — Unicraft работает в браузере как обычный сайт. Нужен только доступ в интернет.",
+  },
+];
 
+const installation = [
+  {
+    id: "installation1a",
+    header: "Как происходит внедрение при покупке box версии платформы?",
+    textContent:
+      "Установка будет происходить на сервер клиента. Есть два варианта: клиент контролирует сервер физически, клиент самостоятельно арендует сервер в ЦОДе. Для установки необходимо будет предоставить нам ssh-доступ к серверу (root). Установка происходит в течении дня (3-4 часа, возможно, больше), включая полную настройку сервера, установку необходимого ПО, его настройку, развертывание платформы из репозитория. После установки мы передаем логин и пароль к учётной записи администратора в установленной системе.",
+  },
+  {
+    id: "installation1b",
+    header: "Сколько стоит обновление box версии платформы?",
+    textContent:
+      "Стоимость подписки на обновления box версии платформы в течение года составляет 20% от стоимости купленных лицензий.",
+  },
+  {
+    id: "installation1c",
+    header:
+      "Как происходит обновление box версии платформы? Не пострадает ли существующий контент?",
+    textContent:
+      "Обновления производяться по процедуре аналогичной внедрению. Для установки и обновлений необходимо предоставить root-доступ к серверу по ssh (IP + логин и пароль, либо IP + доступ с помощью RSA-ключей). Существующий контент пострадать не может, т.к. он изолирован от самого кода программы. Для дополнительной гарантии безопасности перед обновлениями создаются резервные копии платформы и контента, так что если вдруг что-то пойдет не так, последняя работающая версия всегда может быть восстановлена из резервной копии. С марта 2017 года процесс обновления будет автоматизирован с помощью Ansible и Jenkins (приложение будет разворачиваться в docker- контейнере).",
+  },
+  {
+    id: "installation1d",
+    header:
+      "Что нужно предоставить/обеспечить клиенту для внедрения box версии платформы?",
+    textContent:
+      "Необходимо оплатить лицензии, предоставить доступ к выделенному серверу и доменное имя (при наличии).",
+  },
+];
 function Rate() {
-  const [search, setSearch] = React.useState("");
   const [openModal, setOpenModal] = React.useState(false);
+  const [searchTerm, setSearchTerm] = React.useState("");
+  const [purchases, setPurchases] = React.useState([]);
+  const [consultations, setConsultations] = React.useState([]);
+  const [installations, setInstallations] = React.useState([]);
+
+  const handleChange = (event) => {
+    setSearchTerm(event.target.value);
+  };
+
+  React.useEffect(() => {
+    const resultPurchase = purchase.filter((person) =>
+      person.header
+        .toLowerCase()
+        .includes(searchTerm.toLocaleLowerCase().trim())
+    );
+    setPurchases(resultPurchase);
+
+    const resultConsultations = consultation.filter((person) =>
+      person.header
+        .toLowerCase()
+        .includes(searchTerm.toLocaleLowerCase().trim())
+    );
+    setConsultations(resultConsultations);
+
+    const resultInstallation = installation.filter((person) =>
+      person.header
+        .toLowerCase()
+        .includes(searchTerm.toLocaleLowerCase().trim())
+    );
+    setInstallations(resultInstallation);
+  }, [searchTerm, purchases, consultations]);
+
   function priceUser(price, number) {
     return Math.floor(Number(price) / Number(number) / 3);
   }
@@ -282,18 +413,48 @@ function Rate() {
             Мы собрали ответы на самые популярные вопросы: сколько стоит, какие
             условия, технические нюансы и многое другое.
           </p>
-          <label>
+          <label className="input__wrapper__">
             <input
-              onChange={(e) => {
-                setSearch(e.target.value);
-                console.log(search);
-              }}
-              value={search}
+              onChange={handleChange}
+              value={searchTerm}
               type="text"
               placeholder="Что хотите узнать?"
             />
-            <Search />
+            <Search className="search__icon" />
           </label>
+          {purchases.length === 0 &&
+          consultations.length === 0 &&
+          installations.length === 0 ? (
+            "К сожалению по вашему запросу ничего не найдено"
+          ) : (
+            <>
+              {purchases.length !== 0 && (
+                <div>
+                  <div className="label__accord">ПОКУПКА</div>
+                  <Accordion props={purchases} />
+                </div>
+              )}
+              {consultations.length !== 0 && (
+                <div>
+                  <div className="label__accord">КОНСУЛЬТАЦИЯ</div>
+                  <Accordion props={consultations} />
+                </div>
+              )}
+              {installations.length !== 0 && (
+                <div>
+                  <div className="label__accord">УСТАНОВКА НА СЕРВЕР</div>
+                  <Accordion props={installations} />
+                </div>
+              )}
+            </>
+          )}
+          <div>
+            <div className="largetext___">
+              <b>Остались вопросы?</b>
+              <NavLink to={"/contacts"}>Свяжитесь с нами</NavLink>и мы ответим на
+              них
+            </div>
+          </div>
         </div>
       </div>
     </div>
