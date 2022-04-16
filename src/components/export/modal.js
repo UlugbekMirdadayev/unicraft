@@ -24,6 +24,13 @@ export const RegisterModal = ({ open, setOpen }) => {
     <>
       {open && (
         <div className="requestform" id="requestform">
+          <div
+            className="overlay__modal__"
+            onMouseUp={(e) => {
+              e.preventDefault();
+              setOpen(!open);
+            }}
+          />
           <div className="requestform_dialog">
             <button
               type="button"

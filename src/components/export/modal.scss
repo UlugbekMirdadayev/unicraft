@@ -107,18 +107,19 @@
       padding: 0.25rem;
       position: relative;
     }
+
     .radiocustom_filled .radiocustom-label {
-        padding: 1.5rem !important;
-        height: 100%;
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-align: center;
-        -ms-flex-align: center;
-        align-items: center;
-        -webkit-box-pack: center;
-        -ms-flex-pack: center;
-        justify-content: center;
+      padding: 1.5rem !important;
+      height: 100%;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
     }
     input.text:required:invalid,
     input.text:required:invalid:not(:placeholder-shown) {
@@ -284,5 +285,17 @@
     -webkit-box-flex: 0;
     -ms-flex: none;
     flex: none;
+  }
+  .overlay__modal__ {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }
