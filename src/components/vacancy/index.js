@@ -57,7 +57,7 @@ function Vacancy() {
                   Откликнуться
                 </button>
                 <label htmlFor="vacancy2">
-                  <a className="dottedlink">Подробнее</a>
+                  <p className="dottedlink">Подробнее</p>
                 </label>
               </div>
               <input
@@ -193,7 +193,7 @@ function Vacancy() {
                   Откликнуться
                 </button>
                 <label htmlFor="vacancy1">
-                  <a className="dottedlink">Подробнее</a>
+                  <p className="dottedlink">Подробнее</p>
                 </label>
               </div>
               <input

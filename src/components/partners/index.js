@@ -21,13 +21,13 @@ function Partners() {
           <div class="container_widgets" id="partners_types">
             <div class="container_widgets_item">
               <div class="container_widgets_item_icon">
-                <img loading="lazy" src="https://www.unicraft.org/page/partners/icons/integrators.svg" />
+                <img loading="lazy" src="https://www.unicraft.org/page/partners/icons/integrators.svg" alt="..." />
               </div>
               <p class="largetext">ИТ-интеграторы</p>
             </div>
             <div class="container_widgets_item">
               <div class="container_widgets_item_icon">
-                <img loading="lazy" src="https://www.unicraft.org/page/partners/icons/consult.svg" />
+                <img loading="lazy" src="https://www.unicraft.org/page/partners/icons/consult.svg" alt="..." />
               </div>
               <p class="largetext">
                 Консалтинговые компании, агенты и внедренцы обучения
@@ -35,7 +35,7 @@ function Partners() {
             </div>
             <div class="container_widgets_item">
               <div class="container_widgets_item_icon">
-              <img loading="lazy" src="https://www.unicraft.org/page/partners/icons/integrators.svg" />
+              <img loading="lazy" src="https://www.unicraft.org/page/partners/icons/integrators.svg" alt="..." />
               </div>
               <p class="largetext">Разработчики и поставщики готовых курсов</p>
             </div>
