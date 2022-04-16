@@ -87,11 +87,15 @@ function Header() {
   const { scrollDirection } = useScroll();
 
   return (
-    <div className="header-container">
-      <div
-        className="w100"
-        style={scrollDirection === "down" ? styles.active : styles.hidden}
-      >
+    <div
+      className="header-container"
+      style={
+        scrollDirection === "down" || scrollDirection === undefined
+          ? styles.active
+          : styles.hidden
+      }
+    >
+      <div className="w100">
         <header className="header">
           <NavLink to={"/"} className="header__logo">
             <Logo /> <span> Unicraft — платформа для онлайн обучения </span>
