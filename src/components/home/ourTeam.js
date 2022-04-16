@@ -256,7 +256,6 @@ const Members = [
 
 function OurTeam() {
   const [team, setTeam] = useState(1);
-  console.log(team);
   return (
     <div>
       <section className="container_section clients" id="customerreview">
@@ -310,6 +309,7 @@ function OurTeam() {
                   {Members.map((member) => {
                     return (
                       <div
+                        key={member?.id}
                         className={`customerreview_nav_item ${
                           team === member.id ? "active" : ""
                         }`}

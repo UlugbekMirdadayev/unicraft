@@ -1,11 +1,318 @@
 import React, { useState } from "react";
 import "./modal.scss";
 import { useForm } from "react-hook-form";
-
-export const RegisterModal = () => {
-  return <div>RegisterModal</div>;
+export const RegisterModal = ({ open, setOpen }) => {
+  document.body.style.overflow = open ? "hidden" : "auto";
+  const [isLoading, setIsLoading] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm();
+  const onSubmit = (data) => {
+    setIsLoading(true);
+    console.log(data);
+    reset();
+    setTimeout(() => {
+      setIsLoading(false);
+      setIsSuccess(true);
+    }, 400);
+  };
+  return (
+    <>
+      {open && (
+        <div className="requestform" id="requestform">
+          <div className="requestform_dialog">
+            <button
+              type="button"
+              className="close"
+              onClick={() => setOpen(!open)}
+            >
+              X
+            </button>{" "}
+            {/* Форма заявки */}
+            {/* Ожидание ответа */}
+            <div
+              className="requestform_process"
+              id="requestform_process"
+              style={isLoading ? {} : { display: "none" }}
+            >
+              <div className="requestform_process_loader" />
+              <div className="lds-spinner">
+                <div /> <div /> <div /> <div /> <div /> <div /> <div /> <div />
+                <div /> <div /> <div /> <div />
+              </div>
+            </div>
+            {/* Заявка на регистрацию платформы (Упрощенная) */}
+            <div
+              style={isSuccess ? { display: "none" } : {}}
+              className="requestform_content tac callbackwidget-call-form"
+              id="requestform_reg_express"
+            >
+              <div id="tariffinfo" style={{ display: "none" }}>
+                {/* Вывод названия соответствующего тарифа */}
+                <p className="introtext">
+                  Вы выбрали тариф «<span id="tariffinfoname" />» на
+                  <span id="tariffinfousers" /> пользователей
+                </p>
+                <input type="hidden" id="tariffinfovalue" />
+                <div className="separator_h" /> {/*  */}
+              </div>
+              <div
+                style={{ fontSize: "1.875rem", padding: "1rem 0 2rem" }}
+                id="requestform-title"
+              >
+                Для получения доступа укажите
+              </div>
+              <form
+                id="requestform_submit"
+                onSubmit={handleSubmit(onSubmit)}
+                autoComplete="on"
+              >
+                {/* Выбор типа клиента */}
+                <div id="requestform_audience">
+                  <p style={{ margin: "0.5rem 0 1rem" }}>
+                    Кто будет обучаться на платформе?
+                  </p>
+                  <div
+                    className="form_bl form_panel radiocustom_stackedgrid radiocustom_filled"
+                    id="audience"
+                    style={errors.audience ? { borderColor: "red" } : {}}
+                  >
+                    <div className="radiocustom">
+                      <label className="radiocustom-label">
+                        <input
+                          type="radio"
+                          className="radiocustom-radio"
+                          value="Сотрудники"
+                          {...register("audience", { required: true })}
+                        />
+                        <span className="radiocustom-thumbler" />
+                        <div className="radiocustom-title">Сотрудники</div>
+                      </label>
+                    </div>
+                    <div className="radiocustom">
+                      <label className="radiocustom-label">
+                        <input
+                          type="radio"
+                          value="Клиенты"
+                          className="radiocustom-radio"
+                          {...register("audience", { required: true })}
+                        />
+                        <span className="radiocustom-thumbler" />
+                        <div className="radiocustom-title">Клиенты</div>
+                      </label>
+                    </div>
+                    <div className="radiocustom">
+                      <label className="radiocustom-label">
+                        <input
+                          type="radio"
+                          className="radiocustom-radio"
+                          value="Студенты и школьники"
+                          {...register("audience", { required: true })}
+                        />
+                        <span className="radiocustom-thumbler" />
+                        <div className="radiocustom-title">
+                          Студенты и школьники
+                        </div>
+                      </label>
+                    </div>
+                    <div className="radiocustom">
+                      <label className="radiocustom-label">
+                        <input
+                          type="radio"
+                          className="radiocustom-radio"
+                          value="Другие"
+                          {...register("audience", { required: true })}
+                        />
+                        <span className="radiocustom-thumbler" />
+                        <div className="radiocustom-title">Другие</div>
+                      </label>
+                    </div>
+                    <div className="radiocustom" style={{ display: "none" }}>
+                      <label className="radiocustom-label">
+                        <input
+                          type="radio"
+                          className="radiocustom-radio"
+                          value="Партнер"
+                          {...register("audience", { required: true })}
+                        />
+                        <span className="radiocustom-thumbler" />
+                        <div className="radiocustom-title">Партнер</div>
+                      </label>
+                    </div>
+                    <div className="radiocustom" style={{ display: "none" }}>
+                      <label className="radiocustom-label">
+                        <input
+                          type="radio"
+                          name="audience"
+                          defaultValue="Консультация"
+                          className="radiocustom-radio"
+                        />
+                        <span className="radiocustom-thumbler" />
+                        <div className="radiocustom-title">Консультация</div>
+                      </label>
+                    </div>
+                    <div className="radiocustom" style={{ display: "none" }}>
+                      <label className="radiocustom-label">
+                        <input
+                          type="radio"
+                          name="audience"
+                          defaultValue="Курсы"
+                          className="radiocustom-radio"
+                        />
+                        <span className="radiocustom-thumbler" />
+                        <div className="radiocustom-title">Курсы</div>
+                      </label>
+                    </div>
+                    <div className="radiocustom" style={{ display: "none" }}>
+                      <label className="radiocustom-label">
+                        <input
+                          type="radio"
+                          name="audience"
+                          defaultValue="-"
+                          className="radiocustom-radio"
+                        />
+                        <span className="radiocustom-thumbler" />
+                        <div className="radiocustom-title">-</div>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                {/*  */}
+                <p
+                  style={{ margin: "1rem 0" }}
+                  id="requestform_reg_express_contact_header"
+                >
+                  Контактные данные
+                </p>
+                {/*  */}
+                <div>
+                  <input
+                    type="name"
+                    className="text callbackwidget-name"
+                    id="name"
+                    placeholder="Имя и фамилия"
+                    {...register("fullName", { required: true })}
+                    style={errors.fullName ? { borderColor: "red" } : {}}
+                  />
+                </div>
+                {/*  */}
+                <div id="requestform_field_company">
+                  <input
+                    type="text"
+                    className="text"
+                    id="company"
+                    placeholder="Название организации"
+                    {...register("organ", { required: true })}
+                    style={errors.organ ? { borderColor: "red" } : {}}
+                  />
+                </div>
+                {/*  */}
+                <div id="requestform_field_company">
+                  <input
+                    type="tel"
+                    className="text"
+                    id="tel"
+                    placeholder="+998 (99) 99-99-99"
+                    {...register("phone", { required: true })}
+                    style={errors.phone ? { borderColor: "red" } : {}}
+                  />
+                </div>
+                {/*  */}
+                <div>
+                  <input
+                    type="email"
+                    className="text callbackwidget-email"
+                    id="email"
+                    placeholder="E-mail"
+                    {...register("email", { required: true })}
+                    style={errors.email ? { borderColor: "red" } : {}}
+                  />
+                </div>
+                {/* Промокод */}
+                <div
+                  className="form_el_big"
+                  id="promocode_block"
+                  style={{ display: "none" }}
+                >
+                  <input
+                    type="text"
+                    className="text tel"
+                    id="promocode"
+                    placeholder="Промокод"
+                  />
+                </div>
+                <div style={{ margin: "1.5rem 0rem" }} className="form_el_big">
+                  <button
+                    type="submit"
+                    id="requestform-action"
+                    className="button button_success button_gradienteffect button_rounded"
+                    gtag-id="header-request-submit"
+                  >
+                    Получить доступ
+                  </button>
+                </div>
+                {/*  */}
+                <div style={{ margin: "1.5rem 0rem" }} className="clr_gray">
+                  <p className="tinytext">
+                    Нажимая кнопку «Получить доступ», вы соглашаетесь с
+                    <a href="/docs/offer" target="_blank">
+                      Публичной офертой
+                    </a>
+                    и
+                    <a href="/docs/agreement" target="_blank">
+                      Согласием на обработку персональных данных
+                    </a>
+                    .
+                  </p>
+                </div>
+              </form>
+            </div>
+            {/* Ошибка */}
+            <div
+              className="requestform_message requestform_message_yellow"
+              id="requestform_error"
+              style={{ display: "none" }}
+            >
+              Error
+            </div>
+            {/* Заявка отправлена + пробный доступ */}
+            <div
+              className="requestform_content tac"
+              id="requestform_reg_done"
+              style={isSuccess ? {} : { display: "none" }}
+            >
+              <p className="hugetext">
+                Спасибо за ваш интерес к сервису для обучения сотрудников —
+                Unicraft.
+              </p>
+              <p>
+                Вам предоставлен пробный доступ на 14 дней и можете попробовать
+                нашу платформу прямо сейчас.
+              </p>
+              <div style={{ marginTop: "1.5rem" }}>
+                <p
+                  id="requestform_reg_done_link"
+                  className="button button_accent"
+                  onClick={() => {
+                    setIsSuccess(false);
+                    setIsLoading(false);
+                    setOpen(false);
+                  }}
+                >
+                  Войти в систему
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+    </>
+  );
 };
-
 export const VacncyModal = ({ open, setOpen }) => {
   document.body.style.overflow = open ? "hidden" : "auto";
   const [isLoading, setIsLoading] = useState(false);
@@ -114,18 +421,8 @@ export const VacncyModal = ({ open, setOpen }) => {
             >
               <div className="requestform_process_loader" />
               <div className="lds-spinner">
-                <div />
-                <div />
-                <div />
-                <div />
-                <div />
-                <div />
-                <div />
-                <div />
-                <div />
-                <div />
-                <div />
-                <div />
+                <div /> <div /> <div /> <div /> <div /> <div /> <div /> <div />
+                <div /> <div /> <div /> <div />
               </div>
             </div>
             <div

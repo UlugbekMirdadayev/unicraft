@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import "./home.scss";
 import { ArrowSlide, ImgHome, Konsult, KonsultBg } from "../export/svg";
 import OurTeam from "./ourTeam";
+import { RegisterModal } from "./../export/modal";
 
 const [
   Noutbook,
@@ -246,6 +247,7 @@ const Advantages = {
 };
 function Home() {
   const [active, setActive] = React.useState(1);
+  const [isOpen, setIsOpen] = React.useState(false);
   const options = {
     scale: 1,
     speed: 1000,
@@ -272,6 +274,7 @@ function Home() {
 
   return (
     <main className="home">
+      <RegisterModal open={isOpen} setOpen={setIsOpen} />
       <div className="video-bg-intro">
         <div className="video-overlay" />
         <video
@@ -297,7 +300,9 @@ function Home() {
             <p>
               Запусти обучение сотрудников сейчас, следуя простым инструкциям
             </p>
-            <button>Попробовать бесплатно</button>
+            <button onClick={() => setIsOpen(!isOpen)}>
+              Попробовать бесплатно
+            </button>
           </div>
         </div>
       </div>
@@ -364,7 +369,7 @@ function Home() {
                 </div>
                 <div className="__card_title">{__res?.title}</div>
                 <div className="__card_text">{__res?.text}</div>
-                <button>Подробнее</button>
+                <button onClick={() => setIsOpen(!isOpen)}>Подробнее</button>
               </div>
             );
           })}
@@ -538,7 +543,7 @@ function Home() {
             многократно доказавшая свою эффективность на практике
           </div>
           <div className="connecting__button__cont">
-            <button className="connecting__button__">Подключиться</button>
+            <button className="connecting__button__" onClick={() => setIsOpen(!isOpen)}>Подключиться</button>
           </div>
         </div>
       </div>
