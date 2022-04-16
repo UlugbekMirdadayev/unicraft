@@ -325,7 +325,7 @@ function OurTeam() {
                 </div>
               </div>
             </div>
-            <div style={{ position: "relative", overflowY: "clip" }}>
+            <div style={{ position: "relative" }}>
               {Members.map((member) => {
                 return (
                   <div
@@ -333,18 +333,10 @@ function OurTeam() {
                     id="reviewsContainer"
                     className={`${team === member?.id ? "active" : ""}`}
                   >
-                    <div
-                      itemProp="review"
-                      itemScope
-                      itemType="http://schema.org/Review"
-                      data-reviewsitem-id="reviewsitem_0"
-                    >
+                    <div>
                       <div className="customerreview_view">
                         <div>
-                          <div
-                            itemProp="name"
-                            className="customerreview_view_user_name"
-                          >
+                          <div className="customerreview_view_user_name">
                             {member?.name}
                           </div>
                           <div className="customerreview_view_user_desc">
@@ -376,10 +368,7 @@ function OurTeam() {
                           </div>
                         </div>
                         <div className="customerreview_view_result">
-                          <blockquote
-                            itemProp="reviewBody"
-                            className="customerreview_view_quote"
-                          >
+                          <blockquote className="customerreview_view_quote">
                             {member?.desc}
                           </blockquote>
                           <div className="customerreview_view_result_details">

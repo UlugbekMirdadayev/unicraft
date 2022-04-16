@@ -248,12 +248,12 @@ const Advantages = {
 function Home() {
   const [active, setActive] = React.useState(1);
   const [isOpen, setIsOpen] = React.useState(false);
-  const options = {
+  const [options] = React.useState({
     scale: 1,
     speed: 1000,
     max: 30,
-  };
-
+  });
+  const tilt = React.useRef(null);
   React.useEffect(() => {
     const interval = setInterval(() => {
       if (active !== Advantages?.pagination?.length) {
@@ -271,6 +271,10 @@ function Home() {
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => console.log(data);
+
+  React.useEffect(() => {
+    VanillaTilt.init(tilt.current, options);
+  }, [options]);
 
   return (
     <main className="home">
@@ -543,7 +547,12 @@ function Home() {
             многократно доказавшая свою эффективность на практике
           </div>
           <div className="connecting__button__cont">
-            <button className="connecting__button__" onClick={() => setIsOpen(!isOpen)}>Подключиться</button>
+            <button
+              className="connecting__button__"
+              onClick={() => setIsOpen(!isOpen)}
+            >
+              Подключиться
+            </button>
           </div>
         </div>
       </div>
@@ -609,6 +618,145 @@ function Home() {
         </div>
       </div>
       <OurTeam />
+      <div className="container_section alreadyuse">
+        <div className="alreadyuse_map_bg">
+          <img src="https://www.unicraft.org/style/img/dottedmap.png" alt="" />
+        </div>
+        <div className="container_section_body">
+          <div className="container_section_title">
+            <p className="hugetext">
+              Платформу Unicraft уже используют более 500 компаний из разных
+              стран и отраслей
+            </p>
+          </div>
+          <div className="container_section_contents">
+            <div className="container_section_contents_item">
+              <ul className="promo_block_list promo_block_list--checkmark alreadyuse_list">
+                <li>Производство</li>
+                <li>Дистрибуция</li>
+                <li>ИТ-Интеграция</li>
+                <li>Сервис и ремонт</li>
+                <li>Розничные сети</li>
+                <li>Строительство</li>
+                <li>Страхование</li>
+                <li>Финансы</li>
+                <li>Медицина</li>
+                <li>Недвижимость</li>
+                <li>HoReCa</li>
+                <li>Логистика</li>
+                <li>Образование</li>
+                <li>Бизнес-консалтинг</li>
+                <li>Сфера развлечений</li>
+                <li>Сетевой маркетинг</li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="container_section_contents">
+            <div className="container_section_contents_item tac">
+              <h2 className="container_section_title">Используйте и вы!</h2>
+              <p className="hugetext">
+                Вы получите бесплатный пробный период в 14 дней, чтобы
+                протестировать все возможности платформы для проведения обучения
+              </p>
+              <button onClick={() => setIsOpen(!isOpen)}>
+                ПОПРОБОВАТЬ БЕСПЛАТНО
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="mobile_app createfast__block">
+        <div className="container_section_body">
+          <div className="left__col__">
+            <div className="container_section_title">
+              <h2>Научитесь создавать уроки за пару минут</h2>
+              <p>
+                Чтобы вы могли быстрее начать действовать мы подготовили для вас
+                вводный курс по запуску онлайн обучения. Подключайтесь!
+              </p>
+            </div>
+            <div className="container_section_contents">
+              <button onClick={() => setIsOpen(!isOpen)}>
+                Начать обучение
+              </button>
+            </div>
+          </div>
+          <div className="right__col__">
+            <img
+              src={"https://www.unicraft.org/style/img/createfast.webp"}
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
+      <div className="container_section container_section--gray wehaveall">
+        <div className="container_section_body">
+          <div className="container_section_title">
+            <h2>Всё, что потребуется для запуска</h2>
+          </div>
+          <div className="container_section_contents">
+            <img
+              src="https://www.unicraft.org/style/img/wehaveall_puzzle_bl.webp"
+              className="wehaveall_puzzle wehaveall_puzzle_bl"
+              alt=""
+              ref={tilt}
+              data-tilt
+            />
+            <div className="container_section_contents_item">
+              <div className="container_section_title">
+                <h2>Бесплатные онлайн-курсы</h2>
+                <p>
+                  Вам не нужно ломать голову, с чего начать. Платформа для
+                  дистанционного обучения уже содержит все необходимые
+                  инструкции
+                </p>
+              </div>
+              <ul className="promo_block_list promo_block_list--checkmark">
+                <li>Как собрать и структурировать материалы</li>
+                <li>Как упаковать знания в онлайн курс без искажений</li>
+                <li>Как создавать работающие задания на закрепление</li>
+                <li>Как тренировать коммуникативные навыки</li>
+                <li>Как ускорить рост бизнеса с помощью обучения</li>
+                <li>Как устроена платформа для онлайн обучения персонала</li>
+              </ul>
+              <button
+                className="outline__btn__primary"
+                onClick={() => setIsOpen(!isOpen)}
+              >
+                Получить курсы
+              </button>
+            </div>
+            <div className="container_section_contents_item">
+              <div className="container_section_title">
+                <h2>Бесплатные онлайн-курсы</h2>
+                <p>
+                  Вам не нужно ломать голову, с чего начать. Платформа для
+                  дистанционного обучения уже содержит все необходимые
+                  инструкции
+                </p>
+              </div>
+              <ul className="promo_block_list promo_block_list--checkmark">
+                <li>Подробно о компании</li>
+                <li>Продукты и услуги</li>
+                <li>Бизнес-процессы</li>
+                <li>Правила коммуникации</li>
+                <li>Пособие по должности</li>
+                <li>Технологии работы</li>
+                <li>Координация и контроль</li>
+                <li>Работа с инструментами</li>
+              </ul>
+
+              <button
+                className="outline__btn__primary"
+                onClick={() => setIsOpen(!isOpen)}
+              >
+                Посмотреть примеры
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
   );
 }

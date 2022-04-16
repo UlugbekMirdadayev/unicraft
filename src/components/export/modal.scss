@@ -14,10 +14,27 @@
   align-content: flex-start;
   justify-content: flex-start;
   overflow: auto;
-  animation: 100ms requestform_show ease;
-  animation-iteration-count: 1;
+
   padding: 2rem;
   box-sizing: border-box;
+  @keyframes requestform_show {
+    from {
+      opacity: 0;
+      transform: scale(0.7);
+      -webkit-transform: scale(0.7);
+      -moz-transform: scale(0.7);
+      -ms-transform: scale(0.7);
+      -o-transform: scale(0.7);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+      -webkit-transform: scale(1);
+      -moz-transform: scale(1);
+      -ms-transform: scale(1);
+      -o-transform: scale(1);
+    }
+  }
   .requestform_dialog {
     height: auto;
     background-color: #fff;
@@ -30,11 +47,8 @@
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
     border-radius: 5px;
-    -webkit-animation: 250ms requestform_dialog_show ease-out;
-    animation: 250ms requestform_dialog_show ease-out;
-    -webkit-animation-iteration-count: 1;
+    animation: 400ms requestform_show ease;
     animation-iteration-count: 1;
-    -webkit-animation-fill-mode: both;
     animation-fill-mode: both;
     z-index: 4000;
     margin: auto;
@@ -158,6 +172,7 @@
     textarea {
       background-color: #fff;
       border: 1px solid #e6e6e6;
+      min-height: 100px;
     }
   }
   .lds-spinner {
@@ -281,7 +296,6 @@
   .radiocustom {
     display: block;
     position: relative;
-    padding: 1em 0;
     -webkit-box-flex: 0;
     -ms-flex: none;
     flex: none;
@@ -297,5 +311,16 @@
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+  #requestform_field_company {
+    input {
+      margin-top: 0.5rem;
+      font-size: 1.2rem;
+    }
+  }
+}
+.register_modal_ {
+  .form_bl {
+    padding: 0 !important;
   }
 }

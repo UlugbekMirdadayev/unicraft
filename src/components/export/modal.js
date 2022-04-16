@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import "./modal.scss";
 import { useForm } from "react-hook-form";
+import { NavLink } from "react-router-dom";
+
 export const RegisterModal = ({ open, setOpen }) => {
   document.body.style.overflow = open ? "hidden" : "auto";
   const [isLoading, setIsLoading] = useState(false);
@@ -23,7 +25,7 @@ export const RegisterModal = ({ open, setOpen }) => {
   return (
     <>
       {open && (
-        <div className="requestform" id="requestform">
+        <div className="requestform register_modal_" id="requestform">
           <div
             className="overlay__modal__"
             onMouseUp={(e) => {
@@ -64,7 +66,6 @@ export const RegisterModal = ({ open, setOpen }) => {
                   Вы выбрали тариф «<span id="tariffinfoname" />» на
                   <span id="tariffinfousers" /> пользователей
                 </p>
-                <input type="hidden" id="tariffinfovalue" />
                 <div className="separator_h" /> {/*  */}
               </div>
               <div
@@ -162,40 +163,14 @@ export const RegisterModal = ({ open, setOpen }) => {
                         <div className="radiocustom-title">Консультация</div>
                       </label>
                     </div>
-                    <div className="radiocustom" style={{ display: "none" }}>
-                      <label className="radiocustom-label">
-                        <input
-                          type="radio"
-                          name="audience"
-                          defaultValue="Курсы"
-                          className="radiocustom-radio"
-                        />
-                        <span className="radiocustom-thumbler" />
-                        <div className="radiocustom-title">Курсы</div>
-                      </label>
-                    </div>
-                    <div className="radiocustom" style={{ display: "none" }}>
-                      <label className="radiocustom-label">
-                        <input
-                          type="radio"
-                          name="audience"
-                          defaultValue="-"
-                          className="radiocustom-radio"
-                        />
-                        <span className="radiocustom-thumbler" />
-                        <div className="radiocustom-title">-</div>
-                      </label>
-                    </div>
                   </div>
                 </div>
-                {/*  */}
                 <p
                   style={{ margin: "1rem 0" }}
                   id="requestform_reg_express_contact_header"
                 >
                   Контактные данные
                 </p>
-                {/*  */}
                 <div>
                   <input
                     type="name"
@@ -206,7 +181,6 @@ export const RegisterModal = ({ open, setOpen }) => {
                     style={errors.fullName ? { borderColor: "red" } : {}}
                   />
                 </div>
-                {/*  */}
                 <div id="requestform_field_company">
                   <input
                     type="text"
@@ -217,7 +191,6 @@ export const RegisterModal = ({ open, setOpen }) => {
                     style={errors.organ ? { borderColor: "red" } : {}}
                   />
                 </div>
-                {/*  */}
                 <div id="requestform_field_company">
                   <input
                     type="tel"
@@ -228,8 +201,7 @@ export const RegisterModal = ({ open, setOpen }) => {
                     style={errors.phone ? { borderColor: "red" } : {}}
                   />
                 </div>
-                {/*  */}
-                <div>
+                <div id="requestform_field_company">
                   <input
                     type="email"
                     className="text callbackwidget-email"
@@ -239,57 +211,28 @@ export const RegisterModal = ({ open, setOpen }) => {
                     style={errors.email ? { borderColor: "red" } : {}}
                   />
                 </div>
-                {/* Промокод */}
-                <div
-                  className="form_el_big"
-                  id="promocode_block"
-                  style={{ display: "none" }}
-                >
-                  <input
-                    type="text"
-                    className="text tel"
-                    id="promocode"
-                    placeholder="Промокод"
-                  />
-                </div>
                 <div style={{ margin: "1.5rem 0rem" }} className="form_el_big">
                   <button
                     type="submit"
-                    id="requestform-action"
                     className="button button_success button_gradienteffect button_rounded"
-                    gtag-id="header-request-submit"
                   >
                     Получить доступ
                   </button>
                 </div>
-                {/*  */}
                 <div style={{ margin: "1.5rem 0rem" }} className="clr_gray">
                   <p className="tinytext">
                     Нажимая кнопку «Получить доступ», вы соглашаетесь с
-                    <a href="/docs/offer" target="_blank">
-                      Публичной офертой
-                    </a>
-                    и
-                    <a href="/docs/agreement" target="_blank">
+                    <NavLink to="/docs/offer">Публичной офертой</NavLink>и
+                    <NavLink to="/docs/agreement">
                       Согласием на обработку персональных данных
-                    </a>
+                    </NavLink>
                     .
                   </p>
                 </div>
               </form>
             </div>
-            {/* Ошибка */}
-            <div
-              className="requestform_message requestform_message_yellow"
-              id="requestform_error"
-              style={{ display: "none" }}
-            >
-              Error
-            </div>
-            {/* Заявка отправлена + пробный доступ */}
             <div
               className="requestform_content tac"
-              id="requestform_reg_done"
               style={isSuccess ? {} : { display: "none" }}
             >
               <p className="hugetext">
@@ -343,6 +286,13 @@ export const VacncyModal = ({ open, setOpen }) => {
     <>
       {open && (
         <div className="requestform" id="vacancyModal">
+          <div
+            className="overlay__modal__"
+            onMouseUp={(e) => {
+              e.preventDefault();
+              setOpen(!open);
+            }}
+          />
           <div className="requestform_dialog">
             <section
               className="requestform_content tac"
