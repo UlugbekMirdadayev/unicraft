@@ -1,19 +1,275 @@
-import React from "react";
+import React, { useState } from "react";
 import "./ourTeam.css";
 
+const Members = [
+  {
+    id: 1,
+    name: "Никитин Сергей Петрович",
+    role: "Президент и главный тренер футбольного клуба «Импульс»",
+    image: "https://www.unicraft.org/static/reviews/fkimpuls/photo.min.webp",
+    logo: "https://www.unicraft.org/static/reviews/fkimpuls/logo.min.webp",
+    desc: "Платформа Unicraft помогла нам создать системное обучение и стать футбольной школой №1 в каждом городе, где мы представлены. Теперь наши сотрудники непрерывно развиваются и помогают детям формировать стабильные футбольные навыки.",
+    detailText: "Cпортивный клуб",
+    detailText2: "19 клубов, более 100 тренеров",
+    detailText3:
+      "Обучают тренеров по футболу технологии проведения тренировок, а также своих франчайзи тому, как открыть футбольный клуб",
+    imgRight: undefined,
+    listRight: {
+      before: [
+        "Проведение очных обучающих занятий занимает много времени",
+        "Приходится ездить в разные города для обучения удаленных сотрудников, некоторые знания теряются",
+        "Не отслеживается процесс обучения, нет данных по каждому сотруднику",
+      ],
+      after: [
+        "Обучение автоматизировано, сотрудники самостоятельно проходят курсы",
+        "Сотрудники из разных регионов получают одинаковые знания, работа стандартизирована",
+        "Можно получать автоматическую статистику по обучению и контролировать результаты",
+      ],
+    },
+  },
+  {
+    id: 2,
+    name: "Хитрина Наталья Александровна",
+    role: "Менеджер по персоналу «Аптека Вита»",
+    image: "https://www.unicraft.org/static/reviews/aptekavita/photo.min.webp",
+    logo: "https://www.unicraft.org/static/reviews/aptekavita/logo.min.webp",
+    desc: "Платформа Unicraft помогла нам создать системное обучение и стать футбольной школой №1 в каждом городе, где мы представлены. Теперь наши сотрудники непрерывно развиваются и помогают детям формировать стабильные футбольные навыки.",
+    detailText: "Cпортивный клуб",
+    detailText2: "19 клубов, более 100 тренеров",
+    detailText3:
+      "Обучают тренеров по футболу технологии проведения тренировок, а также своих франчайзи тому, как открыть футбольный клуб",
+    imgRight: undefined,
+    listRight: {
+      before: [
+        "Проведение очных обучающих занятий занимает много времени",
+        "Приходится ездить в разные города для обучения удаленных сотрудников, некоторые знания теряются",
+        "Не отслеживается процесс обучения, нет данных по каждому сотруднику",
+      ],
+      after: [
+        "Обучение автоматизировано, сотрудники самостоятельно проходят курсы",
+        "Сотрудники из разных регионов получают одинаковые знания, работа стандартизирована",
+        "Можно получать автоматическую статистику по обучению и контролировать результаты",
+      ],
+    },
+  },
+  {
+    id: 3,
+    name: "Хитрина Наталья Александровна",
+    role: "Менеджер по персоналу «Аптека Вита»",
+    image: "https://www.unicraft.org/static/reviews/aptekavita/photo.min.webp",
+    logo: "https://www.unicraft.org/static/reviews/aptekavita/logo.min.webp",
+    desc: "Платформа Unicraft помогла нам создать системное обучение и стать футбольной школой №1 в каждом городе, где мы представлены. Теперь наши сотрудники непрерывно развиваются и помогают детям формировать стабильные футбольные навыки.",
+    detailText: "Cпортивный клуб",
+    detailText2: "19 клубов, более 100 тренеров",
+    detailText3:
+      "Обучают тренеров по футболу технологии проведения тренировок, а также своих франчайзи тому, как открыть футбольный клуб",
+    imgRight: undefined,
+    listRight: {
+      before: [
+        "Проведение очных обучающих занятий занимает много времени",
+        "Приходится ездить в разные города для обучения удаленных сотрудников, некоторые знания теряются",
+        "Не отслеживается процесс обучения, нет данных по каждому сотруднику",
+      ],
+      after: [
+        "Обучение автоматизировано, сотрудники самостоятельно проходят курсы",
+        "Сотрудники из разных регионов получают одинаковые знания, работа стандартизирована",
+        "Можно получать автоматическую статистику по обучению и контролировать результаты",
+      ],
+    },
+  },
+  {
+    id: 4,
+    name: "Хитрина Наталья Александровна",
+    role: "Менеджер по персоналу «Аптека Вита»",
+    image: "https://www.unicraft.org/static/reviews/aptekavita/photo.min.webp",
+    logo: "https://www.unicraft.org/static/reviews/aptekavita/logo.min.webp",
+    desc: "Платформа Unicraft помогла нам создать системное обучение и стать футбольной школой №1 в каждом городе, где мы представлены. Теперь наши сотрудники непрерывно развиваются и помогают детям формировать стабильные футбольные навыки.",
+    detailText: "Cпортивный клуб",
+    detailText2: "19 клубов, более 100 тренеров",
+    detailText3:
+      "Обучают тренеров по футболу технологии проведения тренировок, а также своих франчайзи тому, как открыть футбольный клуб",
+    imgRight: undefined,
+    listRight: {
+      before: [
+        "Проведение очных обучающих занятий занимает много времени",
+        "Приходится ездить в разные города для обучения удаленных сотрудников, некоторые знания теряются",
+        "Не отслеживается процесс обучения, нет данных по каждому сотруднику",
+      ],
+      after: [
+        "Обучение автоматизировано, сотрудники самостоятельно проходят курсы",
+        "Сотрудники из разных регионов получают одинаковые знания, работа стандартизирована",
+        "Можно получать автоматическую статистику по обучению и контролировать результаты",
+      ],
+    },
+  },
+  {
+    id: 5,
+    name: "Хитрина Наталья Александровна",
+    role: "Менеджер по персоналу «Аптека Вита»",
+    image: "https://www.unicraft.org/static/reviews/aptekavita/photo.min.webp",
+    logo: "https://www.unicraft.org/static/reviews/aptekavita/logo.min.webp",
+    desc: "Платформа Unicraft помогла нам создать системное обучение и стать футбольной школой №1 в каждом городе, где мы представлены. Теперь наши сотрудники непрерывно развиваются и помогают детям формировать стабильные футбольные навыки.",
+    detailText: "Cпортивный клуб",
+    detailText2: "19 клубов, более 100 тренеров",
+    detailText3:
+      "Обучают тренеров по футболу технологии проведения тренировок, а также своих франчайзи тому, как открыть футбольный клуб",
+    imgRight: undefined,
+    listRight: {
+      before: [
+        "Проведение очных обучающих занятий занимает много времени",
+        "Приходится ездить в разные города для обучения удаленных сотрудников, некоторые знания теряются",
+        "Не отслеживается процесс обучения, нет данных по каждому сотруднику",
+      ],
+      after: [
+        "Обучение автоматизировано, сотрудники самостоятельно проходят курсы",
+        "Сотрудники из разных регионов получают одинаковые знания, работа стандартизирована",
+        "Можно получать автоматическую статистику по обучению и контролировать результаты",
+      ],
+    },
+  },
+  {
+    id: 6,
+    name: "Хитрина Наталья Александровна",
+    role: "Менеджер по персоналу «Аптека Вита»",
+    image: "https://www.unicraft.org/static/reviews/aptekavita/photo.min.webp",
+    logo: "https://www.unicraft.org/static/reviews/aptekavita/logo.min.webp",
+    desc: "Платформа Unicraft помогла нам создать системное обучение и стать футбольной школой №1 в каждом городе, где мы представлены. Теперь наши сотрудники непрерывно развиваются и помогают детям формировать стабильные футбольные навыки.",
+    detailText: "Cпортивный клуб",
+    detailText2: "19 клубов, более 100 тренеров",
+    detailText3:
+      "Обучают тренеров по футболу технологии проведения тренировок, а также своих франчайзи тому, как открыть футбольный клуб",
+    imgRight: undefined,
+    listRight: {
+      before: [
+        "Проведение очных обучающих занятий занимает много времени",
+        "Приходится ездить в разные города для обучения удаленных сотрудников, некоторые знания теряются",
+        "Не отслеживается процесс обучения, нет данных по каждому сотруднику",
+      ],
+      after: [
+        "Обучение автоматизировано, сотрудники самостоятельно проходят курсы",
+        "Сотрудники из разных регионов получают одинаковые знания, работа стандартизирована",
+        "Можно получать автоматическую статистику по обучению и контролировать результаты",
+      ],
+    },
+  },
+  {
+    id: 7,
+    name: "Хитрина Наталья Александровна",
+    role: "Менеджер по персоналу «Аптека Вита»",
+    image: "https://www.unicraft.org/static/reviews/aptekavita/photo.min.webp",
+    logo: "https://www.unicraft.org/static/reviews/aptekavita/logo.min.webp",
+    desc: "Платформа Unicraft помогла нам создать системное обучение и стать футбольной школой №1 в каждом городе, где мы представлены. Теперь наши сотрудники непрерывно развиваются и помогают детям формировать стабильные футбольные навыки.",
+    detailText: "Cпортивный клуб",
+    detailText2: "19 клубов, более 100 тренеров",
+    detailText3:
+      "Обучают тренеров по футболу технологии проведения тренировок, а также своих франчайзи тому, как открыть футбольный клуб",
+    imgRight: undefined,
+    listRight: {
+      before: [
+        "Проведение очных обучающих занятий занимает много времени",
+        "Приходится ездить в разные города для обучения удаленных сотрудников, некоторые знания теряются",
+        "Не отслеживается процесс обучения, нет данных по каждому сотруднику",
+      ],
+      after: [
+        "Обучение автоматизировано, сотрудники самостоятельно проходят курсы",
+        "Сотрудники из разных регионов получают одинаковые знания, работа стандартизирована",
+        "Можно получать автоматическую статистику по обучению и контролировать результаты",
+      ],
+    },
+  },
+  {
+    id: 8,
+    name: "Хитрина Наталья Александровна",
+    role: "Менеджер по персоналу «Аптека Вита»",
+    image: "https://www.unicraft.org/static/reviews/aptekavita/photo.min.webp",
+    logo: "https://www.unicraft.org/static/reviews/aptekavita/logo.min.webp",
+    desc: "Платформа Unicraft помогла нам создать системное обучение и стать футбольной школой №1 в каждом городе, где мы представлены. Теперь наши сотрудники непрерывно развиваются и помогают детям формировать стабильные футбольные навыки.",
+    detailText: "Cпортивный клуб",
+    detailText2: "19 клубов, более 100 тренеров",
+    detailText3:
+      "Обучают тренеров по футболу технологии проведения тренировок, а также своих франчайзи тому, как открыть футбольный клуб",
+    imgRight: undefined,
+    listRight: {
+      before: [
+        "Проведение очных обучающих занятий занимает много времени",
+        "Приходится ездить в разные города для обучения удаленных сотрудников, некоторые знания теряются",
+        "Не отслеживается процесс обучения, нет данных по каждому сотруднику",
+      ],
+      after: [
+        "Обучение автоматизировано, сотрудники самостоятельно проходят курсы",
+        "Сотрудники из разных регионов получают одинаковые знания, работа стандартизирована",
+        "Можно получать автоматическую статистику по обучению и контролировать результаты",
+      ],
+    },
+  },
+  {
+    id: 9,
+    name: "Хитрина Наталья Александровна",
+    role: "Менеджер по персоналу «Аптека Вита»",
+    image: "https://www.unicraft.org/static/reviews/aptekavita/photo.min.webp",
+    logo: "https://www.unicraft.org/static/reviews/aptekavita/logo.min.webp",
+    desc: "Платформа Unicraft помогла нам создать системное обучение и стать футбольной школой №1 в каждом городе, где мы представлены. Теперь наши сотрудники непрерывно развиваются и помогают детям формировать стабильные футбольные навыки.",
+    detailText: "Cпортивный клуб",
+    detailText2: "19 клубов, более 100 тренеров",
+    detailText3:
+      "Обучают тренеров по футболу технологии проведения тренировок, а также своих франчайзи тому, как открыть футбольный клуб",
+    imgRight: undefined,
+    listRight: {
+      before: [
+        "Проведение очных обучающих занятий занимает много времени",
+        "Приходится ездить в разные города для обучения удаленных сотрудников, некоторые знания теряются",
+        "Не отслеживается процесс обучения, нет данных по каждому сотруднику",
+      ],
+      after: [
+        "Обучение автоматизировано, сотрудники самостоятельно проходят курсы",
+        "Сотрудники из разных регионов получают одинаковые знания, работа стандартизирована",
+        "Можно получать автоматическую статистику по обучению и контролировать результаты",
+      ],
+    },
+  },
+  {
+    id: 10,
+    name: "Хитрина Наталья Александровна",
+    role: "Менеджер по персоналу «Аптека Вита»",
+    image: "https://www.unicraft.org/static/reviews/aptekavita/photo.min.webp",
+    logo: "https://www.unicraft.org/static/reviews/aptekavita/logo.min.webp",
+    desc: "Платформа Unicraft помогла нам создать системное обучение и стать футбольной школой №1 в каждом городе, где мы представлены. Теперь наши сотрудники непрерывно развиваются и помогают детям формировать стабильные футбольные навыки.",
+    detailText: "Cпортивный клуб",
+    detailText2: "19 клубов, более 100 тренеров",
+    detailText3:
+      "Обучают тренеров по футболу технологии проведения тренировок, а также своих франчайзи тому, как открыть футбольный клуб",
+    imgRight: undefined,
+    listRight: {
+      before: [
+        "Проведение очных обучающих занятий занимает много времени",
+        "Приходится ездить в разные города для обучения удаленных сотрудников, некоторые знания теряются",
+        "Не отслеживается процесс обучения, нет данных по каждому сотруднику",
+      ],
+      after: [
+        "Обучение автоматизировано, сотрудники самостоятельно проходят курсы",
+        "Сотрудники из разных регионов получают одинаковые знания, работа стандартизирована",
+        "Можно получать автоматическую статистику по обучению и контролировать результаты",
+      ],
+    },
+  },
+];
+
 function OurTeam() {
+  const [team, setTeam] = useState(1);
+  console.log(team);
   return (
     <div>
       <section className="container_section clients" id="customerreview">
         <div className="row tac">
           <h2>Отзывы наших клиентов</h2>
         </div>
-        <div className="row">
+        <div className={`row`}>
           <div className="customerreview">
             <div className="customerreview_nav">
               <button
                 className="customerreview_nav_arrow customerreview_nav_arrow--prev"
                 aria-label="Предыдущий отзыв"
+                onClick={() => setTeam(team > 1 ? team - 1 : Members?.length)}
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -31,6 +287,7 @@ function OurTeam() {
               <button
                 className="customerreview_nav_arrow customerreview_nav_arrow--next"
                 aria-label="Предыдущий отзыв"
+                onClick={() => setTeam(Members.length !== team ? team + 1 : 1)}
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -49,1067 +306,130 @@ function OurTeam() {
                 <div
                   className="customerreview_nav_wrapper"
                   id="reviewsNavWrapper"
-                  style={{ transform: "translate3d(-117rem, 0px, 0px)" }}
                 >
-                  <div
-                    className="customerreview_nav_item"
-                    data-id={0}
-                  >
-                    <picture>
-                      <source
-                        type="image/webp"
-                        src="https://www.unicraft.org/static/reviews/eliteclass/photo.min.webp"
-                      />
-                      <img
-                        src="https://www.unicraft.org/static/reviews/eliteclass/photo.min.webp"
-                        alt="Никитин Сергей Петрович — ФК Импульс"
-                      />
-                    </picture>
-                  </div>
-                  <div
-                    className="customerreview_nav_item"
-                    data-id={1}
-                  >
-                    <picture>
-                      <source
-                        type="image/webp"
-                        src="https://www.unicraft.org/static/reviews/eliteclass/photo.min.webp"
-                      />
-                      <img
-                        src="https://www.unicraft.org/static/reviews/eliteclass/photo.min.webp"
-                        alt="Хитрина Наталья Александровна — Компания “Аптека Вита”"
-                      />
-                    </picture>
-                  </div>
-                  <div
-                    className="customerreview_nav_item"
-                    data-id={2}
-                  >
-                    <picture>
-                      <source
-                        type="image/webp"
-                        src="https://www.unicraft.org/static/reviews/eliteclass/photo.min.webp"
-                      />
-                      <img
-                        src="https://www.unicraft.org/static/reviews/eliteclass/photo.min.webp"
-                        alt="Заболотная Светлана Михайловна — АО Талап"
-                      />
-                    </picture>
-                  </div>
-                  <div
-                    className="customerreview_nav_item"
-                    data-id={3}
-                  >
-                    <picture>
-                      <source
-                        type="image/webp"
-                        src="https://www.unicraft.org/static/reviews/eliteclass/photo.min.webp"
-                      />
-                      <img
-                        src="https://www.unicraft.org/static/reviews/eliteclass/photo.min.webp"
-                        alt="Дилдора Турсунова — Perfect Counsulting Group"
-                      />
-                    </picture>
-                  </div>
-                  <div
-                    className="customerreview_nav_item"
-                    data-id={4}
-                  >
-                    <picture>
-                      <source
-                        type="image/webp"
-                        src="https://www.unicraft.org/static/reviews/eliteclass/photo.min.webp"
-                      />
-                      <img
-                        src="https://www.unicraft.org/static/reviews/eliteclass/photo.min.webp"
-                        alt="Алексей Молчанов — Envybox"
-                      />
-                    </picture>
-                  </div>
-                  <div
-                    className="customerreview_nav_item"
-                    data-id={5}
-                  >
-                    <picture>
-                      <source
-                        type="image/webp"
-                        src="https://www.unicraft.org/static/reviews/eliteclass/photo.min.webp"
-                      />
-                      <img
-                        src="https://www.unicraft.org/static/reviews/eliteclass/photo.min.webp"
-                        alt="Валерий Горячев — Evolution management"
-                      />
-                    </picture>
-                  </div>
-                  <div
-                    className="customerreview_nav_item"
-                    data-id={6}
-                  >
-                    <picture>
-                      <source
-                        type="image/webp"
-                        src="https://www.unicraft.org/static/reviews/eliteclass/photo.min.webp"
-                      />
-                      <img
-                        src="https://www.unicraft.org/static/reviews/eliteclass/photo.min.webp"
-                        alt="Илья Кусакин — Люди Дела"
-                      />
-                    </picture>
-                  </div>
-                  <div
-                    className="customerreview_nav_item"
-                    data-id={7}
-                  >
-                    <picture>
-                      <source
-                        type="image/webp"
-                        src="https://www.unicraft.org/static/reviews/eliteclass/photo.min.webp"
-                      />
-                      <img
-                        src="https://www.unicraft.org/static/reviews/eliteclass/photo.min.webp"
-                        alt="Светлана Керимова — Woman Insight"
-                      />
-                    </picture>
-                  </div>
-                  <div
-                    className="customerreview_nav_item"
-                    data-id={8}
-                  >
-                    <picture>
-                      <source
-                        type="image/webp"
-                        src="https://www.unicraft.org/static/reviews/eliteclass/photo.min.webp"
-                      />
-                      <img
-                        src="https://www.unicraft.org/static/reviews/eliteclass/photo.min.webp"
-                        alt="Валентин Нам — Окна Юг"
-                      />
-                    </picture>
-                  </div>
-                  <div
-                    className="customerreview_nav_item"
-                    data-id={9}
-                  >
-                    <picture>
-                      <source
-                        type="image/webp"
-                        src="https://www.unicraft.org/static/reviews/eliteclass/photo.min.webp"
-                      />
-                      <img
-                        src="https://www.unicraft.org/static/reviews/eliteclass/photo.min.webp"
-                        alt="Наталья Мельникова — ЛОЭСК"
-                      />
-                    </picture>
-                  </div>
-                  <div
-                    className="customerreview_nav_item"
-                    data-id={10}
-                  >
-                    <picture>
-                      <source
-                        type="image/webp"
-                        src="https://www.unicraft.org/static/reviews/eliteclass/photo.min.webp"
-                      />
-                      <img
-                        src="https://www.unicraft.org/static/reviews/eliteclass/photo.min.webp"
-                        alt="Алексей Коган — Открытая мобильная платформа"
-                      />
-                    </picture>
-                  </div>
-                  <div
-                    className="customerreview_nav_item"
-                    data-id={11}
-                  >
-                    <picture>
-                      <source
-                        type="image/webp"
-                        src="https://www.unicraft.org/static/reviews/eliteclass/photo.min.webp"
-                      />
-                      <img
-                        src="https://www.unicraft.org/static/reviews/eliteclass/photo.min.webp"
-                        alt="Куринский Андрей Викторович — LogicPower"
-                      />
-                    </picture>
-                  </div>
-                  <div
-                    className="customerreview_nav_item"
-                    data-id={12}
-                  >
-                    <picture>
-                      <source
-                        type="image/webp"
-                        src="https://www.unicraft.org/static/reviews/eliteclass/photo.min.webp"
-                      />
-                      <img
-                        src="https://www.unicraft.org/static/reviews/eliteclass/photo.min.webp"
-                        alt="Юлия Шабанина — Дядюшка Плинтус"
-                      />
-                    </picture>
-                  </div>
-                  <div
-                    className="customerreview_nav_item"
-                    data-id={13}
-                  >
-                    <picture>
-                      <source
-                        type="image/webp"
-                        src="https://www.unicraft.org/static/reviews/eliteclass/photo.min.webp"
-                      />
-                      <img
-                        src="https://www.unicraft.org/static/reviews/eliteclass/photo.min.webp"
-                        alt="Константин Мосин — Инсайт"
-                      />
-                    </picture>
-                  </div>
-                  <div
-                    className="customerreview_nav_item"
-                    data-id={14}
-                  >
-                    <picture>
-                      <source
-                        type="image/webp"
-                        src="https://www.unicraft.org/static/reviews/eliteclass/photo.min.webp"
-                      />
-                      <img
-                        src="https://www.unicraft.org/static/reviews/eliteclass/photo.min.webp"
-                        alt="Альфред Бадгиев — ООО ЛТ Глобал Форвардинг"
-                      />
-                    </picture>
-                  </div>
-                  <div
-                    className="customerreview_nav_item"
-                    data-id={15}
-                  >
-                    <picture>
-                      <source
-                        type="image/webp"
-                        src="https://www.unicraft.org/static/reviews/eliteclass/photo.min.webp"
-                      />
-                      <img
-                        src="https://www.unicraft.org/static/reviews/eliteclass/photo.min.webp"
-                        alt="Руслан Шмаков — РИО Транс"
-                      />
-                    </picture>
-                  </div>
-                  <div
-                    className="customerreview_nav_item"
-                    data-id={16}
-                  >
-                    <picture>
-                      <source
-                        type="image/webp"
-                        src="https://www.unicraft.org/static/reviews/eliteclass/photo.min.webp"
-                      />
-                      <img
-                        src="https://www.unicraft.org/static/reviews/eliteclass/photo.min.webp"
-                        alt="Ольга Кузьменкова — Elite Class"
-                      />
-                    </picture>
-                  </div>
-                  <div
-                    className="customerreview_nav_item"
-                    data-id={17}
-                  >
-                    <picture>
-                      <source
-                        type="image/webp"
-                        src="https://www.unicraft.org/static/reviews/eliteclass/photo.min.webp"
-                      />
-                      <img
-                        src="https://www.unicraft.org/static/reviews/eliteclass/photo.min.webp"
-                        alt="Нина Поляничева — GoFortune"
-                      />
-                    </picture>
-                  </div>
-                  <div
-                    className="customerreview_nav_item"
-                    data-id={18}
-                  >
-                    <picture>
-                      <source
-                        type="image/webp"
-                        src="https://www.unicraft.org/static/reviews/eliteclass/photo.min.webp"
-                      />
-                      <img
-                        src="https://www.unicraft.org/static/reviews/eliteclass/photo.min.webp"
-                        alt="Кристина Лысенко — Автозайм"
-                      />
-                    </picture>
-                  </div>
-                  <div
-                    className="customerreview_nav_item"
-                    data-id={19}
-                  >
-                    <picture>
-                      <source
-                        type="image/webp"
-                        src="https://www.unicraft.org/static/reviews/eliteclass/photo.min.webp"
-                      />
-                      <img
-                        src="https://www.unicraft.org/static/reviews/eliteclass/photo.min.webp"
-                        alt="Наталья Кондратенко — Company"
-                      />
-                    </picture>
-                  </div>
-                  <div
-                    className="customerreview_nav_item active"
-                    data-nav-id="reviewsnav_0"
-                    data-id={0}
-                  >
-                    <picture>
-                      <source
-                        type="image/webp"
-                        src="https://www.unicraft.org/static/reviews/eliteclass/photo.min.webp"
-                      />
-                      <img
-                        src="https://www.unicraft.org/static/reviews/eliteclass/photo.min.webp"
-                        alt="Никитин Сергей Петрович — ФК Импульс"
-                      />
-                    </picture>
-                  </div>
-                  <div
-                    className="customerreview_nav_item"
-                    data-nav-id="reviewsnav_1"
-                    data-id={1}
-                  >
-                    <picture>
-                      <source
-                        type="image/webp"
-                        src="https://www.unicraft.org/static/reviews/eliteclass/photo.min.webp"
-                      />
-                      <img
-                        src="https://www.unicraft.org/static/reviews/eliteclass/photo.min.webp"
-                        alt="Хитрина Наталья Александровна — Компания “Аптека Вита”"
-                      />
-                    </picture>
-                  </div>
-                  <div
-                    className="customerreview_nav_item"
-                    data-nav-id="reviewsnav_2"
-                    data-id={2}
-                  >
-                    <picture>
-                      <source
-                        type="image/webp"
-                        src="https://www.unicraft.org/static/reviews/eliteclass/photo.min.webp"
-                      />
-                      <img
-                        src="https://www.unicraft.org/static/reviews/eliteclass/photo.min.webp"
-                        alt="Заболотная Светлана Михайловна — АО  Талап"
-                      />
-                    </picture>
-                  </div>
-                  <div
-                    className="customerreview_nav_item"
-                    data-nav-id="reviewsnav_3"
-                    data-id={3}
-                  >
-                    <picture>
-                      <source
-                        type="image/webp"
-                        src="https://www.unicraft.org/static/reviews/eliteclass/photo.min.webp"
-                      />
-                      <img
-                        src="https://www.unicraft.org/static/reviews/eliteclass/photo.min.webp"
-                        alt="Дилдора Турсунова — Perfect Counsulting Group"
-                      />
-                    </picture>
-                  </div>
-                  <div
-                    className="customerreview_nav_item"
-                    data-nav-id="reviewsnav_4"
-                    data-id={4}
-                  >
-                    <picture>
-                      <source
-                        type="image/webp"
-                        src="https://www.unicraft.org/static/reviews/eliteclass/photo.min.webp"
-                      />
-                      <img
-                        src="https://www.unicraft.org/static/reviews/eliteclass/photo.min.webp"
-                        alt="Алексей Молчанов — Envybox"
-                      />
-                    </picture>
-                  </div>
-                  <div
-                    className="customerreview_nav_item"
-                    data-nav-id="reviewsnav_5"
-                    data-id={5}
-                  >
-                    <picture>
-                      <source
-                        type="image/webp"
-                        src="https://www.unicraft.org/static/reviews/eliteclass/photo.min.webp"
-                      />
-                      <img
-                        src="https://www.unicraft.org/static/reviews/eliteclass/photo.min.webp"
-                        alt="Валерий Горячев — Evolution management"
-                      />
-                    </picture>
-                  </div>
-                  <div
-                    className="customerreview_nav_item"
-                    data-nav-id="reviewsnav_6"
-                    data-id={6}
-                  >
-                    <picture>
-                      <source
-                        type="image/webp"
-                        src="https://www.unicraft.org/static/reviews/eliteclass/photo.min.webp"
-                      />
-                      <img
-                        src="https://www.unicraft.org/static/reviews/eliteclass/photo.min.webp"
-                        alt="Илья Кусакин — Люди Дела"
-                      />
-                    </picture>
-                  </div>
-                  <div
-                    className="customerreview_nav_item"
-                    data-nav-id="reviewsnav_7"
-                    data-id={7}
-                  >
-                    <picture>
-                      <source
-                        type="image/webp"
-                        src="https://www.unicraft.org/static/reviews/eliteclass/photo.min.webp"
-                      />
-                      <img
-                        src="https://www.unicraft.org/static/reviews/eliteclass/photo.min.webp"
-                        alt="Светлана Керимова — Woman Insight"
-                      />
-                    </picture>
-                  </div>
-                  <div
-                    className="customerreview_nav_item"
-                    data-nav-id="reviewsnav_8"
-                    data-id={8}
-                  >
-                    <picture>
-                      <source
-                        type="image/webp"
-                        src="https://www.unicraft.org/static/reviews/eliteclass/photo.min.webp"
-                      />
-                      <img
-                        src="https://www.unicraft.org/static/reviews/eliteclass/photo.min.webp"
-                        alt="Валентин Нам — Окна Юг"
-                      />
-                    </picture>
-                  </div>
-                  <div
-                    className="customerreview_nav_item"
-                    data-nav-id="reviewsnav_9"
-                    data-id={9}
-                  >
-                    <picture>
-                      <source
-                        type="image/webp"
-                        src="https://www.unicraft.org/static/reviews/eliteclass/photo.min.webp"
-                      />
-                      <img
-                        src="https://www.unicraft.org/static/reviews/eliteclass/photo.min.webp"
-                        alt="Наталья Мельникова — ЛОЭСК"
-                      />
-                    </picture>
-                  </div>
-                  <div
-                    className="customerreview_nav_item"
-                    data-nav-id="reviewsnav_10"
-                    data-id={10}
-                  >
-                    <picture>
-                      <source
-                        type="image/webp"
-                        src="https://www.unicraft.org/static/reviews/eliteclass/photo.min.webp"
-                      />
-                      <img
-                        src="https://www.unicraft.org/static/reviews/eliteclass/photo.min.webp"
-                        alt="Алексей Коган — Открытая мобильная платформа"
-                      />
-                    </picture>
-                  </div>
-                  <div
-                    className="customerreview_nav_item"
-                    data-nav-id="reviewsnav_11"
-                    data-id={11}
-                  >
-                    <picture>
-                      <source
-                        type="image/webp"
-                        src="https://www.unicraft.org/static/reviews/eliteclass/photo.min.webp"
-                      />
-                      <img
-                        src="https://www.unicraft.org/static/reviews/eliteclass/photo.min.webp"
-                        alt="Куринский Андрей Викторович — LogicPower"
-                      />
-                    </picture>
-                  </div>
-                  <div
-                    className="customerreview_nav_item"
-                    data-nav-id="reviewsnav_12"
-                    data-id={12}
-                  >
-                    <picture>
-                      <source
-                        type="image/webp"
-                        src="https://www.unicraft.org/static/reviews/eliteclass/photo.min.webp"
-                      />
-                      <img
-                        src="https://www.unicraft.org/static/reviews/eliteclass/photo.min.webp"
-                        alt="Юлия Шабанина — Дядюшка Плинтус"
-                      />
-                    </picture>
-                  </div>
-                  <div
-                    className="customerreview_nav_item"
-                    data-nav-id="reviewsnav_13"
-                    data-id={13}
-                  >
-                    <picture>
-                      <source
-                        type="image/webp"
-                        src="https://www.unicraft.org/static/reviews/eliteclass/photo.min.webp"
-                      />
-                      <img
-                        src="https://www.unicraft.org/static/reviews/eliteclass/photo.min.webp"
-                        alt="Константин Мосин — Инсайт"
-                      />
-                    </picture>
-                  </div>
-                  <div
-                    className="customerreview_nav_item"
-                    data-nav-id="reviewsnav_14"
-                    data-id={14}
-                  >
-                    <picture>
-                      <source
-                        type="image/webp"
-                        src="https://www.unicraft.org/static/reviews/eliteclass/photo.min.webp"
-                      />
-                      <img
-                        src="https://www.unicraft.org/static/reviews/eliteclass/photo.min.webp"
-                        alt="Альфред Бадгиев — ООО ЛТ Глобал Форвардинг"
-                      />
-                    </picture>
-                  </div>
-                  <div
-                    className="customerreview_nav_item"
-                    data-nav-id="reviewsnav_15"
-                    data-id={15}
-                  >
-                    <picture>
-                      <source
-                        type="image/webp"
-                        src="https://www.unicraft.org/static/reviews/eliteclass/photo.min.webp"
-                      />
-                      <img
-                        src="https://www.unicraft.org/static/reviews/eliteclass/photo.min.webp"
-                        alt="Руслан Шмаков — РИО Транс"
-                      />
-                    </picture>
-                  </div>
-                  <div
-                    className="customerreview_nav_item"
-                    data-nav-id="reviewsnav_16"
-                    data-id={16}
-                  >
-                    <picture>
-                      <source
-                        type="image/webp"
-                        src="https://www.unicraft.org/static/reviews/eliteclass/photo.min.webp"
-                      />
-                      <img
-                        src="https://www.unicraft.org/static/reviews/eliteclass/photo.min.webp"
-                        alt="Ольга Кузьменкова — Elite Class"
-                      />
-                    </picture>
-                  </div>
-                  <div
-                    className="customerreview_nav_item"
-                    data-nav-id="reviewsnav_17"
-                    data-id={17}
-                  >
-                    <picture>
-                      <source
-                        type="image/webp"
-                        src="https://www.unicraft.org/static/reviews/eliteclass/photo.min.webp"
-                      />
-                      <img
-                        src="https://www.unicraft.org/static/reviews/eliteclass/photo.min.webp"
-                        alt="Нина Поляничева — GoFortune"
-                      />
-                    </picture>
-                  </div>
-                  <div
-                    className="customerreview_nav_item"
-                    data-nav-id="reviewsnav_18"
-                    data-id={18}
-                  >
-                    <picture>
-                      <source
-                        type="image/webp"
-                        src="https://www.unicraft.org/static/reviews/eliteclass/photo.min.webp"
-                      />
-                      <img
-                        src="https://www.unicraft.org/static/reviews/eliteclass/photo.min.webp"
-                        alt="Кристина Лысенко — Автозайм"
-                      />
-                    </picture>
-                  </div>
-                  <div
-                    className="customerreview_nav_item"
-                    data-nav-id="reviewsnav_19"
-                    data-id={19}
-                  >
-                    <picture>
-                      <source
-                        type="image/webp"
-                        src="https://www.unicraft.org/static/reviews/eliteclass/photo.min.webp"
-                      />
-                      <img
-                        src="https://www.unicraft.org/static/reviews/eliteclass/photo.min.webp"
-                        alt="Наталья Кондратенко — Company"
-                      />
-                    </picture>
-                  </div>
-                  <div
-                    className="customerreview_nav_item"
-                    data-id={0}
-                  >
-                    <picture>
-                      <source
-                        type="image/webp"
-                        src="https://www.unicraft.org/static/reviews/eliteclass/photo.min.webp"
-                      />
-                      <img
-                        src="https://www.unicraft.org/static/reviews/eliteclass/photo.min.webp"
-                        alt="Никитин Сергей Петрович — ФК Импульс"
-                      />
-                    </picture>
-                  </div>
-                  <div
-                    className="customerreview_nav_item"
-                    data-id={1}
-                  >
-                    <picture>
-                      <source
-                        type="image/webp"
-                        src="https://www.unicraft.org/static/reviews/eliteclass/photo.min.webp"
-                      />
-                      <img
-                        src="https://www.unicraft.org/static/reviews/eliteclass/photo.min.webp"
-                        alt="Хитрина Наталья Александровна — Компания “Аптека Вита”"
-                      />
-                    </picture>
-                  </div>
-                  <div
-                    className="customerreview_nav_item"
-                    data-id={2}
-                  >
-                    <picture>
-                      <source
-                        type="image/webp"
-                        src="https://www.unicraft.org/static/reviews/eliteclass/photo.min.webp"
-                      />
-                      <img
-                        src="https://www.unicraft.org/static/reviews/eliteclass/photo.min.webp"
-                        alt="Заболотная Светлана Михайловна — АО  Талап"
-                      />
-                    </picture>
-                  </div>
-                  <div
-                    className="customerreview_nav_item"
-                    data-id={3}
-                  >
-                    <picture>
-                      <source
-                        type="image/webp"
-                        src="https://www.unicraft.org/static/reviews/eliteclass/photo.min.webp"
-                      />
-                      <img
-                        src="https://www.unicraft.org/static/reviews/eliteclass/photo.min.webp"
-                        alt="Дилдора Турсунова — Perfect Counsulting Group"
-                      />
-                    </picture>
-                  </div>
-                  <div
-                    className="customerreview_nav_item"
-                    data-id={4}
-                  >
-                    <picture>
-                      <source
-                        type="image/webp"
-                        src="https://www.unicraft.org/static/reviews/eliteclass/photo.min.webp"
-                      />
-                      <img
-                        src="https://www.unicraft.org/static/reviews/eliteclass/photo.min.webp"
-                        alt="Алексей Молчанов — Envybox"
-                      />
-                    </picture>
-                  </div>
-                  <div
-                    className="customerreview_nav_item"
-                    data-id={5}
-                  >
-                    <picture>
-                      <source
-                        type="image/webp"
-                        src="https://www.unicraft.org/static/reviews/eliteclass/photo.min.webp"
-                      />
-                      <img
-                        src="https://www.unicraft.org/static/reviews/eliteclass/photo.min.webp"
-                        alt="Валерий Горячев — Evolution management"
-                      />
-                    </picture>
-                  </div>
-                  <div
-                    className="customerreview_nav_item"
-                    data-id={6}
-                  >
-                    <picture>
-                      <source
-                        type="image/webp"
-                        src="https://www.unicraft.org/static/reviews/eliteclass/photo.min.webp"
-                      />
-                      <img
-                        src="https://www.unicraft.org/static/reviews/eliteclass/photo.min.webp"
-                        alt="Илья Кусакин — Люди Дела"
-                      />
-                    </picture>
-                  </div>
-                  <div
-                    className="customerreview_nav_item"
-                    data-id={7}
-                  >
-                    <picture>
-                      <source
-                        type="image/webp"
-                        src="https://www.unicraft.org/static/reviews/eliteclass/photo.min.webp"
-                      />
-                      <img
-                        src="https://www.unicraft.org/static/reviews/eliteclass/photo.min.webp"
-                        alt="Светлана Керимова — Woman Insight"
-                      />
-                    </picture>
-                  </div>
-                  <div
-                    className="customerreview_nav_item"
-                    data-id={8}
-                  >
-                    <picture>
-                      <source
-                        type="image/webp"
-                        src="https://www.unicraft.org/static/reviews/eliteclass/photo.min.webp"
-                      />
-                      <img
-                        src="https://www.unicraft.org/static/reviews/eliteclass/photo.min.webp"
-                        alt="Валентин Нам — Окна Юг"
-                      />
-                    </picture>
-                  </div>
-                  <div
-                    className="customerreview_nav_item"
-                    data-id={9}
-                  >
-                    <picture>
-                      <source
-                        type="image/webp"
-                        src="https://www.unicraft.org/static/reviews/eliteclass/photo.min.webp"
-                      />
-                      <img
-                        src="https://www.unicraft.org/static/reviews/eliteclass/photo.min.webp"
-                        alt="Наталья Мельникова — ЛОЭСК"
-                      />
-                    </picture>
-                  </div>
-                  <div
-                    className="customerreview_nav_item"
-                    data-id={10}
-                  >
-                    <picture>
-                      <source
-                        type="image/webp"
-                        src="https://www.unicraft.org/static/reviews/eliteclass/photo.min.webp"
-                      />
-                      <img
-                        src="https://www.unicraft.org/static/reviews/eliteclass/photo.min.webp"
-                        alt="Алексей Коган — Открытая мобильная платформа"
-                      />
-                    </picture>
-                  </div>
-                  <div
-                    className="customerreview_nav_item"
-                    data-id={11}
-                  >
-                    <picture>
-                      <source
-                        type="image/webp"
-                        src="https://www.unicraft.org/static/reviews/eliteclass/photo.min.webp"
-                      />
-                      <img
-                        src="https://www.unicraft.org/static/reviews/eliteclass/photo.min.webp"
-                        alt="Куринский Андрей Викторович — LogicPower"
-                      />
-                    </picture>
-                  </div>
-                  <div
-                    className="customerreview_nav_item"
-                    data-id={12}
-                  >
-                    <picture>
-                      <source
-                        type="image/webp"
-                        src="https://www.unicraft.org/static/reviews/eliteclass/photo.min.webp"
-                      />
-                      <img
-                        src="https://www.unicraft.org/static/reviews/eliteclass/photo.min.webp"
-                        alt="Юлия Шабанина — Дядюшка Плинтус"
-                      />
-                    </picture>
-                  </div>
-                  <div
-                    className="customerreview_nav_item"
-                    data-id={13}
-                  >
-                    <picture>
-                      <source
-                        type="image/webp"
-                        src="https://www.unicraft.org/static/reviews/eliteclass/photo.min.webp"
-                      />
-                      <img
-                        src="https://www.unicraft.org/static/reviews/eliteclass/photo.min.webp"
-                        alt="Константин Мосин — Инсайт"
-                      />
-                    </picture>
-                  </div>
-                  <div
-                    className="customerreview_nav_item"
-                    data-id={14}
-                  >
-                    <picture>
-                      <source
-                        type="image/webp"
-                        src="https://www.unicraft.org/static/reviews/eliteclass/photo.min.webp"
-                      />
-                      <img
-                        src="https://www.unicraft.org/static/reviews/eliteclass/photo.min.webp"
-                        alt="Альфред Бадгиев — ООО ЛТ Глобал Форвардинг"
-                      />
-                    </picture>
-                  </div>
-                  <div
-                    className="customerreview_nav_item"
-                    data-id={15}
-                  >
-                    <picture>
-                      <source
-                        type="image/webp"
-                        src="https://www.unicraft.org/static/reviews/eliteclass/photo.min.webp"
-                      />
-                      <img
-                        src="https://www.unicraft.org/static/reviews/eliteclass/photo.min.webp"
-                        alt="Руслан Шмаков — РИО Транс"
-                      />
-                    </picture>
-                  </div>
-                  <div
-                    className="customerreview_nav_item"
-                    data-id={16}
-                  >
-                    <picture>
-                      <source
-                        type="image/webp"
-                        src="https://www.unicraft.org/static/reviews/eliteclass/photo.min.webp"
-                      />
-                      <img
-                        src="https://www.unicraft.org/static/reviews/eliteclass/photo.min.webp"
-                        alt="Ольга Кузьменкова — Elite Class"
-                      />
-                    </picture>
-                  </div>
-                  <div
-                    className="customerreview_nav_item"
-                    data-id={17}
-                  >
-                    <picture>
-                      <source
-                        type="image/webp"
-                        src="https://www.unicraft.org/static/reviews/eliteclass/photo.min.webp"
-                      />
-                      <img
-                        src="https://www.unicraft.org/static/reviews/eliteclass/photo.min.webp"
-                        alt="Нина Поляничева — GoFortune"
-                      />
-                    </picture>
-                  </div>
-                  <div
-                    className="customerreview_nav_item"
-                    data-id={18}
-                  >
-                    <picture>
-                      <source
-                        type="image/webp"
-                        src="https://www.unicraft.org/static/reviews/eliteclass/photo.min.webp"
-                      />
-                      <img
-                        src="https://www.unicraft.org/static/reviews/eliteclass/photo.min.webp"
-                        alt="Кристина Лысенко — Автозайм"
-                      />
-                    </picture>
-                  </div>
-                  <div
-                    className="customerreview_nav_item"
-                    data-id={19}
-                  >
-                    <picture>
-                      <source
-                        type="image/webp"
-                        src="https://www.unicraft.org/static/reviews/eliteclass/photo.min.webp"
-                      />
-                      <img
-                        src="https://www.unicraft.org/static/reviews/eliteclass/photo.min.webp"
-                        alt="Наталья Кондратенко — Company"
-                      />
-                    </picture>
-                  </div>
+                  {Members.map((member) => {
+                    return (
+                      <div
+                        className={`customerreview_nav_item ${
+                          team === member.id ? "active" : ""
+                        }`}
+                        onClick={() => setTeam(member?.id)}
+                      >
+                        <picture>
+                          <source type="image/webp" src={member?.image} />
+                          <img src={member?.image} alt={member?.name} />
+                        </picture>
+                      </div>
+                    );
+                  })}
                 </div>
               </div>
             </div>
-            {/*  */}
-            <div id="reviewsContainer">
-              <div
-                itemProp="review"
-                itemScope
-                itemType="http://schema.org/Review"
-                data-reviewsitem-id="reviewsitem_0"
-              >
-                <div
-                  itemProp="itemReviewed"
-                  itemScope
-                  itemType="https://schema.org/Organization"
-                  style={{
-                    overflow: "hidden",
-                    position: "absolute",
-                    height: 1,
-                    width: 1,
-                  }}
-                >
-                  <meta itemProp="name" content="Unicraft" />
-                  <link itemProp="url" href="https://unicraft.org" />
+            <div style={{ position: "relative", overflowY: "clip" }}>
+              {Members.map((member) => {
+                return (
                   <div
-                    itemProp="logo"
-                    itemScope
-                    itemType="https://schema.org/ImageObject"
-                  >
-                    <img
-                      itemProp="contentUrl"
-                      src="/style/img/logo/logo_color.svg"
-                      alt="Logo"
-                    />
-                  </div>
-                </div>
-                <div className="customerreview_view">
-                  <div
-                    className="customerreview_view_user"
-                    itemProp="author"
-                    itemScope
-                    itemType="http://schema.org/Person"
+                    key={member?.id}
+                    id="reviewsContainer"
+                    className={`${team === member?.id ? "active" : ""}`}
                   >
                     <div
-                      itemProp="name"
-                      className="customerreview_view_user_name"
+                      itemProp="review"
+                      itemScope
+                      itemType="http://schema.org/Review"
+                      data-reviewsitem-id="reviewsitem_0"
                     >
-                      Никитин Сергей Петрович
-                    </div>
-                    <div className="customerreview_view_user_desc">
-                      Президент и главный тренер футбольного клуба «Импульс»
-                    </div>
-                    <div className="customerreview_view_user_company">
-                      <picture>
-                        <source
-                          type="image/webp"
-                          srcSet="/static/reviews/fkimpuls/logo.min.webp 1x, /static/reviews/fkimpuls/logo@2x.min.webp 2x"
-                        />
-                        <source
-                          type="image/png"
-                          srcSet="/static/reviews/fkimpuls/logo.min.png 1x, /static/reviews/fkimpuls/logo@2x.min.png 2x"
-                        />
-                        <img
-                          src="/static/reviews/fkimpuls/logo.min.png"
-                          alt="ФК Импульс"
-                        />
-                      </picture>
-                    </div>
-                    <div className="customerreview_view_user_details">
-                      <div className="customerreview_view_user_details_item">
-                        <p>Cпортивный клуб</p>
-                      </div>
-                      <div className="customerreview_view_user_details_item">
-                        <p>19 клубов, более 100 тренеров</p>
-                      </div>
-                      <div className="customerreview_view_user_details_item">
-                        <p>
-                          Обучают тренеров по футболу технологии проведения
-                          тренировок, а также своих франчайзи тому, как открыть
-                          футбольный клуб
-                        </p>
+                      <div className="customerreview_view">
+                        <div>
+                          <div
+                            itemProp="name"
+                            className="customerreview_view_user_name"
+                          >
+                            {member?.name}
+                          </div>
+                          <div className="customerreview_view_user_desc">
+                            {member?.role}
+                          </div>
+                          <div className="customerreview_view_user_company">
+                            <picture>
+                              <source
+                                type="image/webp"
+                                srcSet={`${member?.logo} 1x, ${member?.logo} 2x`}
+                              />
+                              <source
+                                type="image/png"
+                                srcSet={`${member?.logo} 1x, ${member?.logo} 2x`}
+                              />
+                              <img src={member?.logo} alt="..." />
+                            </picture>
+                          </div>
+                          <div className="customerreview_view_user_details">
+                            <div className="customerreview_view_user_details_item">
+                              <p>{member?.detailText}</p>
+                            </div>
+                            <div className="customerreview_view_user_details_item">
+                              <p>{member?.detailText2}</p>
+                            </div>
+                            <div className="customerreview_view_user_details_item">
+                              <p>{member?.detailText3}</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="customerreview_view_result">
+                          <blockquote
+                            itemProp="reviewBody"
+                            className="customerreview_view_quote"
+                          >
+                            {member?.desc}
+                          </blockquote>
+                          <div className="customerreview_view_result_details">
+                            <div className="customerreview_view_result_details_line" />
+                            <div className="customerreview_view_result_details_before">
+                              <h3 className="customerreview_view_result_details_before_title">
+                                До
+                              </h3>
+                              <ul>
+                                <li>
+                                  Проведение очных обучающих занятий занимает
+                                  много времени
+                                </li>
+                                <li>
+                                  Приходится ездить в разные города для обучения
+                                  удаленных сотрудников, некоторые знания
+                                  теряются
+                                </li>
+                                <li>
+                                  Не отслеживается процесс обучения, нет данных
+                                  по каждому сотруднику
+                                </li>
+                              </ul>
+                            </div>
+                            <div className="customerreview_view_result_details_after">
+                              <h3 className="customerreview_view_result_details_after_title">
+                                После
+                              </h3>
+                              <ul>
+                                <li>
+                                  Обучение автоматизировано, сотрудники
+                                  самостоятельно проходят курсы
+                                </li>
+                                <li>
+                                  Сотрудники из разных регионов получают
+                                  одинаковые знания, работа стандартизирована
+                                </li>
+                                <li>
+                                  Можно получать автоматическую статистику по
+                                  обучению и контролировать результаты
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
-                  <div className="customerreview_view_result">
-                    <blockquote
-                      itemProp="reviewBody"
-                      className="customerreview_view_quote"
-                    >
-                      Платформа Unicraft помогла нам создать системное обучение
-                      и стать футбольной школой №1 в каждом городе, где мы
-                      представлены. Теперь наши сотрудники непрерывно
-                      развиваются и помогают детям формировать стабильные
-                      футбольные навыки.
-                    </blockquote>
-                    <div className="customerreview_view_result_details">
-                      <div className="customerreview_view_result_details_line" />
-                      <div className="customerreview_view_result_details_before">
-                        <h3 className="customerreview_view_result_details_before_title">
-                          До
-                        </h3>
-                        <ul>
-                          <li>
-                            Проведение очных обучающих занятий занимает много
-                            времени
-                          </li>
-                          <li>
-                            Приходится ездить в разные города для обучения
-                            удаленных сотрудников, некоторые знания теряются
-                          </li>
-                          <li>
-                            Не отслеживается процесс обучения, нет данных по
-                            каждому сотруднику
-                          </li>
-                        </ul>
-                      </div>
-                      <div className="customerreview_view_result_details_after">
-                        <h3 className="customerreview_view_result_details_after_title">
-                          После
-                        </h3>
-                        <ul>
-                          <li>
-                            Обучение автоматизировано, сотрудники самостоятельно
-                            проходят курсы
-                          </li>
-                          <li>
-                            Сотрудники из разных регионов получают одинаковые
-                            знания, работа стандартизирована
-                          </li>
-                          <li>
-                            Можно получать автоматическую статистику по обучению
-                            и контролировать результаты
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+                );
+              })}
             </div>
           </div>
         </div>
