@@ -480,7 +480,7 @@ function Home() {
                                   );
                                 })}
                               </div>
-                              <button className="modal_opener__btn">
+                              <button className="modal_opener__btn" onClick={()=> setIsOpen(!isOpen)}>
                                 УЗНАТЬ ПОДРОБНЕЙ
                               </button>
                             </div>

@@ -5,7 +5,7 @@ import "./about.css";
 function About() {
   return (
     <>
-      <div className="container_full">
+      <div className="container_full" id="about">
         <section className="container_section container_section--main container_section--leader">
           <div className="from_leader">
             <div className="from_leader_content">
