@@ -11,6 +11,7 @@ import Contacts from "./components/contacts/index";
 import Partners from "./components/partners/index";
 import Vacancy from "./components/vacancy/index";
 import Review from "./components/review/index";
+import Blog from "./components/blog";
 
 function App() {
   const location = useLocation();
@@ -48,6 +49,7 @@ function HomePage() {
         <Route path="/partners" element={<Partners />} />
         <Route path="/vacancy" element={<Vacancy />} />
         <Route path="/reviews" element={<Review />} />
+        <Route path="/blog" element={<Blog />} />
       </Routes>
       <Footer />
     </>
