@@ -4,7 +4,11 @@ import { useForm } from "react-hook-form";
 import { NavLink } from "react-router-dom";
 
 export const RegisterModal = ({ open, setOpen }) => {
-  document.body.style.overflow = open ? "hidden" : "auto";
+  if (open) {
+    document.body.setAttribute("style", "overflow: hidden");
+  } else {
+    document.body.removeAttribute("style");
+  }
   const [isLoading, setIsLoading] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const {
@@ -222,8 +226,11 @@ export const RegisterModal = ({ open, setOpen }) => {
                 <div style={{ margin: "1.5rem 0rem" }} className="clr_gray">
                   <p className="tinytext">
                     Нажимая кнопку «Получить доступ», вы соглашаетесь с
-                    <NavLink className={"tinytext"} to="/docs/offer">Публичной офертой</NavLink>и
-                    <NavLink className={"tinytext"}  to="/docs/agreement">
+                    <NavLink className={"tinytext"} to="/docs/offer">
+                      Публичной офертой
+                    </NavLink>
+                    и
+                    <NavLink className={"tinytext"} to="/docs/agreement">
                       Согласием на обработку персональных данных
                     </NavLink>
                     .
@@ -264,7 +271,11 @@ export const RegisterModal = ({ open, setOpen }) => {
   );
 };
 export const VacncyModal = ({ open, setOpen }) => {
-  document.body.style.overflow = open ? "hidden" : "auto";
+  if (open) {
+    document.body.setAttribute("style", "overflow: hidden");
+  } else {
+    document.body.removeAttribute("style");
+  }
   const [isLoading, setIsLoading] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const {

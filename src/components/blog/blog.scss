@@ -1,4 +1,7 @@
 .blogs_container {
+  @media screen and (max-width: 425px) {
+    width: 100vw;
+  }
   .blogs_container_title {
     h1 {
       font-weight: 600;
@@ -8,6 +11,12 @@
       text-align: center;
       display: block;
       padding-top: 4rem;
+
+      @media (max-width: 426px) {
+        font-size: 2.5em;
+        margin: 0 auto;
+        padding-top: 1rem;
+      }
     }
   }
   .blogs_container_content {
@@ -16,8 +25,14 @@
     flex-wrap: wrap;
     justify-content: flex-start;
     align-content: flex-start;
-    max-width: 1200px;
     margin: calc(3 * 1rem) auto;
+
+    @media screen and (max-width: 1250px) {
+      max-width: 1170px;
+    }
+    @media (max-width: 426px) {
+      margin: 0;
+    }
 
     .blogs_container_content_item {
       flex-grow: 0;
@@ -117,6 +132,49 @@
           word-wrap: break-word;
           width: 100%;
 
+          &:nth-child(even) {
+            span {
+              left: auto;
+              right: 0;
+
+              @media screen and (max-width: 1250px) {
+                font-size: 1.311em;
+                display: flex;
+                flex-direction: row-reverse;
+                align-items: center;
+                max-width: 45vw;
+
+                svg {
+                  transform: rotateY(180deg);
+                  -webkit-transform: rotateY(180deg);
+                  -moz-transform: rotateY(180deg);
+                  -ms-transform: rotateY(180deg);
+                  -o-transform: rotateY(180deg);
+                  width: 1.5em;
+                  height: 1.5em;
+                }
+              }
+            }
+          }
+          &:nth-child(odd) {
+            span {
+              left: 0;
+              right: auto;
+
+              @media screen and (max-width: 1250px) {
+                font-size: 1.311em;
+                display: flex;
+                flex-direction: row;
+                max-width: 45vw;
+                align-items: center;
+                svg {
+                  width: 1.5em;
+                  height: 1.5em;
+                }
+              }
+            }
+          }
+
           .long__text {
             overflow: hidden;
             text-overflow: ellipsis;
@@ -158,6 +216,20 @@
             -moz-border-radius: 4px;
             -ms-border-radius: 4px;
             -o-border-radius: 4px;
+
+            @media screen and (max-width: 768px) {
+              max-width: calc(100vw - 1em) !important;
+            }
+
+            @media screen and (max-width: 425px) {
+              font-size: 1em !important;
+              max-width: 80vw !important;
+
+              svg {
+                width: 30% !important;
+              }
+            }
+
             &:hover {
               transform: scale(0.9);
               opacity: 0;
@@ -183,6 +255,13 @@
               -ms-transform: scale(1);
               -o-transform: scale(1);
               transform: scale(1);
+            }
+          }
+        }
+        @media screen and (max-width: 425px) {
+          a {
+            .long__text {
+              max-width: 100px;
             }
           }
         }

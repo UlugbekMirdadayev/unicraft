@@ -12,9 +12,35 @@
     padding-top: 3rem;
     padding-bottom: 3rem;
 
+    @media screen and (max-width: 1250px) {
+      max-width: 90vw;
+    }
+
+    @media screen and (max-width: 1024px) {
+      padding-top: 2rem;
+    }
+
+    @media screen and (max-width: 768px) {
+      padding-top: 2rem;
+
+      .footer_nav {
+        flex-direction: column !important;
+        justify-content: center !important;
+        align-items: center !important;
+      }
+    }
+
     .has-text-centered {
       text-align: center;
       padding: 1rem 0 2rem;
+
+      @media screen and (max-width: 768px) {
+        padding: 1rem 0;
+
+        a {
+          font-size: 1.43rem !important;
+        }
+      }
 
       p {
         font-size: 1.39725em;
@@ -36,13 +62,25 @@
       width: 100%;
       border-bottom: 1px solid #e6e6e6;
 
+      @media screen and (max-width: 768px) {
+        flex-wrap: wrap;
+      }
+
       .partners-footer__item {
         padding: 1.5rem;
+        @media screen and (max-width: 768px) {
+          padding: 0.5rem;
+        }
         img {
           width: 10rem;
           height: 5rem;
           object-fit: contain;
           object-position: center;
+
+          @media screen and (max-width: 768px) {
+            width: 8rem;
+            height: 4rem;
+          }
         }
       }
     }
