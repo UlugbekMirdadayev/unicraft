@@ -88,7 +88,6 @@ function Header() {
   if (window.innerWidth < 1025) {
     document.body.style.overflow = !menu ? "auto" : "hidden";
   }
-
   return (
     <div
       className={`header-container ${
