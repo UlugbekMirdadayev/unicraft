@@ -4,8 +4,8 @@ import "./notfound.css";
 
 function PageNotfound() {
   return (
-    <div>
-      <h1>404 Error Page</h1>
+    <div style={{ padding: "3vw 0" }}>
+      <h1 className="error__heading">404 Error Page</h1>
       <p className="zoom-area"></p>
       <section className="error-container">
         <span className="four">
