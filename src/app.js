@@ -12,6 +12,7 @@ import Partners from "./components/partners/index";
 import Vacancy from "./components/vacancy/index";
 import Review from "./components/review/index";
 import Blog from "./components/blog";
+import PageNotfound from "./components/export/pageNotfound";
 
 function App() {
   const location = useLocation();
@@ -50,6 +51,7 @@ function HomePage() {
         <Route path="/vacancy" element={<Vacancy />} />
         <Route path="/reviews" element={<Review />} />
         <Route path="/blog" element={<Blog />} />
+        <Route path="/*" element={<PageNotfound />} />
       </Routes>
       <Footer />
     </>
