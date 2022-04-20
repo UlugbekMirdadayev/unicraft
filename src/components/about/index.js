@@ -5,7 +5,7 @@ import "./about.css";
 function About() {
   return (
     <>
-      <div className="container_full">
+      <div className="container_full" id="about">
         <section className="container_section container_section--main container_section--leader">
           <div className="from_leader">
             <div className="from_leader_content">
@@ -136,72 +136,106 @@ function About() {
             </div>
           </div>
         </div>
-      </section><section id="team" className="container_section">
-      <div className="row tac">
-        <h2>Слаженная команда</h2>
-        <p className="hugetext">В разработке проекта участвуют специалисты своего дела, благодаря чему мы можем предложить вам отличный продукт!</p>
-      </div>
-      <div className="row">
-        <div className="team" id="teamMembers">
-          <div className="team_member">
-            <div className="team_member_photo">
-              <img src="https://www.unicraft.org/static/team/maslovartem.png" alt="Артём Маслов, Генеральный директор" />
+      </section>
+      <section id="team" className="container_section">
+        <div className="row tac">
+          <h2>Слаженная команда</h2>
+          <p className="hugetext">
+            В разработке проекта участвуют специалисты своего дела, благодаря
+            чему мы можем предложить вам отличный продукт!
+          </p>
+        </div>
+        <div className="row">
+          <div className="team" id="teamMembers">
+            <div className="team_member">
+              <div className="team_member_photo">
+                <img
+                  src="https://www.unicraft.org/static/team/maslovartem.png"
+                  alt="Артём Маслов, Генеральный директор"
+                />
+              </div>
+              <div className="team_member_info">
+                <div className="team_member_name">Артём Маслов</div>
+                <div className="team_member_job">Генеральный директор</div>
+                <div className="team_member_desc">
+                  Помогаю клиентам направить вектор коллективного намерения в
+                  правильную сторону
+                </div>
+              </div>
             </div>
-            <div className="team_member_info">
-              <div className="team_member_name">Артём Маслов</div>
-              <div className="team_member_job">Генеральный директор</div>
-              <div className="team_member_desc">Помогаю клиентам направить вектор коллективного намерения в правильную сторону</div>
+
+            <div className="team_member">
+              <div className="team_member_photo">
+                <img
+                  src="https://www.unicraft.org/static/team/medovvladislav.png"
+                  alt="Владислав Мёдов, Технический директор"
+                />
+              </div>
+              <div className="team_member_info">
+                <div className="team_member_name">Владислав Мёдов</div>
+                <div className="team_member_job">Технический директор</div>
+                <div className="team_member_desc">
+                  Координирую разработку продукта и поддерживаю работу
+                  технических процессов компании
+                </div>
+              </div>
             </div>
-          </div>
-        
-          <div className="team_member">
-            <div className="team_member_photo">
-              <img src="https://www.unicraft.org/static/team/medovvladislav.png" alt="Владислав Мёдов, Технический директор" />
+
+            <div className="team_member">
+              <div className="team_member_photo">
+                <img
+                  src="https://www.unicraft.org/static/team/perovmax.png"
+                  alt="Максим Перов, Коммерческий директор"
+                />
+              </div>
+              <div className="team_member_info">
+                <div className="team_member_name">Максим Перов</div>
+                <div className="team_member_job">Коммерческий директор</div>
+                <div className="team_member_desc">
+                  Подбираю клиентам и партнерам лучшее предложение для решения
+                  их бизнес-задач
+                </div>
+              </div>
             </div>
-            <div className="team_member_info">
-              <div className="team_member_name">Владислав Мёдов</div>
-              <div className="team_member_job">Технический директор</div>
-              <div className="team_member_desc">Координирую разработку продукта и поддерживаю работу технических процессов компании</div>
+
+            <div className="team_member">
+              <div className="team_member_photo">
+                <img
+                  src="https://www.unicraft.org/static/team/titovskiyandrey.png"
+                  alt="Андрей Титовский, Дизайнер продукта"
+                />
+              </div>
+              <div className="team_member_info">
+                <div className="team_member_name">Андрей Титовский</div>
+                <div className="team_member_job">Дизайнер продукта</div>
+                <div className="team_member_desc">
+                  Создаю внешний облик продукта, его юзабилити, учитываю нюансы,
+                  делаю его — отличным
+                </div>
+              </div>
             </div>
-          </div>
-        
-          <div className="team_member">
-            <div className="team_member_photo">
-              <img src="https://www.unicraft.org/static/team/perovmax.png" alt="Максим Перов, Коммерческий директор" />
-            </div>
-            <div className="team_member_info">
-              <div className="team_member_name">Максим Перов</div>
-              <div className="team_member_job">Коммерческий директор</div>
-              <div className="team_member_desc">Подбираю клиентам и партнерам лучшее предложение для решения их бизнес-задач</div>
-            </div>
-          </div>
-        
-          <div className="team_member">
-            <div className="team_member_photo">
-              <img src="https://www.unicraft.org/static/team/titovskiyandrey.png" alt="Андрей Титовский, Дизайнер продукта" />
-            </div>
-            <div className="team_member_info">
-              <div className="team_member_name">Андрей Титовский</div>
-              <div className="team_member_job">Дизайнер продукта</div>
-              <div className="team_member_desc">Создаю внешний облик продукта, его юзабилити, учитываю нюансы, делаю его — отличным</div>
-            </div>
-          </div>
-        
-          <div className="team_member">
-            <div className="team_member_photo">
-              <img src="https://www.unicraft.org/static/team/maslovaanastasia.png" alt="Анастасия Маслова, Руководитель клиентского сервиса" />
-            </div>
-            <div className="team_member_info">
-              <div className="team_member_name">Анастасия Маслова</div>
-              <div className="team_member_job">Руководитель клиентского сервиса</div>
-              <div className="team_member_desc">Забочусь о счастье и комфорте наших клиентов! Помогаю решать бизнес-задачи с помощью обучения на платформе</div>
+
+            <div className="team_member">
+              <div className="team_member_photo">
+                <img
+                  src="https://www.unicraft.org/static/team/maslovaanastasia.png"
+                  alt="Анастасия Маслова, Руководитель клиентского сервиса"
+                />
+              </div>
+              <div className="team_member_info">
+                <div className="team_member_name">Анастасия Маслова</div>
+                <div className="team_member_job">
+                  Руководитель клиентского сервиса
+                </div>
+                <div className="team_member_desc">
+                  Забочусь о счастье и комфорте наших клиентов! Помогаю решать
+                  бизнес-задачи с помощью обучения на платформе
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      
-      </div>
-     
-    </section>
+      </section>
     </>
   );
 }

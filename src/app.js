@@ -1,5 +1,5 @@
 import React from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import Header from "./components/header";
 import Footer from "./components/footer";
 import { LoginAuntification } from "./adminComponent/login";
@@ -11,8 +11,22 @@ import Contacts from "./components/contacts/index";
 import Partners from "./components/partners/index";
 import Vacancy from "./components/vacancy/index";
 import Review from "./components/review/index";
+import Blog from "./components/blog";
+import PageNotfound from "./components/export/pageNotfound";
 
 function App() {
+  const location = useLocation();
+
+  React.useEffect(() => {
+    if (location.hash) {
+      let elem = document.getElementById(location.hash.slice(1));
+      if (elem) {
+        elem.scrollIntoView({ behavior: "smooth" });
+      }
+    } else {
+      window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+    }
+  }, [location]);
   return (
     <>
       <Routes>
@@ -36,6 +50,8 @@ function HomePage() {
         <Route path="/partners" element={<Partners />} />
         <Route path="/vacancy" element={<Vacancy />} />
         <Route path="/reviews" element={<Review />} />
+        <Route path="/blog" element={<Blog />} />
+        <Route path="/*" element={<PageNotfound />} />
       </Routes>
       <Footer />
     </>

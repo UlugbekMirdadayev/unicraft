@@ -1,8 +1,11 @@
 import React from "react";
+import { VacncyModal } from "../export/modal";
 import "./vacancy.css";
 function Vacancy() {
+  const [isOpen, setIsOpen] = React.useState(false);
   return (
     <div>
+      <VacncyModal open={isOpen} setOpen={setIsOpen} />
       <div className="container_section container_section--main">
         <div className="row">
           <h1 className="container_section_title text_center">Вакансии</h1>
@@ -51,22 +54,22 @@ function Vacancy() {
               <div className="vacancy_item_action">
                 <button
                   type="button"
+                  onClick={() => setIsOpen(true)}
                   className="button button_rounded button_success button_gradienteffect"
-                  onclick="vacancyrequest(this)"
                 >
                   Откликнуться
                 </button>
-                <label htmlFor="vacancy2">
-                  {" "}
-                  <a className="dottedlink">Подробнее</a>
+                <label htmlFor="vacancy2" className="dottedlink">
+                  Подробнее
                 </label>
-              </div><input
+              </div>
+              <input
                 type="checkbox"
                 className="see_alls"
                 style={{ display: "none" }}
                 id="vacancy2"
               />
-              <div className="vacancy_item_more" >
+              <div className="vacancy_item_more">
                 <div className="vacancy_item_options">
                   <div className="vacancy_item_options_block">
                     <p>
@@ -75,35 +78,35 @@ function Vacancy() {
                     <ul className="vacancy_item_list">
                       <li>
                         Заработная плата от 100 000 рублей на руки.
-                        Результативные менеджеры получают 200-300 т.р.{" "}
+                        Результативные менеджеры получают 200-300 т.р.
                       </li>
                       <li>Молодой и амбициозный коллектив профессионалов </li>
                       <li>
-                        Быстрорастущая компания на перспективном EdTech рынке{" "}
+                        Быстрорастущая компания на перспективном EdTech рынке
                       </li>
                       <li>
-                        Современный, востребованный и социально значимый продукт{" "}
+                        Современный, востребованный и социально значимый продукт
                       </li>
                       <li>Карьерный рост с расширением компании </li>
                       <li>
                         Работа на большом количестве входящих лидов, без поиска
-                        клиентов и «холодных» звонков{" "}
+                        клиентов и «холодных» звонков
                       </li>
                       <li>
                         Полностью удаленный формат работы, вы можете работать из
-                        любой точки мира{" "}
+                        любой точки мира
                       </li>
                       <li>
                         Профессиональные инструменты и сервисы для удаленной
-                        работы{" "}
+                        работы
                       </li>
                       <li>
                         Полноценное обучение продукту и техникам продаж в первые
-                        дни работы, персональный коучинг от опытного наставника{" "}
+                        дни работы, персональный коучинг от опытного наставника
                       </li>
                       <li>
                         График работы с 10 до 19. График гибкий, главное -
-                        результат!{" "}
+                        результат!
                       </li>
                     </ul>
                   </div>
@@ -114,20 +117,20 @@ function Vacancy() {
                     <ul className="vacancy_item_list">
                       <li>
                         Продавать лучшую онлайн платформу на рынке России для
-                        обучения и развития навыков у сотрудников компаний{" "}
+                        обучения и развития навыков у сотрудников компаний
                       </li>
                       <li>
                         Получать заявки из отдела маркетинга, квалифицировать и
                         консультировать клиентов, заключать сделки и передавать
-                        их в отдел сопровождения{" "}
+                        их в отдел сопровождения
                       </li>
                       <li>
                         Работать только на входящем потоке (заявки в CRM, сервис
-                        обратного звонка){" "}
+                        обратного звонка)
                       </li>
                       <li>
                         Использовать готовые инструменты и алгоритмы продажах и
-                        участвовать в их улучшении{" "}
+                        участвовать в их улучшении
                       </li>
                       <li>Работы очень много и вся она крайне интересная! </li>
                     </ul>
@@ -139,14 +142,14 @@ function Vacancy() {
                     <ul className="vacancy_item_list">
                       <li>Коммуникабельный и активный член команды </li>
                       <li>
-                        Минимум один год опыта в продажах, остальному научим{" "}
+                        Минимум один год опыта в продажах, остальному научим
                       </li>
                       <li>Обладающий грамотной устной и письменной речью </li>
                       <li>
-                        Самоорганизованный, ответственный и целеустремленный{" "}
+                        Самоорганизованный, ответственный и целеустремленный
                       </li>
                       <li>
-                        Желающий работать и добиваться высоких результатов{" "}
+                        Желающий работать и добиваться высоких результатов
                       </li>
                       <li>Опыт удаленной работы будет плюсом </li>
                     </ul>
@@ -186,15 +189,14 @@ function Vacancy() {
               </div>
               <div className="vacancy_item_action">
                 <button
+                  onClick={() => setIsOpen(true)}
                   type="button"
                   className="button button_rounded button_success button_gradienteffect"
-                  onclick="vacancyrequest(this)"
                 >
                   Откликнуться
                 </button>
-                <label htmlFor="vacancy1">
-                  {" "}
-                  <a className="dottedlink">Подробнее</a>
+                <label htmlFor="vacancy1" className="dottedlink">
+                  Подробнее
                 </label>
               </div>
               <input
@@ -212,15 +214,15 @@ function Vacancy() {
                     <ul className="vacancy_item_list">
                       <li>
                         Заработная плата от 120 000 рублей до 160 000 рублей
-                        (net);{" "}
+                        (net);
                       </li>
                       <li>
                         Молодой и амбициозный коллектив профессионалов,
-                        быстрорастущая компания;{" "}
+                        быстрорастущая компания;
                       </li>
                       <li>
                         Современный, востребованный и социально значимый
-                        продукт;{" "}
+                        продукт;
                       </li>
                       <li>Карьерный рост с расширением компании; </li>
                       <li>Полная занятость, удаленная работа; </li>
