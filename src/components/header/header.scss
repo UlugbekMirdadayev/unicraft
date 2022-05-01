@@ -11,9 +11,10 @@
       position: fixed;
 
       .header__menu {
+        margin-right: 0;
         .header__menu-item {
           &:nth-child(2) {
-            transform: translateX(200%);
+            transform: scaleX(0);
           }
           &:nth-child(1) {
             transform: rotate(45deg);
@@ -42,6 +43,7 @@
     height: 40px;
 
     .header__menu {
+      margin-right: 1rem;
       position: absolute;
       top: 0;
       right: 0.5rem;
@@ -60,6 +62,7 @@
         width: 30px;
         padding: 0.25rem;
         top: 0.5rem;
+        margin-right: 0rem;
       }
 
       transition: all 0.1s ease-in-out;

@@ -299,7 +299,7 @@ function Home() {
       } else {
         setActive(1);
       }
-    }, 5000);
+    }, 50000);
     return () => clearInterval(interval);
   }, [active]);
 

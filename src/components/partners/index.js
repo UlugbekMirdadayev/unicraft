@@ -1,28 +1,6 @@
 import React from "react";
 import "./partner.css";
 function Partners() {
-  // const info = [
-  //   {
-  //     infoH3: "Рекламные материалы",
-  //     infoP: "Полный набор для продвижения продукта в интернете и оффлайн",
-  //   },
-  //   {
-  //     infoH3: "Совместное проведение первых презентаций",
-  //     infoP:
-  //       "Покажем, расскажем и научим как провести презентацию лучшим образо",
-  //   },
-  //   {
-  //     infoH3: "Демо-доступы",
-  //     infoP:
-  //       "Для демонтрации возможностей платформы предоставляются демо-версии площадок  ",
-  //   },
-  //   {
-  //     infoH3: "Оперативная поддержка по любым вопросам",
-  //     infoP:
-  //       "Вы всегда можете рассчитывать на квалифицированную помощь наших специалистов. ",
-  //   },
-  // ];
-
   return (
     <div className="cont_big">
       <div className="container_section container_section--main content_is">
@@ -40,13 +18,19 @@ function Partners() {
           <div className="container_widgets" id="partners_types">
             <div className="container_widgets_item">
               <div className="container_widgets_item_icon">
-                <img src="https://www.unicraft.org/page/partners/icons/integrators.svg" />
+                <img
+                  alt=""
+                  src="https://www.unicraft.org/page/partners/icons/integrators.svg"
+                />
               </div>
               <p className="largetext">ИТ-интеграторы</p>
             </div>
             <div className="container_widgets_item">
               <div className="container_widgets_item_icon">
-                <img src="https://www.unicraft.org/page/partners/icons/consult.svg" />
+                <img
+                  alt=""
+                  src="https://www.unicraft.org/page/partners/icons/consult.svg"
+                />
               </div>
               <p className="largetext">
                 Консалтинговые компании, агенты и внедренцы обучения
@@ -54,7 +38,10 @@ function Partners() {
             </div>
             <div className="container_widgets_item">
               <div className="container_widgets_item_icon">
-                <img src="https://www.unicraft.org/page/partners/icons/integrators.svg" />
+                <img
+                  alt=""
+                  src="https://www.unicraft.org/page/partners/icons/integrators.svg"
+                />
               </div>
               <p className="largetext">
                 Разработчики и поставщики готовых курсов
@@ -75,27 +62,6 @@ function Partners() {
             </p>
           </div>
           <div className="row">
-            {/* {info.map((item, index) => {
-              return (
-                <div key={index} className="promo_block">
-                  <div className="promo_block_description">
-                    <h3>{item.infoH3}</h3>
-                    <p className="largetext">
-                    {item.infoP}
-                    </p>
-                    <ul className="promo_block_list promo_block_list--checkmark">
-                      <li>Иллюстрации</li>
-                      <li>Буклеты</li>
-                      <li>Фирменные бланки</li>
-                    </ul>
-                  </div>
-                  <div className="promo_block_preview">
-                    <img  src="./images/materials.png" />
-                  </div>
-                </div>
-              );
-            })} */}
-
             <div className="promo_block">
               <div className="promo_block_description">
                 <h3>Рекламные материалы</h3>
@@ -109,13 +75,19 @@ function Partners() {
                 </ul>
               </div>
               <div className="promo_block_preview">
-                <img src="https://www.unicraft.org/page/partners/images/materials.png" />
+                <img
+                  alt=""
+                  src="https://www.unicraft.org/page/partners/images/materials.png"
+                />
               </div>
             </div>
 
             <div className="promo_block">
               <div className="promo_block_preview">
-                <img src="https://www.unicraft.org/page/partners/images/presentation.png" />
+                <img
+                  alt=""
+                  src="https://www.unicraft.org/page/partners/images/presentation.png"
+                />
               </div>
               <div className="promo_block_description">
                 <h3>Совместное проведение первых презентаций</h3>
@@ -135,13 +107,19 @@ function Partners() {
                 </p>
               </div>
               <div className="promo_block_preview">
-                <img src="https://www.unicraft.org/page/partners/images/demo.png" />
+                <img
+                  alt=""
+                  src="https://www.unicraft.org/page/partners/images/demo.png"
+                />
               </div>
             </div>
 
             <div className="promo_block">
               <div className="promo_block_preview">
-                <img src="https://www.unicraft.org/page/partners/images/support.png" />
+                <img
+                  alt=""
+                  src="https://www.unicraft.org/page/partners/images/support.png"
+                />
               </div>
               <div className="promo_block_description">
                 <h3>Оперативная поддержка по любым вопросам</h3>
@@ -153,46 +131,73 @@ function Partners() {
             </div>
           </div>
         </div>
-        
       </div>
-      <div class="container_section container_section--main gggggg" >
-      <div class="row tac">
-        <h2>Зарабатывайте вместе с Unicraft</h2>
-      </div>
-      <div class="cta_block">
-        <button type="button" class="button button_rounded button_success button_gradienteffect" requestform_reg_express="" requestform-auditory="Партнер" requestform-title="Заявка на сотрудничество" requestform-action="Отправить">Стать партнёром</button>
-      </div>
+      <div class="container_section container_section--main gggggg">
+        <div class="row tac">
+          <h2>Зарабатывайте вместе с Unicraft</h2>
+        </div>
+        <div class="cta_block">
+          <button
+            type="button"
+            class="button button_rounded button_success button_gradienteffect"
+            requestform_reg_express=""
+            requestform-auditory="Партнер"
+            requestform-title="Заявка на сотрудничество"
+            requestform-action="Отправить"
+          >
+            Стать партнёром
+          </button>
+        </div>
 
-      <div class="row tac">
-        <p class="largetext">В среднем с одной продажи партнёр получает 30 000 ₽</p>
-        <p class="largetext">С нами уже сотрудничают более 100 компаний, среди которых есть такие крупные как:</p>
+        <div class="row tac">
+          <p class="largetext">
+            В среднем с одной продажи партнёр получает 30 000 ₽
+          </p>
+          <p class="largetext">
+            С нами уже сотрудничают более 100 компаний, среди которых есть такие
+            крупные как:
+          </p>
 
-        <div class="partners partners--spaced">
-          <div class="partners_item">
-            <div class="partners_logo">
-              <img loading="lazy" src="https://www.unicraft.org/static/logos/partners/softline.png" alt="Софтлайн"/>
+          <div class="partners partners--spaced">
+            <div class="partners_item">
+              <div class="partners_logo">
+                <img
+                  alt=""
+                  loading="lazy"
+                  src="https://www.unicraft.org/static/logos/partners/softline.png"
+                />
+              </div>
             </div>
-          </div>
-          <div class="partners_item">
-            <div class="partners_logo">
-              <img loading="lazy" src="https://www.unicraft.org/static/logos/partners/croc.png" alt="Крок"/>
+            <div class="partners_item">
+              <div class="partners_logo">
+                <img
+                  alt=""
+                  loading="lazy"
+                  src="https://www.unicraft.org/static/logos/partners/croc.png"
+                />
+              </div>
             </div>
-          </div>
-          <div class="partners_item">
-            <div class="partners_logo">
-              <img loading="lazy" src="https://www.unicraft.org/static/logos/partners/amocrm.png" alt="AMO"/>
+            <div class="partners_item">
+              <div class="partners_logo">
+                <img
+                  alt=""
+                  loading="lazy"
+                  src="https://www.unicraft.org/static/logos/partners/amocrm.png"
+                />
+              </div>
             </div>
-          </div>
-          <div class="partners_item">
-            <div class="partners_logo">
-              <img loading="lazy" src="https://www.unicraft.org/static/logos/partners/tinkoff.png" alt="Тинькофф"/>
+            <div class="partners_item">
+              <div class="partners_logo">
+                <img
+                  alt=""
+                  loading="lazy"
+                  src="https://www.unicraft.org/static/logos/partners/tinkoff.png"
+                />
+              </div>
             </div>
           </div>
         </div>
       </div>
-
-
-    </div>
     </div>
   );
 }
